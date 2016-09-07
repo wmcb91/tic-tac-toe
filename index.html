@@ -31,7 +31,11 @@
       - Need to write jQuery to put username in place of willmcbride1 -->
       <div class='user-welcome'>
         <p> Hi, <span>willmcbride1</span>!</p>
-        <span class="glyphicons glyphicons-cogwheel"></span>
+        <button type="button" class="btn btn-default btn-md">
+          <!-- *****glyph still not working***** -->
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+          </span>
+        </button>
       </div>
 
       <!-- Initially hidden-->
@@ -97,9 +101,19 @@
     </header>
     <hr>
     <div class='container game-container'>
+
       <button id="new-game" class="new-game">
         <h3 class='new-game'>New Game</h3>
       </button>
+
+      <!-- alert should trigger if new-game clicked before player sign in -->
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+        </span>
+        <span class="sr-only">Error:</span>
+        Whoops! You must sign in or <a id="alert-sign-up" class="alert-link">
+          sign up</a>to start a new game.
+      </div>
 
       <!-- Display of players turn -->
       <h3 id="player-turn" class="player-turn">
