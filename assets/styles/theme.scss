@@ -1,16 +1,15 @@
-// $background-color: $off-white;
-// $font-color: $charcoal;
-// $quote-background-color: $grey;
+$background-color: $off-white;
+$font-color: $charcoal;
+$margin-unit: 5px;
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+  margin: $margin-unit;
+}
 
 
-// body {
-//   background-color: $background-color;
-//   color: $font-color;
-// }
 
-// .quote {
-//   background-color: $quote-background-color;
-//   font-size: 30px;
-// }
+
 
 //Change hover icon from highlight bar to mouse or finger for anchors

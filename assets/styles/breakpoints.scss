@@ -16,3 +16,20 @@
 //     max-width: 700px;
 //   }
 // }
+
+// container {
+//   @include breakpoint(tiny) {
+//     max-width: 400px;
+//   }
+
+//   @include breakpoint(small) {
+//     max-width: 500px;
+//   }
+
+//   @include breakpoint(medium) {
+//     max-width: 700px;
+
+//   @include breakpoint(large) {
+//     max-width: 700px;
+//   }
+// }

@@ -1,27 +1,23 @@
-// $unit: 25px;
-// $height: ($unit * 4);
-// $width: ($unit * 4);
-//
-// body {
-//   background-color: $background-color;
-//   color: $font-color;
-// }
-//
-// .container {
-//   margin: 20px auto;
-//   max-width: 650px;
-// }
-//
-// .game-board {
-//   margin: 0 25%;
-//   text-align: center;
-//   width: 50%;
-// }
-//
-// .game-cell {
-//   border: 1px solid $black;
-//   box-sizing: border-box;
-//   height: $height;
-//   text-align: center;
-//   width: $width;
-// }
+$unit: 50px;
+$height: ($unit * 6.5);
+$width: ($unit * 6.5);
+$base-container-width: 1200px;
+
+.container {
+  margin: 20px auto;
+  max-width: $base-container-width;
+}
+
+.game-board {
+  margin: 0 4%;
+  text-align: center;
+  width: 92%;
+}
+
+.game-cell {
+  border: 1px solid $black;
+  box-sizing: border-box;
+  height: $height;
+  text-align: center;
+  width: $width;
+}
