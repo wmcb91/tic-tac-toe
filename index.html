@@ -23,7 +23,7 @@
           <input type="submit" value="Sign In!">
         </fieldset>
       </form>
-      <p>New user?<a href="#"> Click here to sign-up!</a></p>
+      <p>New user? <a id="sign-up-link">Click here to sign-up!</a></p>
 
   <!-- Initially hidden
   Note:
@@ -34,22 +34,46 @@
         <span class="glyphicons glyphicons-cogwheel"></span>
       </div>
 
-    <!-- Initially hidden-->
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <input type="email" name="credentials[user_name]" placeholder="User Name">
-          <br>
-          <input type="password" name="credentials[password]"
-          placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]"
-          placeholder="Confirm Password">
-          <input type="submit" value="Sign Up!">
-        </fieldset>
-      </form>
+      <!-- Initially hidden-->
+      <!--  Sign Up Modal-->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
 
-      <!-- initially hidden -->
+              <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+
+              <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+
+            </div>
+
+            <div class="modal-body">
+              <form id="sign-up">
+                <fieldset>
+                  <input type="text" placeholder="Email">
+                  <input type="email" name="credentials[user_name]" placeholder="User Name">
+                  <br>
+                  <input type="password" name="credentials[password]" placeholder="Password">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirmpassword">
+                  <input type="submit" value="Sign Up!">
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" id="sign-up-button" data-dismiss="modal">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- initially hidden-->
       <form id="change-password">
         <fieldset>
           <legend>Change Password</legend>
@@ -69,37 +93,7 @@
         </fieldset>
       </form>
 
-      <!--  Sign Up Modal-->
-      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
 
-              <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-
-              <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-              
-            </div>
-
-            <div class="modal-body">
-              <input type="text" placeholder="Email">
-              <input type="email" name="credentials[user_name]" placeholder="User Name">
-              <input type="password" placeholder="Password">
-              <input type="password" placeholder="Re-enter password">
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" id="sign-up-button" data-dismiss="modal">Sign Up</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </header>
     <hr>
     <div class='container game-container'>
