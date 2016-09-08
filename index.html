@@ -13,7 +13,7 @@
     <header>
       <h1 class='title'>TIC-TAC-TOE</h1>
 
-      <div class = "sign-in-prompt">
+      <div id="sign-in-prompt" class = "sign-in-prompt">
         <form id="sign-in">
           <fieldset>
             <input type="email" name="credentials[email]" placeholder="Email">
@@ -30,11 +30,10 @@
   Note:
       - Find something better than span if possible
       - Need to write jQuery to put username in place of willmcbride1 -->
-      <div class='user-welcome'>
+      <div class='user-welcome' id="user-welcome">
         <p> Hi, <span>willmcbride1</span>!</p>
         <button type="button" class="btn btn-default btn-md">
-          <!-- *****glyph still not working***** -->
-          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+          <span class="glyphicon glyphicon-cog" aria-hidden="true">
           </span>
         </button>
       </div>
@@ -65,14 +64,14 @@
                   <input type="email" name="credentials[user_name]" placeholder="User Name">
                   <br>
                   <input type="password" name="credentials[password]" placeholder="Password">
-                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirmpassword">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
                   <input type="submit" value="Sign Up!">
                 </fieldset>
               </form>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
               <button type="button" class="btn btn-default" id="sign-up-button" data-dismiss="modal">Sign Up</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -108,7 +107,7 @@
       </button>
 
       <!-- alert should trigger if new-game clicked before player sign in -->
-      <div class="alert alert-danger" role="alert">
+      <div id="sign-in-warning" class="alert alert-danger" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
         </span>
         <span class="sr-only">Error:</span>
@@ -116,9 +115,10 @@
           sign up</a>to start a new game.
       </div>
 
-      <!-- Display of players turn -->
-      <h3 id="player-turn" class="player-turn">
-      </h3>
+      <!-- Display of players turn
+          using placeholder currently-->
+      <h2 id="player-turn" class="player-turn">Player X's Turn
+      </h2>
 
       <!--  Game Over Modal-->
       <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -139,7 +139,7 @@
         </div>
       </div>
 
-      <div class="container game-board">
+      <div class="container game-board" id="game-board">
           <div class="row board-row">
             <div class="col-xs-4 game-cell">
             </div>
