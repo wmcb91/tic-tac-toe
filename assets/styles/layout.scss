@@ -3,16 +3,29 @@ $height: ($unit / 3);
 $row-width: $unit;
 $base-container-width: 1200px;
 $header-margin: 15px;
+$header-box-height: 95px;
+
+p {
+  margin: 0;
+}
 
 .title {
   float: left;
-  margin-left: $header-margin;
+  margin: ($header-box-height * .28) 0 0 $header-margin;
+}
+
+.header-box {
+  align-items: flex-end;
+  display: flex;
+  float: right;
+  height: $header-box-height;
+  margin-right: $header-margin;
 }
 
 .sign-in-prompt {
-  float: right;
-  margin-right: ($header-margin * 1.5);
-  margin-top: $header-margin;
+  float: left;
+  // margin-right: ($header-margin * 1.5);
+  // margin-top: $header-margin;
 }
 
 .user-welcome {
@@ -78,7 +91,7 @@ hr {
   margin: 0 auto;
   // position: relative;
   text-align: center;
-  width: 92%;
+  // width: 92%;
 }
 
 .board-row {

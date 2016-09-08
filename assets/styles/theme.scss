@@ -6,13 +6,17 @@ body {
   color: $font-color;
 }
 
-
 hr {
   border: 1px solid $black;
 }
 
 .game-cell {
   border: 1px solid $black;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 

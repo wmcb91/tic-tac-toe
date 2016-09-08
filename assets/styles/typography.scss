@@ -4,32 +4,23 @@
 // font-size
 // padding
 
-
 // font-family: 'VT323', monospace;
-// font-family: 'Bungee Shade', cursive;
-// font-family: 'Bungee', cursive;
-// font-family: 'Rubik', sans-serif;
+$bungee-shade: 'Bungee Shade', cursive;
+$bungee: 'Bungee', cursive;
+$rubik: 'Rubik', sans-serif;
+$vt323: 'VT323', monospace;
+
+$font-size: 14px;
+$line-height: 1.6;
+$heading-line-height: 2;
 
 
-// $font-size: 18px;
-// $line-height: 1.6;
-// $vertical-margin: 40px;
-// $max-width: 650px;
-// $horizontal-padding: 10px;
-// $heading-line-height: 2;
+body {
+  color: $charcoal;
+  font-family: $rubik;
+}
 
-
-// body {
-//   color: $charcoal;
-//   font-size: $font-size;
-//   line-height: $line-height;
-//   margin: $vertical-margin auto;
-//   max-width: $max-width;
-//   padding: 0 $horizontal-padding;
-// }
-
-// h1,
-// h2,
-// h3 {
-//   line-height: $heading-line-height;
-// }
+.title {
+  font-family: $rubik;
+  font-size: 66px;
+}
