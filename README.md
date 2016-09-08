@@ -7,12 +7,13 @@ CSS:
  - Make boxes smaller for >1200px
 
 JS:
-
+ - Hide & show password failed match indicator
 
 HTML:
  - Change change-password to a modal
  - Add player score
-
+ - Add failed password match indicator
+ - Drop down bar from cog glyph
 
 
 Down the road ideas:

@@ -31,13 +31,3 @@ $('#new-game').on('click', function () {
   $('#game-board').show();
   $('#player-turn').show();
 });
-
-//Initially hidden elements
-$(document).on('ready', function(){
-  $('#sign-out').hide();
-  $('#change-password').hide();
-  $('#user-welcome').hide();
-  $('#sign-in-warning').hide();
-  $('#player-turn').hide();
-  $('#game-board').hide();
-});
