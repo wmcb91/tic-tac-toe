@@ -1,25 +1,98 @@
-$unit: 50px;
-$height: ($unit * 6.5);
-$width: ($unit * 6.5);
+$unit: 900px;
+$height: ($unit / 3);
+$row-width: $unit;
 $base-container-width: 1200px;
+$header-margin: 15px;
+
+.title {
+  float: left;
+  margin-left: $header-margin;
+}
+
+.sign-in-prompt {
+  float: right;
+  margin-right: ($header-margin * 1.5);
+  margin-top: $header-margin;
+}
+
+.user-welcome {
+  align-items: center;
+  display: flex;
+  float: right;
+  // justify-content: center;
+  margin-right: ($header-margin * 1.5);
+  margin-top: $header-margin;
+}
+
+.welcome-msg {
+  float: left;
+  margin: auto 5px;
+}
+
+.cog-btn {
+  float: right;
+  margin: 3px;
+  padding: 0;
+}
+
+.glyphicon-cog {
+  margin: 0;
+  padding: 3px 3px 1px 4px;
+}
 
 
+hr {
+  clear: both;
+  margin: 0;
+  position: static;
+  width: 100%;
+}
 
 .container {
   margin: 20px auto;
   max-width: $base-container-width;
+  // position: relative;
+}
+
+.game-container {
+  text-align: center;
+}
+
+.new-game-text {
+  clear: both;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+.new-game-button {
+  clear: both;
+  margin: 5px auto;
+}
+
+.player-turn {
+  clear: both;
+  text-align: center;
 }
 
 .game-board {
-  margin: 0 4%;
+  margin: 0 auto;
+  // position: relative;
   text-align: center;
   width: 92%;
 }
 
+.board-row {
+  margin: 0 auto;
+  width: $row-width;
+}
+
 .game-cell {
-  border: 1px solid $black;
   box-sizing: border-box;
   height: $height;
-  text-align: center;
-  width: $width;
+  margin: 0 auto;
+  width: ($row-width / 3);
+}
+
+.credit {
+  margin: 55px 0 5px 10px;
 }

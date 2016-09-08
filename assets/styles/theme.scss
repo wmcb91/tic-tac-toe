@@ -1,15 +1,19 @@
 $background-color: $off-white;
 $font-color: $charcoal;
-$margin-unit: 5px;
 
 body {
   background-color: $background-color;
   color: $font-color;
-  margin: $margin-unit;
 }
 
 
+hr {
+  border: 1px solid $black;
+}
 
+.game-cell {
+  border: 1px solid $black;
+}
 
 
 //Change hover icon from highlight bar to mouse or finger for anchors

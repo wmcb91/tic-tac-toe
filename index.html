@@ -23,18 +23,26 @@
             <input type="submit" value="Sign In!">
           </fieldset>
         </form>
-        <p>New user? <a id="sign-up-link">Click here to sign-up!</a></p>
+        <p class="new-user-text">
+          New user? <a id="sign-up-link" class="sign-up-link">
+            Click here to sign-up!</a>
+        </p>
       </div>
 
-  <!-- Initially hidden
-  Note:
+        <!-- Initially hidden
+        Note:
       - Find something better than span if possible
       - Need to write jQuery to put username in place of willmcbride1 -->
       <div class='user-welcome' id="user-welcome">
-        <p> Hi, <span>willmcbride1</span>!</p>
-        <button type="button" class="btn btn-default btn-md">
-          <span class="glyphicon glyphicon-cog" aria-hidden="true">
-          </span>
+        <h4 class="welcome-msg"> Hi,
+          <span
+          id="user-name-welcome"
+          class="user-name-welcome">
+          <!-- styling placeholder -->
+          willmcbride1</span>!
+        </h4>
+        <button type="button" class="btn btn-default btn-lg cog-btn">
+          <span class="glyphicon glyphicon-cog" aria-hidden="true"><!-- empty span --></span>
         </button>
       </div>
 
@@ -44,7 +52,6 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-
               <button
               type="button"
               class="close"
@@ -52,11 +59,8 @@
               aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-
               <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-
             </div>
-
             <div class="modal-body">
               <form id="sign-up">
                 <fieldset>
@@ -101,18 +105,19 @@
     </header>
     <hr>
     <div class='container game-container'>
-
-      <button id="new-game" class="new-game">
-        <h3 class='new-game'>New Game</h3>
+      <button id="new-game" class="new-game-button">
+        <h3 class='new-game-text'>New Game</h3>
       </button>
 
+      <!-- Initially hidden-->
       <!-- alert should trigger if new-game clicked before player sign in -->
       <div id="sign-in-warning" class="alert alert-danger" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
-        </span>
+        <!-- empty span tidy --></span>
         <span class="sr-only">Error:</span>
-        Whoops! You must sign in or <a id="alert-sign-up" class="alert-link">
-          sign up</a>to start a new game.
+        Whoops! You must sign in or
+        <a id="alert-sign-up" class="alert-link">
+        sign up</a> to start a new game.
       </div>
 
       <!-- Display of players turn
@@ -170,7 +175,7 @@
     </div>
 
     <footer>
-      <h5>Game created by Will McBride</h5>
+      <h5 class="credit">Game created by Will McBride</h5>
     </footer>
 
   </body>
