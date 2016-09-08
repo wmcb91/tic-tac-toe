@@ -1,9 +1,9 @@
-$unit: 900px;
-$height: ($unit / 3);
-$row-width: $unit;
+$row-width: 900px;
+$cell-height: 300px;
 $base-container-width: 1200px;
 $header-margin: 15px;
 $header-box-height: 95px;
+$cell-width: 300px;
 
 p {
   margin: 0;
@@ -61,12 +61,6 @@ hr {
   width: 100%;
 }
 
-.container {
-  margin: 20px auto;
-  max-width: $base-container-width;
-  // position: relative;
-}
-
 .game-container {
   text-align: center;
 }
@@ -79,7 +73,7 @@ hr {
 
 .new-game-button {
   clear: both;
-  margin: 5px auto;
+  margin: 15px auto;
 }
 
 .player-turn {
@@ -89,21 +83,21 @@ hr {
 
 .game-board {
   margin: 0 auto;
-  // position: relative;
   text-align: center;
-  // width: 92%;
 }
 
 .board-row {
-  margin: 0 auto;
-  width: $row-width;
+  margin-left: auto;
+  margin-right: auto;
+  // width: $row-width;
 }
 
 .game-cell {
   box-sizing: border-box;
-  height: $height;
+  height: $cell-height;
   margin: 0 auto;
-  width: ($row-width / 3);
+  padding: 0;
+  width: $cell-width;
 }
 
 .credit {

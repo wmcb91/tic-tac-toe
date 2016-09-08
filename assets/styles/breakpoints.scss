@@ -1,4 +1,5 @@
 @import 'breakpoint';
+@import 'layout';
 
 // body {
 //   @include breakpoint(tiny) {
@@ -17,19 +18,78 @@
 //   }
 // }
 
-// container {
-//   @include breakpoint(tiny) {
-//     max-width: 400px;
-//   }
+.container {
+  @include breakpoint(tiny) {
+    max-width: 100%;
+  }
 
-//   @include breakpoint(small) {
-//     max-width: 500px;
-//   }
+  @include breakpoint(x-small) {
+    max-width: 460px;
+  }
 
-//   @include breakpoint(medium) {
-//     max-width: 700px;
+  @include breakpoint(small) {
+    max-width: 768px;
+  }
 
-//   @include breakpoint(large) {
-//     max-width: 700px;
-//   }
+  @include breakpoint(medium) {
+    max-width: 992px;
+  }
+
+  @include breakpoint(large) {
+    max-width: $base-container-width;
+  }
+}
+
+.board-row {
+  @include breakpoint(tiny) {
+    width: 75%;
+  }
+
+  @include breakpoint(x-small) {
+    width: 75%;
+  }
+
+  @include breakpoint(small) {
+    width: ($row-width * 7.68 / 12);
+  }
+
+  @include breakpoint(medium) {
+    width: ($row-width * 9.92 / 12);
+  }
+
+  @include breakpoint(large) {
+    width: $row-width;
+  }
+}
+
+.game-cell {
+  @include breakpoint(tiny) {
+    height: ($cell-height * 3 / 12);
+    width: ($cell-width * 3 / 12);
+  }
+
+  @include breakpoint(x-small) {
+    height: ($cell-height * 4 / 12);
+    width: ($cell-width * 4 / 12);
+  }
+
+  @include breakpoint(small) {
+    height: ($cell-height * 7.68 / 12);
+    width: ($cell-width * 7.68 / 12);
+  }
+
+  @include breakpoint(medium) {
+    height: ($cell-height * 9.92 / 12);
+    width: ($cell-width * 9.92 / 12);
+  }
+
+  @include breakpoint(large) {
+    height: $cell-height;
+    width: $cell-width;
+  }
+}
+
+// .game-cell {
+//   height: $height;
+//   width: ($row-width / 3);
 // }
