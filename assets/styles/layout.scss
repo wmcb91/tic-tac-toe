@@ -11,7 +11,7 @@ p {
 
 .title {
   float: left;
-  margin: ($header-box-height * .28) 0 0 $header-margin;
+  margin: ($header-box-height * .2) 0 0 $header-margin;
 }
 
 .header-box {
@@ -20,12 +20,6 @@ p {
   float: right;
   height: $header-box-height;
   margin-right: $header-margin;
-}
-
-.sign-in-prompt {
-  float: left;
-  // margin-right: ($header-margin * 1.5);
-  // margin-top: $header-margin;
 }
 
 .user-welcome {
