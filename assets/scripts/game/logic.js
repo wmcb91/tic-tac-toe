@@ -1,7 +1,7 @@
 'use strict';
 
 const app = require('../app');
-const ui = require('./ui');
+// const ui = require('./ui');
 
 
 //allow game move to proceed if allowMove = true
@@ -21,11 +21,11 @@ const allowMove = function (index) {
   }
 };
 
-const gameOver = function (index, value) {
-
-};
+// const gameOver = function (index, value) {
+//
+// };
 
 module.export = {
   allowMove,
-  gameOver
+  // gameOver
 };
