@@ -8,7 +8,8 @@ const signInSuccess = (data) => {
   $('#sign-in-prompt').hide();
   $('#user-welcome').show();
   $('#sign-in-failure').hide();
-  //code to show username in welcome
+  //code to show email in welcome
+  $('#user-name-welcome').html(app.user.email);
 };
 
 const signInFailure = (error) => {
@@ -23,7 +24,9 @@ const signUpSuccess = (data) => {
   $('#sign-up').hide();
   $('#signUpModal').modal('hide');
   $('#user-welcome').show();
+  //how to avoid repeat code?
   console.log(data);
+  $('#user-name-welcome').html(app.user.email);
 };
 
 const signUpFailure = (error) => {
