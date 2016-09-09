@@ -20,13 +20,11 @@ const signInFailure = (error) => {
 
 //sign up
 const signUpSuccess = (data) => {
-  $('#sign-in-prompt').hide();
   $('#sign-up').hide();
   $('#signUpModal').modal('hide');
-  $('#user-welcome').show();
-  //how to avoid repeat code?
+  $('#signUpSuccessModal').modal('show');
+
   console.log(data);
-  $('#user-name-welcome').html(app.user.email);
 };
 
 const signUpFailure = (error) => {
