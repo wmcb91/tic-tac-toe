@@ -42,7 +42,7 @@
             willmcbride1</span>
           </h4>
           <button type="button" class="btn btn-default btn-lg cog-btn">
-            <span class="glyphicon glyphicon-cog" aria-hidden="true"><!-- empty span --></span>
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"><!-- --></span>
           </button>
         </div>
       </div>
@@ -104,22 +104,28 @@
     </header>
 
     <hr>
-
+    <div id="sign-in-failure" class="alert alert-danger sign-in-alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+      <!-- --></span>
+      <span class="sr-only">Error:</span>
+      The account email or password you entered is incorrect.
+    </div>
     <div class='container game-container'>
-      <button id="new-game" class="new-game-button">
-        <h3 class='new-game-text'>New Game</h3>
-      </button>
 
       <!-- Initially hidden-->
       <!-- alert should trigger if new-game clicked before player sign in -->
+      <button id="new-game" class="new-game-button">
+        <h3 class='new-game-text'>New Game</h3>
+      </button>
       <div id="sign-in-warning" class="alert alert-danger" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
-        <!-- empty span tidy --></span>
+        <!-- --></span>
         <span class="sr-only">Error:</span>
         Whoops! You must sign in or
         <a id="alert-sign-up" class="alert-link">
         sign up</a> to start a new game.
       </div>
+
 
       <!-- Display of players turn
           using placeholder currently-->

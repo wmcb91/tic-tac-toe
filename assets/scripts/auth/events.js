@@ -8,24 +8,27 @@ const ui = require('./ui');
 
 const showSignUp = function (){
   $('#signUpModal').modal('show');
+  $('#sign-in-failure').hide();
 };
 
 const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
+  $('#sign-in-warning').hide();
 
   api.signUp(data)
-    .done(ui.success)
-    .fail(ui.failure);
+    .done(ui.signUpSuccess)
+    .fail(ui.signUpfailure);
 };
 
 const onSignIn = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
+  $('#sign-in-warning').hide();
 
   api.signIn(data)
     .done(ui.signInSuccess)
-    .fail(ui.failure);
+    .fail(ui.signInFailure);
 };
 
 const onChangePassword = function(event) {
@@ -34,7 +37,7 @@ const onChangePassword = function(event) {
 
   api.changePassword(data)
     .done(ui.changePasswordSuccess)
-    .fail(ui.failure);
+    .fail(ui.changePasswordFailure);
 };
 
 const onSignOut = function(event) {

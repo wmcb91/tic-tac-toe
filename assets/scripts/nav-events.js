@@ -1,11 +1,11 @@
 'use strict';
 
 // Sign in Event handler shit
-$('#sign-in').submit(function () {
-  event.preventDefault();
-  $('#sign-in-prompt').hide();
-  $('#user-welcome').show();
-});
+// $('#sign-in').submit(function () {
+//   event.preventDefault();
+//   $('#sign-in-prompt').hide();
+//   $('#user-welcome').show();
+// });
 
 // Sign up event handler shit
 // Set both possible prompt links to open modal

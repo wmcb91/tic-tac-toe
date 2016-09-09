@@ -24,4 +24,5 @@ $(() => {
   $('#sign-in-warning').hide();
   $('#player-turn').hide();
   $('#game-board').hide();
+  $('#sign-in-failure').hide();
 });
