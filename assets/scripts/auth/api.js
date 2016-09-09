@@ -10,6 +10,7 @@ const index = function () {
       Authorization: 'Token token=' + app.user.token,
     },
   });
+  
 };
 
 const signUp = (data) => {
