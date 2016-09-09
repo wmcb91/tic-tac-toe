@@ -20,7 +20,6 @@ const signInFailure = (error) => {
 
 //sign up
 const signUpSuccess = (data) => {
-  $('#sign-up').hide();
   $('#signUpModal').modal('hide');
   $('#signUpSuccessModal').modal('show');
 
@@ -36,6 +35,9 @@ const signUpFailure = (error) => {
 const signOutSuccess = () => {
   console.log('Sign Out Successful');
   app.user=null;
+  $('#user-welcome').hide();
+  $('#game-container').hide();
+  $('#sign-in-prompt').show();
 };
 
 const signOutFailure = (error) => {

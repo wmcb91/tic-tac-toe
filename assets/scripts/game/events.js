@@ -3,17 +3,17 @@
 const app = require('../app');
 
 const clickNewGame = function () {
+
   if (app.user === null || app.user === undefined) {
     $('#sign-in-warning').show();
   }
   else {
-    $('#game-board').show();
-    $('#player-turn').show();
+    $('#game-container').show();
   }
 };
 
 const addHandlers = () => {
-  $('#new-game').on('click', clickNewGame);
+  $('#new-game-btn').on('click', clickNewGame);
 };
 
 module.exports = {

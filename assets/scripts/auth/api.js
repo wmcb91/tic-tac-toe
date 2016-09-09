@@ -2,6 +2,13 @@
 
 const app = require('../app');
 
+const index = function () {
+  return $.ajax({
+    url: app + '/user',
+    method: 'GET',
+  });
+};
+
 const signUp = (data) => {
   // console.log(data);
   return $.ajax({
@@ -47,6 +54,7 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
+  index,
 };
 
 //notes: line 41

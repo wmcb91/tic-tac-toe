@@ -22,7 +22,8 @@ $(() => {
   $('#change-password').hide();
   $('#user-welcome').hide();
   $('#sign-in-warning').hide();
-  $('#player-turn').hide();
-  $('#game-board').hide();
+  $('#game-container').hide();
+  // $('#player-turn').hide();
+  // $('#game-board').hide();
   $('#sign-in-failure').hide();
 });

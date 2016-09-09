@@ -1,5 +1,11 @@
 Will's Tic-Tac-Toe Game.
 
+Bugs:
+ - After signing one user up, clicking sign up button opens empty modal.
+ 
+
+
+
 Changes to make:
 
 CSS:
