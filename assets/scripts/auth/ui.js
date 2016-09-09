@@ -4,12 +4,19 @@ const app = require('../app');
 
 //sign in
 const signInSuccess = (data) => {
+  //Stores current user data into app.user
   app.user = data.user;
+
+  //UI response to sign in
   $('#sign-in-prompt').hide();
   $('#user-welcome').show();
   $('#sign-in-failure').hide();
+
   //code to show email in welcome
   $('#user-name-welcome').html(app.user.email);
+
+  //debug
+  console.log('data.user is', data.user);
 };
 
 const signInFailure = (error) => {
@@ -23,7 +30,8 @@ const signUpSuccess = (data) => {
   $('#signUpModal').modal('hide');
   $('#signUpSuccessModal').modal('show');
 
-  console.log(data);
+  //debug
+  console.log('data is', data);
 };
 
 const signUpFailure = (error) => {
@@ -33,11 +41,13 @@ const signUpFailure = (error) => {
 
 //sign out
 const signOutSuccess = () => {
-  console.log('Sign Out Successful');
-  app.user=null;
+  app.user = null;
   $('#user-welcome').hide();
   $('#game-container').hide();
   $('#sign-in-prompt').show();
+
+  //debug
+  console.log('Sign Out Successful');
 };
 
 const signOutFailure = (error) => {
@@ -70,5 +80,4 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   showSignUpModal,
-
 };
