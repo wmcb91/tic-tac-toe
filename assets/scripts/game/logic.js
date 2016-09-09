@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 const app = require('../app');
 // const ui = require('./ui');
@@ -21,11 +21,17 @@ const allowMove = function (index) {
   }
 };
 
+//switch player each turn
+// const changePlayer = function (player) {
+//   player =
+// };
+
 // const gameOver = function (index, value) {
 //
 // };
 
 module.export = {
   allowMove,
+  // changePlayer,
   // gameOver
 };
