@@ -101,10 +101,12 @@ hr {
 }
 
 .game-cell {
+  align-items: stretch;
   box-sizing: border-box;
   height: $cell-height;
   margin: 0 auto;
   padding: 0;
+  text-align: center;
   width: $cell-width;
 }
 
