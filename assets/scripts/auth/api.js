@@ -10,10 +10,9 @@ const index = function () {
       Authorization: 'Token token=' + app.user.token,
     },
   });
-  
 };
 
-const signUp = (data) => {
+const signUp = function (data) {
   // console.log(data);
   return $.ajax({
     url: app.host + '/sign-up',
@@ -22,7 +21,7 @@ const signUp = (data) => {
   });
 };
 
-const signIn = (data) => {
+const signIn = function (data) {
   // console.log(data);
   return $.ajax({
     url: app.host + '/sign-in',
@@ -31,7 +30,7 @@ const signIn = (data) => {
   });
 };
 
-const changePassword = (data) => {
+const changePassword = function (data) {
   return $.ajax({
     url: app.host + '/change-password/' + app.user.id,
     method: 'PATCH',
@@ -42,13 +41,13 @@ const changePassword = (data) => {
   });
 };
 
-const signOut = (data) => {
+const signOut = function (data) {
   return $.ajax({
     url: app.host + '/sign-out/' + app.user.id,
     method: 'DELETE',
     headers: {
         Authorization: 'Token token=' + app.user.token,
-    },
+      },
     data: data,
   });
 };

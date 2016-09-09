@@ -5,12 +5,11 @@ const getFormFields = require('../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
-
-const onSignUpClick = function (){
+const onSignUpClick = function () {
   ui.showSignUpModal();
 };
 
-const onSignUp = function(event) {
+const onSignUp = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   $('#sign-in-warning').hide();
@@ -20,7 +19,7 @@ const onSignUp = function(event) {
     .fail(ui.signUpfailure);
 };
 
-const onSignIn = function(event) {
+const onSignIn = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   $('#sign-in-warning').hide();
@@ -30,7 +29,7 @@ const onSignIn = function(event) {
     .fail(ui.signInFailure);
 };
 
-const onChangePassword = function(event) {
+const onChangePassword = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
 
@@ -39,7 +38,7 @@ const onChangePassword = function(event) {
     .fail(ui.changePasswordFailure);
 };
 
-const onSignOut = function(event) {
+const onSignOut = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
 
@@ -48,7 +47,7 @@ const onSignOut = function(event) {
     .fail(ui.failure);
 };
 
-const addHandlers = () => {
+const addHandlers = function() {
   $('#sign-up-link').on('click', onSignUpClick);
   $('#alert-sign-up').on('click', onSignUpClick);
   $('#sign-up').on('submit', onSignUp);
@@ -57,8 +56,8 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
 };
 
-
 module.exports = {
   addHandlers,
+  
   // onSignUp,
 };
