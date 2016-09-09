@@ -6,9 +6,8 @@ const api = require('./api');
 const ui = require('./ui');
 
 
-const showSignUp = function (){
-  $('#signUpModal').modal('show');
-  $('#sign-in-failure').hide();
+const onSignUpClick = function (){
+  ui.showSignUpModal();
 };
 
 const onSignUp = function(event) {
@@ -50,8 +49,8 @@ const onSignOut = function(event) {
 };
 
 const addHandlers = () => {
-  $('#sign-up-link').on('click', showSignUp);
-  $('#alert-sign-up').on('click', showSignUp);
+  $('#sign-up-link').on('click', onSignUpClick);
+  $('#alert-sign-up').on('click', onSignUpClick);
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);

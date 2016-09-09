@@ -54,6 +54,12 @@ const changePasswordFailure = (error) => {
   console.error(error);
 };
 
+//Show sign in modal and hide sign-in-failure message if displayed
+const showSignUpModal = function() {
+  $('#signUpModal').modal('show');
+  $('#sign-in-failure').hide();
+};
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -63,5 +69,6 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
+  showSignUpModal,
 
 };

@@ -4,8 +4,11 @@ const app = require('../app');
 
 const index = function () {
   return $.ajax({
-    url: app + '/user',
+    url: app.host + '/users',
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 

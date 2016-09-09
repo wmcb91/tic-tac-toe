@@ -16,6 +16,10 @@ const addHandlers = () => {
   $('#new-game-btn').on('click', clickNewGame);
 };
 
+
+
+
+
 module.exports = {
   addHandlers,
 };
