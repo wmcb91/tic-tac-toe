@@ -2,6 +2,7 @@
 
 const app = require('../app');
 const api = require('./api');
+const ui = require('./ui');
 
 const clickNewGame = function () {
   if (app.user === null || app.user === undefined) {
