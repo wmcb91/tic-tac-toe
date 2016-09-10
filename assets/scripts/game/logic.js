@@ -2,6 +2,7 @@
 
 const app = require('../app');
 const ui = require('./ui');
+// const api = require('./api');
 
 let currentPlayer = 'X';
 
@@ -101,7 +102,8 @@ const gameTied = function (index) {
   // then change the current player to X
   // Call UI function to display it is X's turn
 
-const changePlayer = function(currentPlayer) {
+const changePlayer = function (currentPlayer) {
+  currentPlayer = currentPlayer;
   if (allowMove === false) {
     console.log('no player change, move not allowed');
     return;
@@ -118,9 +120,7 @@ const changePlayer = function(currentPlayer) {
 
 // compile information and send it to UI and API
 
-const executeTurn = function()
-
-
+// const executeTurn = function()
 
 module.export = {
   allowMove,
