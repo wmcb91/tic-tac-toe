@@ -1,4 +1,4 @@
- 'use strict';
+'use strict';
 
 const app = require('../app');
 // const ui = require('./ui');
@@ -30,8 +30,50 @@ const allowMove = function (index) {
 //
 // };
 
+
+
+
+
+
+
+const gameOver = function () {
+
+  if (('#1' === '#2' && '#1' === '#3' && '#1' !== '') ||
+      ('#1' === '#4' && '#1' === '#7' && '#1' !== '') ||
+      ('#1' === '#5' && '#1' === '#9' && '#1' !== '') ||
+      ('#2' === '#5' && '#2' === '#8' && '#2' !== '') ||
+      ('#3' === '#6' && '#6' === '#9' && '#3' !== '') ||
+      ('#4' === '#5' && '#4' === '#6' && '#4' !== '') ||
+      ('#7' === '#8' && '#7' === '#9' && '#7' !== '') ||
+      ('#7' === '#5' && '#7' === '#3' && '#7' !== '')
+    )
+      {
+      //game is over
+      //some player won
+      //display player won
+      console.log('Someone won');
+      return true;
+    }
+    else {
+      console.log('keep playing');
+      return false;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 module.export = {
   allowMove,
   // changePlayer,
-  // gameOver
+  gameOver,
 };

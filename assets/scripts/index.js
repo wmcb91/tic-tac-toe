@@ -7,14 +7,16 @@
 require('./example');
 
 
-const authEvents = require('./auth/events.js');
-const gameEvents = require('./game/events.js');
-// const navEvents =
-// require('./nav-events');
+const authEvents = require('./auth/events');
+const gameEvents = require('./game/events');
+// const render = require('./app/render');
+// const app = require('./app');
+
 
 // On document ready
 $(() => {
   // navEvents.addHandlers();
+  // render(app);
   authEvents.addHandlers();
   gameEvents.addHandlers();
 

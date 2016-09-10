@@ -3,7 +3,9 @@
 
 // const api = require('./api');
 const ui = require('./ui');
+const logic = require('./logic');
 
+// gonna delete
 let currentPlayer = 'X';
 
 const onNewGame = function () {
@@ -15,6 +17,7 @@ const onUpdateBoard = function (player, cell) {
   player = currentPlayer;
   cell = this.id;
   ui.updateBoard(player, cell);
+  logic.gameOver();
 };
 
 
