@@ -12,6 +12,19 @@ const newGame = function () {
   }
 };
 
+const showStats = function () {
+  if (app.user === null || app.user === undefined) {
+    $('#sign-in-warning').show();
+  }
+  else {
+    $('#showStatsModal').modal('show');
+    console.log('showing stats');
+    // api.getStats();
+    // jQuery to post stats
+  }
+};
+
+
 const updateBoard = function (player, cell) {
   console.log('update board memory');
   console.log(player);
@@ -44,4 +57,5 @@ module.exports = {
   // onError,
   updateBoard,
   newGame,
+  showStats,
 };

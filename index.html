@@ -126,10 +126,41 @@
         <span class="sr-only">Error:</span>
         The account email or password you entered is incorrect.
       </div>
-      <!-- new game button -->
-      <button id="new-game-btn" class="new-game-button">
-        <h3 class='new-game-text'>New Game</h3>
+      <!-- NEW GAME BUTTON -->
+      <button id="new-game-btn" class="new-game-btn">
+        <h3 class='btn-text'>New Game</h3>
       </button>
+      <!-- SHOW PLAYER STATS BUTTON
+            INITIALLY HIDDEN -->
+      <button id="show-stats-btn" class="show-stats-btn">
+        <h3 class='btn-text'>Player Stats</h3>
+      </button>
+      <!-- PLAYER STATS MODAL
+            INITIALLY HIDDEN -->
+      <div class="modal fade" id="showStatsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3>Player Stats</h3>
+              <br>
+              <div class='stats' id='stats'>
+                <h4>Games Played: </h4>
+                <h4 class="games-played" id="games-played"></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Initially hidden: warning if attemp to play pre sign in-->
       <!-- alert should trigger if new-game clicked before player sign in -->
       <div
@@ -141,7 +172,9 @@
         <span class="sr-only">Error:</span>
         Whoops! You must sign in or
         <a id="alert-sign-up" class="alert-link">
-        sign up</a> to start a new game.
+        sign up</a>
+        <br>
+        to start a new game or see stats.
       </div>
 
       <!-- GAME OVER - WIN OR TIE MESSAGE

@@ -73,15 +73,23 @@ hr {
   width: 460px;
 }
 
-.new-game-text {
+.btn-text {
   clear: both;
   margin: 10px 5px;
   text-align: center;
 }
 
-.new-game-button {
+.new-game-btn {
   clear: both;
-  margin: 15px auto;
+  margin: 15px 0 0 5px;
+  position: relative;
+}
+
+.show-stats-btn {
+  // float: right;
+  position: inherit;
+  right: 25px;
+  top: 15px;
 }
 
 .player-turn {

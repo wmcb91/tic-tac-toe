@@ -12,6 +12,10 @@ const onNewGame = function () {
   ui.newGame();
 };
 
+const onShowStats = function () {
+  ui.showStats();
+};
+
 const onUpdateBoard = function (player, cell) {
   //player = X for now
   player = currentPlayer;
@@ -20,10 +24,11 @@ const onUpdateBoard = function (player, cell) {
   logic.gameOver();
 };
 
-
 const addHandlers = () => {
   $('#new-game-btn').on('click', onNewGame);
+  $('#show-stats-btn').on('click', onShowStats);
   $('.game-board').on('click', '.game-cell', onUpdateBoard);
+
 };
 
 module.exports = {
