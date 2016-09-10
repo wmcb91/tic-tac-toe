@@ -3,6 +3,16 @@
 const app = require('../app');
 // const ui = require('./ui');
 
+let currentPlayer = 'X';
+
+
+// on click --> is move allowed?
+// If the cell is occupied (get data from memory or server?)
+// or If the game is over
+// Then the move is not allowed and nothing happens (console log)
+// else
+// The move is allowed and a UI function to update the board is called and an
+// API function is called to update the server
 
 //allow game move to proceed if allowMove = true
 const allowMove = function (index) {
@@ -21,20 +31,11 @@ const allowMove = function (index) {
   }
 };
 
-//switch player each turn
-// const changePlayer = function (player) {
-//   player =
-// };
-
-// const gameOver = function (index, value) {
-//
-// };
-
-
-
-
-
-
+// Did the move win the game?
+// If there are three cells in the same row, column or diagnal with the same value
+  // Then the player with the value in those three cells has won the game
+// else
+  // No one won on this turn, check if there are any empty cells
 
 const gameOver = function () {
 
@@ -59,6 +60,30 @@ const gameOver = function () {
       return false;
     }
 };
+
+
+// who's turn is it next?
+// the opposite of the currentPlayer
+// changePlayer
+// If currentPlayer is X
+// then change the current player to O
+// If the currentPlayer is O
+// then change the current player to X
+
+
+
+
+//switch player each turn
+// const changePlayer = function (player) {
+//   player =
+// };
+
+// const gameOver = function (index, value) {
+//
+// };
+
+
+
 
 
 
