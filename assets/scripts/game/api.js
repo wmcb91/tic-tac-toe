@@ -10,7 +10,7 @@ const app = require('../app');
 
 // need to include way to insert [?over=] query
 
-const index = () => {
+const indexGames = () => {
   console.log('index success');
   return $.ajax({
     url: app.host + '/games',
@@ -21,7 +21,7 @@ const index = () => {
   });
 };
 
-const create = () => {
+const createGame = () => {
   console.log('create success');
   return $.ajax({
     url: app.host + '/games',
@@ -33,7 +33,7 @@ const create = () => {
   });
 };
 
-const show = (data) => {
+const showGame = (data) => {
   console.log(data);
   return $.ajax({
     //url app.game correct?
@@ -46,7 +46,7 @@ const show = (data) => {
   });
 };
 
-const update = (data) => {
+const updateGame = (data) => {
   console.log(data);
   return $.ajax({
     url: app.host + '/sign-up' + app.game.id,
@@ -58,23 +58,23 @@ const update = (data) => {
   });
 };
 
-const watch = (data) => {
-  console.log(data);
-  return $.ajax({
-    url: app.host + '/sign-up' + app.game.id/watch,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-    data: data,
-  });
-};
+// const watchGame = (data) => {
+//   console.log(data);
+//   return $.ajax({
+//     url: app.host + '/sign-up' + app.game.id/watch,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//     data: data,
+//   });
+// };
 
 
 module.exports = {
-  index,
-  create,
-  show,
-  update,
-  watch,
+  indexGames,
+  createGame,
+  showGame,
+  updateGame,
+  // watch,
 };

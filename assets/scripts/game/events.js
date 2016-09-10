@@ -1,7 +1,7 @@
 'use strict';
 
 
-// const api = require('./api');
+const api = require('./api');
 const ui = require('./ui');
 const logic = require('./logic');
 
@@ -10,6 +10,7 @@ let currentPlayer = 'X';
 
 const onNewGame = function () {
   ui.newGame();
+  api.createGame();
 };
 
 const onShowStats = function () {

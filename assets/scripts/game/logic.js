@@ -1,10 +1,10 @@
 'use strict';
 
 const app = require('../app');
-const ui = require('./ui');
+// const ui = require('./ui');
 // const api = require('./api');
 
-let currentPlayer = 'X';
+// let currentPlayer = 'X';
 
 
 // on click --> is move allowed?
@@ -36,15 +36,18 @@ const allowMove = function (index) {
 };
 
 // Did the move win the game?
+// Add the move to the current game data to check for winner
 // If there are three cells in the same row, column or diagnal with the same value
   // Then the player with the value in those three cells has won the game.
   // Call UI function to prompt game over modal with Winner message
-  // Call API function to PATCH 'over' to equal true
+  // Call API function to PATCH game
 // else
   // No one won on this turn, check if there are any empty cells
 
-const gameWon = function (index) {
+const gameWon = function (index, value) {
   let cells = app.user.game.cells;
+  cells[index] = value;
+
   if ((cells[0] === cells[1] && cells[0] === cells[2] && cells[0] !== '') ||
       (cells[0] === cells[3] && cells[0] === cells[6] && cells[0] !== '') ||
       (cells[0] === cells[4] && cells[0] === cells[8] && cells[0] !== '') ||
@@ -69,6 +72,7 @@ const gameWon = function (index) {
 };
 
 // Are there any empty cells left?
+// Add the move to the current game data to check for empty cells
 // If there are no empty cells (a nobody has won)
   // Then the game is a tie
   // Call UI Function to prompt game tie modal
@@ -76,9 +80,11 @@ const gameWon = function (index) {
 // else
   // Do nothing, move on to see who's turn is next
 
-const gameTied = function (index) {
-  let game = app.user.game;
-  if (game.cells.indexOf('') === -1) {
+const gameTied = function (index, value) {
+  let cells = app.user.game.cells;
+  cells[index] = value;
+
+  if (cells.indexOf('') === -1) {
     console.log('Game ended in tie');
     // run UI function
     // set game.over === true
@@ -90,7 +96,6 @@ const gameTied = function (index) {
     return false;
   }
 };
-
 
 // who's turn is it next?
 // the opposite of the currentPlayer if move was allowed
@@ -124,6 +129,8 @@ const changePlayer = function (currentPlayer) {
 
 module.export = {
   allowMove,
-  // changePlayer,
-  gameOver,
+  gameWon,
+  gameTied,
+  // gameOver,
+  changePlayer,
 };
