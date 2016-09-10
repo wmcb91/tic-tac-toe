@@ -108,6 +108,12 @@ hr {
   width: $cell-width;
 }
 
+footer {
+  bottom: 0;
+  position: fixed;
+
+}
+
 .credit {
   margin: 55px 0 5px 10px;
 }

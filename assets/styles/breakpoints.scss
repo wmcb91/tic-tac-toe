@@ -89,6 +89,12 @@
   }
 }
 
+html {
+  @include breakpoint(large) {
+    height: 1174px;
+  }
+}
+
 // .game-cell {
 //   height: $height;
 //   width: ($row-width / 3);
