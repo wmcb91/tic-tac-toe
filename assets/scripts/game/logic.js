@@ -30,7 +30,7 @@ const allowMove = function (index) {
     return false;
   }
   else {
-    console.log('You can move');
+    console.log('allow move = true');
     return true;
   }
 };
@@ -66,7 +66,7 @@ const gameWon = function (index, value) {
       return true;
     }
     else {
-      console.log('keep playing');
+      console.log('game won = false');
       return false;
     }
 };
@@ -126,7 +126,7 @@ const changePlayer = function (player) {
 // spitting in DRY's face...
 const executeTurn = function (index) {
   let value = currentPlayer;
-  console.log(value);
+  console.log('current player is ', value);
   // is valid move?
   // call UI function to update game board
   if (allowMove(index) !== true) {
@@ -144,7 +144,8 @@ const executeTurn = function (index) {
     console.log('game won');
     ui.gameOver(currentPlayer);
     api.updateGame(index, value, true)
-    .done(render.updateGameSuccess);
+      .done(render.updateGameSuccess)
+      .fail(render.updateGameFailure);
   }
 
   //to repeat less could I write code saying if gameWon or gameTied is true,
@@ -153,13 +154,18 @@ const executeTurn = function (index) {
     //pass game tied to gameOver
     console.log('game tied');
     ui.gameOver(gameTied);
-    api.updateGame(index, value, true);
+    api.updateGame(index, value, true)
+      .done(render.updateGameSuccess)
+      .fail(render.updateGameFailure);
   }
   else {
     console.log('next turn');
-    api.updateGame(index,value, true);
+    api.updateGame(index, value, false)
+      .done(render.updateGameSuccess)
+      .fail(render.updateGameFailure);
     changePlayer(currentPlayer);
-    console.log('player ' + currentPlayer + 'is up');
+    console.log('player ' + currentPlayer + ' is up');
+    return;
   }
 };
 

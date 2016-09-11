@@ -10,22 +10,24 @@ const render = require('../app/render');
 // let currentPlayer = 'X';
 
 const onNewGame = function () {
+  event.preventDefault();
   ui.newGame();
   api.createGame()
-    .done(render.createGameSuccess);
+    .done(render.createGameSuccess)
+    .fail(render.createGameFailure);
   // if statement
   // if board is not empty, clear board, start new game, or just clear board
 };
 
 const onShowStats = function () {
+  event.preventDefault();
   ui.showStats();
   //api Index request then count "dones"
 };
 
 const onClickBoard = function (event) {
+  event.preventDefault();
   let index = event.data.index;
-  console.log('board click registered');
-  console.log('index is', index);
   // //player = X for now
   // player = currentPlayer;
   // cell = this.id;

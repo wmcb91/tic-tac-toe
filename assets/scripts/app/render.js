@@ -4,12 +4,24 @@ const app = require('../app');
 
 const createGameSuccess = function(data) {
     app.user.game = data.game;
+    console.log('data is ', data);
 };
+
+const createGameFailure = function(error) {
+    console.log('createGameFailure');
+    console.log('error is ', error);
+};
+
 
 const updateGameSuccess = function(data) {
     app.user.game = data.game;
+    console.log('data is ', data);
 };
 
+const updateGameFailure = function(error) {
+    console.log('updateGameFailure');
+    console.log('error is ', error);
+};
 
 
 
@@ -41,5 +53,7 @@ const updateGameSuccess = function(data) {
 module.exports = {
   // render,
   createGameSuccess,
+  createGameFailure,
   updateGameSuccess,
+  updateGameFailure
 };
