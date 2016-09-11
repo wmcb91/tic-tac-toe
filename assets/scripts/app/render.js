@@ -23,6 +23,8 @@ const updateGameFailure = function(error) {
     console.log('error is ', error);
 };
 
+// let currentPlayer = 'X';
+
 
 
 // Not ready
@@ -55,5 +57,6 @@ module.exports = {
   createGameSuccess,
   createGameFailure,
   updateGameSuccess,
-  updateGameFailure
+  updateGameFailure,
+
 };

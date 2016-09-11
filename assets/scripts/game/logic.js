@@ -5,8 +5,6 @@ const ui = require('./ui');
 const api = require('./api');
 const render = require('../app/render');
 
-let currentPlayer = 'X';
-
 
 // on click --> is move allowed?
 // If the cell is occupied (get data from memory or server?)
