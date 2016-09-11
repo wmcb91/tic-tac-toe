@@ -11,6 +11,8 @@ const logic = require('./logic');
 const onNewGame = function () {
   ui.newGame();
   api.createGame();
+  // if statement
+  // if board is not empty, clear board, start new game, or just clear board
 };
 
 const onShowStats = function () {
