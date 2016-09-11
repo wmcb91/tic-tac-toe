@@ -26,6 +26,11 @@ const showStats = function () {
   }
 };
 
+// const countGames = function (data) {
+//   let app.user.games = data.games;
+// }
+
+
 const updateBoard = function (index, value) {
   let player = value;
   let cell = (index + 1);

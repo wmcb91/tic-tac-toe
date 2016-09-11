@@ -7,10 +7,10 @@ const render = require('../app/render');
 
 const onNewGame = function () {
   event.preventDefault();
+  ui.newGame();
   api.createGame()
     .done(render.createGameSuccess)
     .fail(render.createGameFailure);
-  ui.newGame();
   // if statement
   // if board is not empty, clear board, start new game, or just clear board
 };
