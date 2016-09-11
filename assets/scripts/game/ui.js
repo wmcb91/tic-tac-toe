@@ -43,7 +43,9 @@ const updateBoard = function (index, value) {
   $(cellId).text(player);
 };
 
-
+const gameOver = function (value) {
+  
+};
 
 
 
