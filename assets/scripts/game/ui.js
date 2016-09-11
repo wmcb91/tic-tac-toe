@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../app');
+// const api = require('./api');
 
 const newGame = function () {
   if (app.user === null || app.user === undefined) {
@@ -8,7 +9,6 @@ const newGame = function () {
   }
   else {
     $('#game-container').show();
-    // api.index();
   }
 };
 

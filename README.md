@@ -49,5 +49,11 @@ when clicked, and had progress in the logic, but did not have a working game.
 
 
 
+Future Changes
+ - Cut down on code by changing event to call only API and have UI affected based 
+on .success or .failure.
+
+
+
 Bugs:
  -
