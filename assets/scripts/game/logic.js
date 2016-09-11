@@ -3,6 +3,7 @@
 const app = require('../app');
 const ui = require('./ui');
 const api = require('./api');
+const render = require('../app/render');
 
 let currentPlayer = 'X';
 
@@ -124,37 +125,46 @@ const changePlayer = function (player) {
 // compile information and send it to UI and API
 // spitting in DRY's face...
 const executeTurn = function (index) {
+  let value = currentPlayer;
+  console.log(value);
   // is valid move?
   // call UI function to update game board
   if (allowMove(index) !== true) {
+    console.log('invalid move');
     return;
   }
 
-  let value = currentPlayer;
   if (allowMove(index) === true) {
+    console.log('valid move');
     ui.updateBoard(index, value);
   }
+
   if (gameWon === true) {
     //create gameOver function and take argument player --> pass currentPlayer
+    console.log('game won');
     ui.gameOver(currentPlayer);
-    api.updateGame(index, value, true);
+    api.updateGame(index, value, true)
+    .done(render.updateGameSuccess);
   }
 
   //to repeat less could I write code saying if gameWon or gameTied is true,
   // pass ui.gameOver a different argument depending on which is true??
   if (gameTied === true && gameWon === false) {
     //pass game tied to gameOver
+    console.log('game tied');
     ui.gameOver(gameTied);
     api.updateGame(index, value, true);
   }
   else {
+    console.log('next turn');
     api.updateGame(index,value, true);
     changePlayer(currentPlayer);
+    console.log('player ' + currentPlayer + 'is up');
   }
 };
 
-module.export = {
-  executeTurn
+module.exports = {
+  executeTurn,
   // allowMove,
   // gameWon,
   // gameTied,

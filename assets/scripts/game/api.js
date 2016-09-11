@@ -23,6 +23,14 @@ const indexGames = () => {
 
 const createGame = () => {
   console.log('create success');
+  console.log($.ajax({
+    url: app.host + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: '',
+  }));
   return $.ajax({
     url: app.host + '/games',
     method: 'POST',
@@ -31,6 +39,8 @@ const createGame = () => {
     },
     data: '',
   });
+
+
 };
 
 const showGame = (data) => {

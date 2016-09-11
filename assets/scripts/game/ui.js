@@ -12,6 +12,11 @@ const newGame = function () {
   }
 };
 
+// const createGameSuccess = function(data) {
+//     app.user.game = data.game;
+// };
+
+
 const showStats = function () {
   if (app.user === null || app.user === undefined) {
     $('#sign-in-warning').show();
@@ -23,6 +28,8 @@ const showStats = function () {
     // jQuery to post stats
   }
 };
+
+// const
 
 
 const updateBoard = function (player, cell) {
@@ -59,4 +66,5 @@ module.exports = {
   updateBoard,
   newGame,
   showStats,
+  // createGameSuccess,
 };

@@ -4,13 +4,15 @@
 const api = require('./api');
 const ui = require('./ui');
 const logic = require('./logic');
+const render = require('../app/render');
 
 // gonna delete
 // let currentPlayer = 'X';
 
 const onNewGame = function () {
   ui.newGame();
-  api.createGame();
+  api.createGame()
+    .done(render.createGameSuccess);
   // if statement
   // if board is not empty, clear board, start new game, or just clear board
 };
@@ -22,6 +24,8 @@ const onShowStats = function () {
 
 const onClickBoard = function (event) {
   let index = event.data.index;
+  console.log('board click registered');
+  console.log('index is', index);
   // //player = X for now
   // player = currentPlayer;
   // cell = this.id;
