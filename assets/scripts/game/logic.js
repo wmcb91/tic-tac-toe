@@ -112,18 +112,18 @@ const changePlayer = function (player) {
   // }
   if (player === 'X') {
     console.log('next up is O');
-    return currentPlayer === 'O';
+    return app.currentPlayer === 'O';
   }
   else {
     console.log('next up is X');
-    return currentPlayer === 'X';
+    return app.currentPlayer === 'X';
   }
 };
 
 // compile information and send it to UI and API
 // spitting in DRY's face...
 const executeTurn = function (index) {
-  let value = currentPlayer;
+  let value = app.currentPlayer;
   console.log('current player is ', value);
   // is valid move?
   // call UI function to update game board
@@ -140,7 +140,7 @@ const executeTurn = function (index) {
   if (gameWon === true) {
     //create gameOver function and take argument player --> pass currentPlayer
     console.log('game won');
-    ui.gameOver(currentPlayer);
+    ui.gameOver(app.currentPlayer);
     api.updateGame(index, value, true)
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
@@ -161,8 +161,8 @@ const executeTurn = function (index) {
     api.updateGame(index, value, false)
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
-    changePlayer(currentPlayer);
-    console.log('player ' + currentPlayer + ' is up');
+    changePlayer(app.currentPlayer);
+    console.log('player ' + app.currentPlayer + ' is up');
     return;
   }
 };
