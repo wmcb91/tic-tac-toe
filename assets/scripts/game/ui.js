@@ -35,16 +35,22 @@ const showStats = function () {
 const updateBoard = function (index, value) {
   let player = value;
   let cell = (index + 1);
-//  player = currentPlayer;
-  console.log('update board memory');
-  console.log(player);
-  console.log(cell);
+  // console.log('update board memory');
+  // console.log(player);
+  // console.log(cell);
   let cellId = '#' + cell;
   $(cellId).text(player);
 };
 
-const gameOver = function (value) {
-  
+const gameOver = function (value, result) {
+  let winner = value;
+  if (result === true) {
+    $('#gameResult').text('Player ' + winner + ' won this game!');
+  }
+  else {
+    $('#gameResult').text('Game ended in a tie');
+  }
+  $('#gameOverModal').modal('show');
 };
 
 
@@ -70,5 +76,6 @@ module.exports = {
   updateBoard,
   newGame,
   showStats,
+  gameOver,
   // createGameSuccess,
 };

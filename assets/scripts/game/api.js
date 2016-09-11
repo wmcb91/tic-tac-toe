@@ -47,9 +47,8 @@ const createGame = () => {
 // };
 
 const updateGame = (index, value, over) => {
-  console.log(index, value, over);
-  console.log('update game has been reached');
-  // let app.game = game.data;
+  // console.log(index, value, over);
+  // console.log('update game has been reached');
   return $.ajax({
     url: app.host + '/games/' + app.user.game.id,
     method: 'PATCH',

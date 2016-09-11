@@ -28,7 +28,7 @@ const allowMove = function (index) {
     return false;
   }
   else {
-    console.log('allow move has run and returned true');
+    // console.log('allow move has run and returned true');
     return true;
   }
 };
@@ -60,11 +60,10 @@ const gameWon = function (index, value) {
       // call ui function to display game winner
       // set game.over === true
       // call API function to patch 'over' to true
-      console.log('Someone won');
       return true;
     }
     else {
-      console.log('game won = false');
+      // console.log('game won = false');
       return false;
     }
 };
@@ -83,14 +82,13 @@ const gameTied = function (index, value) {
   cells[index] = value;
 
   if (cells.indexOf('') === -1) {
-    console.log('Game ended in tie');
     // run UI function
     // set game.over === true
     // run API patch function
     return true;
   }
   else {
-    console.log('no tie, keep playing');
+    // console.log('no tie, keep playing');
     return false;
   }
 };
@@ -121,7 +119,7 @@ const changePlayer = function (player) {
 // compile information and send it to UI and API
 // spitting in DRY's face...
 const executeTurn = function (index) {
-
+  console.log('click');
   // is valid move?
   // call UI function to update game board
   if (allowMove(index) !== true) {
@@ -131,43 +129,47 @@ const executeTurn = function (index) {
 
 
   let value = app.activePlayer;
-  console.log('current player is ', value);
-
+  // console.log('current player is ', value);
 
   if (allowMove(index) === true) {
-    console.log('valid move');
+    // console.log('valid move');
     ui.updateBoard(index, value);
   }
 
-
   if (gameWon(index, value) === true) {
     //create gameOver function and take argument player --> pass currentPlayer
-    console.log('game won');
-    ui.gameOver(app.currentPlayer);
+    ui.gameOver(value, true);
     api.updateGame(index, value, true)
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
+      return;
+      // debugger;
   }
 
   //to repeat less could I write code saying if gameWon or gameTied is true,
   // pass ui.gameOver a different argument depending on which is true??
   if (gameTied(index, value) === true && gameWon(index, value) === false) {
     //pass game tied to gameOver
-    console.log('game tied');
     ui.gameOver(gameTied);
     api.updateGame(index, value, true)
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
+    console.log('Game ended in tie');
+    return;
   }
 
+// question --> why did gameTie work without return but gameWon still
+// allowed else to run without return?
+
   else {
-    console.log('next turn');
+    console.log('turn executed');
     api.updateGame(index, value, false)
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
     changePlayer(app.activePlayer);
     console.log('player ' + app.activePlayer + ' is up');
     return;
+    // debugger;
   }
 };
 

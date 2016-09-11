@@ -193,16 +193,25 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="gameOverModalLabel">Game Over!</h4>
+                <button
+                    type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="gameOver">Game Over</h4>
               </div>
               <div class="modal-body">
               <!-- insert game result text in <h3> below  -->
-              <h3 class="modal--subtitle" id="gameResultModalLabel"></h3>
+              <h3 class="modal--subtitle" id="gameResult"></h3>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default play-again" id="play-again-button" data-dismiss="modal">Play Again</button>
-              </div>
+              <!-- PLAY AGAIN BUTTON include if there is time-->
+              <!-- <div class="modal-footer">
+                <button
+                    type="button" class="btn btn-default play-again"
+                    id="play-again-button"
+                    data-dismiss="modal">Play Again
+                </button>
+              </div> -->
             </div>
           </div>
         </div>

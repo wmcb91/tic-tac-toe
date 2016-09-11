@@ -6,7 +6,7 @@ const createGameSuccess = function(data) {
     app.user.game = data.game;
     app.activePlayer = 'X';
     console.log('app.user.game data is ', data);
-    console.log('First up is player ', app.activePlayer);
+    // console.log('First up is player ', app.activePlayer);
 };
 
 const createGameFailure = function(error) {
