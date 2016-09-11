@@ -32,7 +32,9 @@ const showStats = function () {
 // const
 
 
-const updateBoard = function (player, cell) {
+const updateBoard = function (index, value) {
+  let player = value;
+  let cell = (index + 1);
 //  player = currentPlayer;
   console.log('update board memory');
   console.log(player);

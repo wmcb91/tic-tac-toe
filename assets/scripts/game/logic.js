@@ -28,7 +28,7 @@ const allowMove = function (index) {
     return false;
   }
   else {
-    console.log('allow move = true');
+    console.log('allow move has run and returned true');
     return true;
   }
 };
@@ -111,20 +111,17 @@ const changePlayer = function (player) {
   //   return;
   // }
   if (player === 'X') {
-    console.log('next up is O');
-    return app.currentPlayer === 'O';
+    app.activePlayer = 'O';
   }
   else {
-    console.log('next up is X');
-    return app.currentPlayer === 'X';
+    app.activePlayer = 'X';
   }
 };
 
 // compile information and send it to UI and API
 // spitting in DRY's face...
 const executeTurn = function (index) {
-  let value = app.currentPlayer;
-  console.log('current player is ', value);
+
   // is valid move?
   // call UI function to update game board
   if (allowMove(index) !== true) {
@@ -132,12 +129,18 @@ const executeTurn = function (index) {
     return;
   }
 
+
+  let value = app.activePlayer;
+  console.log('current player is ', value);
+
+
   if (allowMove(index) === true) {
     console.log('valid move');
     ui.updateBoard(index, value);
   }
 
-  if (gameWon === true) {
+
+  if (gameWon(index, value) === true) {
     //create gameOver function and take argument player --> pass currentPlayer
     console.log('game won');
     ui.gameOver(app.currentPlayer);
@@ -148,7 +151,7 @@ const executeTurn = function (index) {
 
   //to repeat less could I write code saying if gameWon or gameTied is true,
   // pass ui.gameOver a different argument depending on which is true??
-  if (gameTied === true && gameWon === false) {
+  if (gameTied(index, value) === true && gameWon(index, value) === false) {
     //pass game tied to gameOver
     console.log('game tied');
     ui.gameOver(gameTied);
@@ -156,13 +159,14 @@ const executeTurn = function (index) {
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
   }
+
   else {
     console.log('next turn');
     api.updateGame(index, value, false)
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
-    changePlayer(app.currentPlayer);
-    console.log('player ' + app.currentPlayer + ' is up');
+    changePlayer(app.activePlayer);
+    console.log('player ' + app.activePlayer + ' is up');
     return;
   }
 };

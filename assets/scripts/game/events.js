@@ -1,13 +1,9 @@
 'use strict';
 
-
 const api = require('./api');
 const ui = require('./ui');
 const logic = require('./logic');
 const render = require('../app/render');
-
-// gonna delete
-// let currentPlayer = 'X';
 
 const onNewGame = function () {
   event.preventDefault();
@@ -28,11 +24,6 @@ const onShowStats = function () {
 const onClickBoard = function (event) {
   event.preventDefault();
   let index = event.data.index;
-  // //player = X for now
-  // player = currentPlayer;
-  // cell = this.id;
-  // ui.updateBoard(player, cell);
-  // logic.
   logic.executeTurn(index);
 };
 
