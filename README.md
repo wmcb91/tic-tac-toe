@@ -58,4 +58,8 @@ on .success or .failure.
 
 
 Bugs:
- -
+ - If you press new game btn too quickly after pressing sign in, you will
+   get error message and it will stay.  Happens if you click before API
+   processes because in browser events take priority in stack.  Possible
+   fixes: don't allow click for X milliseconds after log in click or just
+   make an x out button on the error message.

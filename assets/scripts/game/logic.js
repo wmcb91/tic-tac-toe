@@ -168,6 +168,7 @@ const executeTurn = function (index) {
       .fail(render.updateGameFailure);
     changePlayer(app.activePlayer);
     console.log('player ' + app.activePlayer + ' is up');
+    ui.showTurn(value);
     return;
     // debugger;
   }

@@ -9,13 +9,10 @@ const newGame = function () {
   }
   else {
     $('#game-container').show();
+    $('#game-board').find('.game-cell').text('');
+    $('#player-turn').text('Player X begins');
   }
 };
-
-// const createGameSuccess = function(data) {
-//     app.user.game = data.game;
-// };
-
 
 const showStats = function () {
   if (app.user === null || app.user === undefined) {
@@ -28,9 +25,6 @@ const showStats = function () {
     // jQuery to post stats
   }
 };
-
-// const
-
 
 const updateBoard = function (index, value) {
   let player = value;
@@ -53,29 +47,15 @@ const gameOver = function (value, result) {
   $('#gameOverModal').modal('show');
 };
 
-
-
-
-
-
-// const onSuccess = function (data) {
-//   if (data.book) {
-//     console.log(data.book);
-//   } else {
-//     console.table(data.books);
-//   }
-// };
-//
-// const onError = function (response) {
-//   console.error(response);
-// };
+const showTurn = function (player) {
+  player = app.activePlayer;
+  $('#player-turn').text('Player ' + player + "'s turn");
+};
 
 module.exports = {
-  // onSuccess,
-  // onError,
   updateBoard,
   newGame,
   showStats,
   gameOver,
-  // createGameSuccess,
+  showTurn,
 };
