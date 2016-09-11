@@ -1,10 +1,10 @@
 'use strict';
 
 const app = require('../app');
-// const ui = require('./ui');
-// const api = require('./api');
+const ui = require('./ui');
+const api = require('./api');
 
-// let currentPlayer = 'X';
+let currentPlayer = 'X';
 
 
 // on click --> is move allowed?
@@ -30,7 +30,6 @@ const allowMove = function (index) {
   }
   else {
     console.log('You can move');
-    //call UI function to update game board
     return true;
   }
 };
@@ -107,30 +106,58 @@ const gameTied = function (index, value) {
   // then change the current player to X
   // Call UI function to display it is X's turn
 
-const changePlayer = function (currentPlayer) {
-  currentPlayer = currentPlayer;
-  if (allowMove === false) {
-    console.log('no player change, move not allowed');
-    return;
-  }
-  else if (currentPlayer === 'X') {
+const changePlayer = function (player) {
+  // if (allowMove === false) {
+  //   console.log('no player change, move not allowed');
+  //   return;
+  // }
+  if (player === 'X') {
     console.log('next up is O');
     return currentPlayer === 'O';
   }
-  else if (currentPlayer === 'O') {
+  else {
     console.log('next up is X');
     return currentPlayer === 'X';
   }
 };
 
 // compile information and send it to UI and API
+// spitting in DRY's face...
+const executeTurn = function (index) {
+  // is valid move?
+  // call UI function to update game board
+  if (allowMove(index) !== true) {
+    return;
+  }
 
-// const executeTurn = function()
+  let value = currentPlayer;
+  if (allowMove(index) === true) {
+    ui.updateBoard(index, value);
+  }
+  if (gameWon === true) {
+    //create gameOver function and take argument player --> pass currentPlayer
+    ui.gameOver(currentPlayer);
+    api.updateGame(index, value, true);
+  }
+
+  //to repeat less could I write code saying if gameWon or gameTied is true,
+  // pass ui.gameOver a different argument depending on which is true??
+  if (gameTied === true && gameWon === false) {
+    //pass game tied to gameOver
+    ui.gameOver(gameTied);
+    api.updateGame(index, value, true);
+  }
+  else {
+    api.updateGame(index,value, true);
+    changePlayer(currentPlayer);
+  }
+};
 
 module.export = {
-  allowMove,
-  gameWon,
-  gameTied,
-  // gameOver,
-  changePlayer,
+  executeTurn
+  // allowMove,
+  // gameWon,
+  // gameTied,
+  // // gameOver,
+  // changePlayer,
 };

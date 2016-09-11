@@ -26,6 +26,7 @@ const showStats = function () {
 
 
 const updateBoard = function (player, cell) {
+//  player = currentPlayer;
   console.log('update board memory');
   console.log(player);
   console.log(cell);
