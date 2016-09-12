@@ -10,7 +10,7 @@ const app = require('../app');
 
 // need to include way to insert [?over=] query
 
-const indexFinishedGames = () => {
+const indexGames = () => {
   console.log('index request success');
   return $.ajax({
     url: app.host + '/games',
@@ -81,7 +81,7 @@ const updateGame = (index, value, over) => {
 
 
 module.exports = {
-  indexFinishedGames,
+  indexGames,
   createGame,
   // showGame,
   updateGame,

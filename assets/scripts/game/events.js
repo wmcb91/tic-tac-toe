@@ -18,7 +18,7 @@ const onNewGame = function () {
 const onShowStats = function () {
   event.preventDefault();
   ui.showStats();
-  api.indexFinishedGames()
+  api.indexGames()
     .done(render.indexGamesSuccess)
     .fail(console.log('index request failed'));
   //api Index request then count "dones"
