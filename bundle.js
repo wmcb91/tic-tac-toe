@@ -367,17 +367,13 @@ webpackJsonp([0],[
 	  event.preventDefault();
 	  ui.newGame();
 	  api.createGame().done(render.createGameSuccess).fail(render.createGameFailure);
-	  // if statement
-	  // if board is not empty, clear board, start new game, or just clear board
 	};
 
 	var onShowStats = function onShowStats() {
 	  event.preventDefault();
-	  // ui.showStats();
+	  ui.showStats();
 	  api.indexGames().done(render.indexGamesSuccess).fail(render.indexGamesFailure);
-	  // debugger;
-	  //api Index request then count "dones"
-	  //render.indexGamesSuccess;
+	  // ui.countGames();
 	};
 
 	var onClickBoard = function onClickBoard(event) {
@@ -385,8 +381,6 @@ webpackJsonp([0],[
 	  var index = event.data.index;
 	  logic.executeTurn(index);
 	};
-
-	// const updateGame =
 
 	var addHandlers = function addHandlers() {
 	  $('#new-game-btn').on('click', onNewGame);
@@ -413,16 +407,8 @@ webpackJsonp([0],[
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	// GET	/games	games#index
-	// POST	/games	games#create
-	// GET	/games/:id	games#show
-	// PATCH	/games/:id	games#update
-	// GET	/games/:id/watch	games#watch
-
 	var app = __webpack_require__(7);
 
-	// need to include way to insert [?over=] query
-	//[?over=] not working
 	var indexGames = function indexGames() {
 	  console.log('index request success');
 	  return $.ajax({
@@ -445,19 +431,6 @@ webpackJsonp([0],[
 	    data: ''
 	  });
 	};
-
-	// const showGame = (data) => {
-	//   console.log(data);
-	//   return $.ajax({
-	//     //url app.game correct?
-	//     url: app.host + '/games' + app.game.id,
-	//     method: 'GET',
-	//     headers: {
-	//       Authorization: 'Token token=' + app.user.token,
-	//     },
-	//     data: data,
-	//   });
-	// };
 
 	var updateGame = function updateGame(index, value, over) {
 	  // console.log(index, value, over);
@@ -484,6 +457,19 @@ webpackJsonp([0],[
 	//   console.log(data);
 	//   return $.ajax({
 	//     url: app.host + '/sign-up' + app.game.id/watch,
+	//     method: 'GET',
+	//     headers: {
+	//       Authorization: 'Token token=' + app.user.token,
+	//     },
+	//     data: data,
+	//   });
+	// };
+
+	// const showGame = (data) => {
+	//   console.log(data);
+	//   return $.ajax({
+	//     //url app.game correct?
+	//     url: app.host + '/games' + app.game.id,
 	//     method: 'GET',
 	//     headers: {
 	//       Authorization: 'Token token=' + app.user.token,
@@ -524,25 +510,21 @@ webpackJsonp([0],[
 	  if (app.user === null || app.user === undefined) {
 	    $('#sign-in-warning').show();
 	  } else {
-	    // countGames(user)
 	    $('#showStatsModal').modal('show');
-	    console.log('showing stats');
-	    // api.getStats();
-	    // jQuery to post stats
+	    console.log('showing stats modal');
 	  }
 	};
 
 	// const countGames = function (data) {
-	//   console.table(data.games);
+	//
+	//   // let numGames = games.length;
+	//   $('#games-played').text(numGames);
+	//   console.log(data.games);
 	// };
-
 
 	var updateBoard = function updateBoard(index, value) {
 	  var player = value;
 	  var cell = index + 1;
-	  // console.log('update board memory');
-	  // console.log(player);
-	  // console.log(cell);
 	  var cellId = '#' + cell;
 	  $(cellId).text(player);
 	};
@@ -555,6 +537,7 @@ webpackJsonp([0],[
 	    $('#gameResult').text('Game ended in a tie');
 	  }
 	  $('#gameOverModal').modal('show');
+	  $('#player-turn').text('Game Over');
 	};
 
 	var showTurn = function showTurn(player) {
@@ -737,53 +720,75 @@ webpackJsonp([0],[
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	var app = __webpack_require__(7);
 
 	var createGameSuccess = function createGameSuccess(data) {
-	    app.user.game = data.game;
-	    app.activePlayer = 'X';
-	    console.log('app.user.game data is ', data);
-	    // console.log('First up is player ', app.activePlayer);
-	    return app.activePlayer;
+	  app.user.game = data.game;
+	  app.activePlayer = 'X';
+	  console.log('app.user.game data is ', data);
+	  return app.activePlayer;
 	};
 
 	var createGameFailure = function createGameFailure(error) {
-	    console.log('createGameFailure');
-	    console.log('error is ', error);
+	  console.log('createGameFailure');
+	  console.log('error is ', error);
 	};
 
 	var updateGameSuccess = function updateGameSuccess(data) {
-	    app.user.game = data.game;
-	    console.log('updated game data is ', data);
+	  app.user.game = data.game;
+	  console.log('updated game data is ', data);
 	};
 
 	var updateGameFailure = function updateGameFailure(error) {
-	    console.log('updateGameFailure');
-	    console.log('error is ', error);
+	  console.log('updateGameFailure');
+	  console.log('error is ', error);
 	};
 
 	var indexGamesSuccess = function indexGamesSuccess(data) {
-	    console.log('indexGamesSuccess');
-	    // app.user.game = data.games;
-	    console.table(data.games);
+	  app.user.games = data.games;
+	  var gamesStarted = [];
+	  var gamesFinished = [];
+	  for (var i = 0, max = data.games.length; i < max; i++) {
+	    gamesStarted.push(data.games[i].over);
+	  }
+	  console.log('gamesStarted is ', gamesStarted);
+	  for (var _i = 0, _max = data.games.length; _i < _max; _i++) {
+	    if (gamesStarted[_i] === true) {
+	      gamesFinished.push(data.games[_i].over);
+	    }
+	  }
+	  console.log('gamesFinished is ', gamesFinished);
+	  $('#games-played').text(gamesFinished.length);
+	  return gamesFinished;
 	};
 
+	// const makeStartArray = function() {
+	//   let gamesStarted = [];
+	// };
+
+	//
+	//   console.log(gamesFinished);
+	//   // console.log(data.games.over);
+	//   // console.table(data.games);
+	// };
+
 	var indexGamesFailure = function indexGamesFailure(error) {
-	    console.log('indexGamesFailure');
-	    console.log('error is ', error);
+	  console.log('indexGamesFailure');
+	  console.log('error is ', error);
 	};
 
 	module.exports = {
-	    // render,
-	    createGameSuccess: createGameSuccess,
-	    createGameFailure: createGameFailure,
-	    updateGameSuccess: updateGameSuccess,
-	    updateGameFailure: updateGameFailure,
-	    indexGamesSuccess: indexGamesSuccess,
-	    indexGamesFailure: indexGamesFailure
+	  // render,
+	  createGameSuccess: createGameSuccess,
+	  createGameFailure: createGameFailure,
+	  updateGameSuccess: updateGameSuccess,
+	  updateGameFailure: updateGameFailure,
+	  indexGamesSuccess: indexGamesSuccess,
+	  indexGamesFailure: indexGamesFailure
 	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
 /* 14 */
