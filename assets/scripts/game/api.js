@@ -9,11 +9,11 @@
 const app = require('../app');
 
 // need to include way to insert [?over=] query
-
+//[?over=] not working
 const indexGames = () => {
   console.log('index request success');
   return $.ajax({
-    url: app.host + '/games[?over=]',
+    url: app.host + '/games',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
