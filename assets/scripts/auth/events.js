@@ -29,6 +29,10 @@ const onSignIn = function (event) {
     .fail(ui.signInFailure);
 };
 
+const onChangePasswordClick = function () {
+  ui.showChangePassword();
+};
+
 const onChangePassword = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -37,6 +41,10 @@ const onChangePassword = function (event) {
     .done(ui.changePasswordSuccess)
     .fail(ui.changePasswordFailure);
 };
+
+// const onLogOutClick = function () {
+//   api.
+// }
 
 const onSignOut = function (event) {
   event.preventDefault();
@@ -52,12 +60,13 @@ const addHandlers = function() {
   $('#alert-sign-up').on('click', onSignUpClick);
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
+  $('#change-password-btn').on('click', onChangePasswordClick);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
 };
 
 module.exports = {
   addHandlers,
-  
+
   // onSignUp,
 };

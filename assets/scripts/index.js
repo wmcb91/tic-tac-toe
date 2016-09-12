@@ -20,8 +20,8 @@ $(() => {
   authEvents.addHandlers();
   gameEvents.addHandlers();
 
-  $('#sign-out').hide();
-  $('#change-password').hide();
+  $('#pwd-change-msg').hide();
+  // $('#sign-out').hide();
   $('#user-welcome').hide();
   $('#sign-in-warning').hide();
   $('#game-container').hide();

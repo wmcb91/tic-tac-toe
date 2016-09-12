@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Rubik|VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Rubik|VT323"
+    rel="stylesheet">
   </head>
 
   <body>
@@ -21,7 +22,7 @@
               <br>
               <input type="password" name="credentials[password]"
               placeholder="Password">
-              <input type="submit" value="Sign In!">
+              <input type="submit" value="Sign In">
             </fieldset>
           </form>
           <p class="new-user-text">
@@ -44,11 +45,16 @@
               <span class="glyphicon glyphicon-cog" aria-hidden="true">
               <!-- --></span>
             </button>
-            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="dropdownMenu1">
               <li><a id="show-stats-btn">View Stats</a></li>
-              <li><a href="#">Change Password</a></li>
+              <li><a id='change-password-btn'>Change Password</a></li>
               <li role="separator" class="divider"><!----></li>
-              <li><a href="#">Log Out</a></li>
+              <li><form id="sign-out" class='sign-out'>
+                <fieldset>
+                  <input type="submit" value="Sign Out">
+                </fieldset>
+              </form></li>
             </ul>
           </div>
         </div>
@@ -56,7 +62,9 @@
 
       <!-- Initially hidden-->
       <!--  Sign Up Modal-->
-      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="signUpModal"
+           tabindex="-1" role="dialog"
+           aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -75,8 +83,10 @@
                   <input type="email" name="credentials[email]" placeholder="Email">
                   <!-- <input type="text" name="credentials[user_name]" placeholder="User Name"> -->
                   <br>
-                  <input type="password" name="credentials[password]" placeholder="Password">
-                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                  <input type="password" name="credentials[password]"
+                  placeholder="Password">
+                  <input type="password" name="credentials[password_confirmation]"
+                  placeholder="Confirm Password">
                   <input type="submit" value="Sign Up!">
                 </fieldset>
               </form>
@@ -85,7 +95,8 @@
         </div>
       </div>
       <!-- successful sign up message and prompt to sign in -->
-      <div class="modal fade" id="signUpSuccessModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="signUpSuccessModal" tabindex="-1"
+      role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -106,23 +117,37 @@
 
 
       <!-- initially hidden: change password form-->
-      <form id="change-password">
-        <fieldset>
-          <legend>Change Password</legend>
-          <input type="password" name="passwords[old]"
-          placeholder="Current Password">
-          <input type="password" name="passwords[new]"
-          placeholder="New Password">
-          <input type="submit" value="Change Password">
-        </fieldset>
-      </form>
+      <div class="modal fade" id="changePasswordModal" tabindex="-1"
+      role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change Password</legend>
+                  <input type="password" name="passwords[old]"
+                  placeholder="Current Password">
+                  <input type="password" name="passwords[new]"
+                  placeholder="New Password">
+                  <input type="submit" value="Change Password">
+                </fieldset>
+              </form>
+              <h3 id='pwd-change-msg'>Password Successfully Changed</h3>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <!-- initially hidden: sign out button -->
-      <form id="sign-out">
-        <fieldset>
-          <input type="submit" value="Sign Out">
-        </fieldset>
-      </form>
     </header>
 
     <hr>

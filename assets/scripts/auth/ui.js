@@ -55,9 +55,17 @@ const signOutFailure = (error) => {
 };
 
 
+const showChangePassword = function () {
+  $('#pwd-change-msg').hide();
+  $('#changePasswordModal').modal('show');
+  $('#change-password').show();
+};
+
 //change password
 const changePasswordSuccess = () => {
-  console.log('Change Successful');
+  $('#change-password').hide();
+  $('#pwd-change-msg').show();
+  console.log('Password Successfully Changed');
 };
 
 const changePasswordFailure = (error) => {
@@ -77,6 +85,7 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   signOutFailure,
+  showChangePassword,
   changePasswordSuccess,
   changePasswordFailure,
   showSignUpModal,
