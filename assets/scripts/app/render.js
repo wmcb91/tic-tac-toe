@@ -5,23 +5,25 @@ const app = require('../app');
 const createGameSuccess = function(data) {
     app.user.game = data.game;
     app.activePlayer = 'X';
-    console.log('app.user.game data is ', data);
+    // console.log('app.user.game data is ', data);
     return app.activePlayer;
 };
 
 const createGameFailure = function(error) {
-    console.log('createGameFailure');
-    console.log('error is ', error);
+  return error;
+    // console.log('createGameFailure');
+    // console.log('error is ', error);
 };
 
 const updateGameSuccess = function(data) {
     app.user.game = data.game;
-    console.log('updated game data is ', data);
+    // console.log('updated game data is ', data);
 };
 
 const updateGameFailure = function(error) {
-    console.log('updateGameFailure');
-    console.log('error is ', error);
+    // console.log('updateGameFailure');
+    // console.log('error is ', error);
+    return error;
 };
 
 
@@ -32,13 +34,13 @@ const indexGamesSuccess = function (data) {
   for (let i=0, max = data.games.length; i < max; i++) {
     gamesStarted.push(data.games[i].over);
   }
-  console.log('gamesStarted is ', gamesStarted);
+  // console.log('gamesStarted is ', gamesStarted);
   for (let i=0, max = data.games.length; i < max; i++) {
     if (gamesStarted[i] === true) {
       gamesFinished.push(data.games[i].over);
     }
   }
-  console.log('gamesFinished is ', gamesFinished);
+  // console.log('gamesFinished is ', gamesFinished);
   $('#games-played').text(gamesFinished.length);
   return gamesFinished;
 };
@@ -55,8 +57,9 @@ const indexGamesSuccess = function (data) {
 // };
 
 const indexGamesFailure = function (error) {
-  console.log('indexGamesFailure');
-  console.log('error is ', error);
+  // console.log('indexGamesFailure');
+  // console.log('error is ', error);
+  return error;
 };
 
 

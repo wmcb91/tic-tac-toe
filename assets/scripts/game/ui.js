@@ -20,7 +20,7 @@ const showStats = function () {
   }
   else {
     $('#showStatsModal').modal('show');
-    console.log('showing stats modal');
+    // console.log('showing stats modal');
   }
 };
 

@@ -4,7 +4,7 @@ const app = require('../app');
 
 
 const indexGames = () => {
-  console.log('index request success');
+  // console.log('index request success');
   return $.ajax({
     url: app.host + '/games',
     method: 'GET',

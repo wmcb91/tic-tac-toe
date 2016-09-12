@@ -21,7 +21,8 @@ const signInSuccess = (data) => {
 
 const signInFailure = (error) => {
   $('#sign-in-failure').show();
-  console.error(error);
+  // console.error(error);
+  return error;
 };
 
 
@@ -31,11 +32,12 @@ const signUpSuccess = (data) => {
   $('#signUpSuccessModal').modal('show');
 
   //debug
-  console.log('data is', data);
+  // console.log('data is', data);
 };
 
 const signUpFailure = (error) => {
-  console.error(error);
+  // console.error(error);
+  return error;
 };
 
 
@@ -47,11 +49,12 @@ const signOutSuccess = () => {
   $('#sign-in-prompt').show();
 
   //debug
-  console.log('Sign Out Successful');
+  // console.log('Sign Out Successful');
 };
 
 const signOutFailure = (error) => {
-  console.error(error);
+  // console.error(error);
+  return error;
 };
 
 
@@ -65,11 +68,12 @@ const showChangePassword = function () {
 const changePasswordSuccess = () => {
   $('#change-password').hide();
   $('#pwd-change-msg').show();
-  console.log('Password Successfully Changed');
+  // console.log('Password Successfully Changed');
 };
 
 const changePasswordFailure = (error) => {
-  console.error(error);
+  // console.error(error);
+  return error;
 };
 
 //Show sign in modal and hide sign-in-failure message if displayed

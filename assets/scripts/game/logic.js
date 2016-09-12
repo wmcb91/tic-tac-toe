@@ -20,11 +20,11 @@ const allowMove = function (index) {
   let game = app.user.game;
   // May delete if gameOver triggers event which wouldn't allow move anyway
   if (game.over === true) {
-    console.log('Cannot move; game has ended');
+    // console.log('Cannot move; game has ended');
     return false;
   }
   else if (game.cells[index] !== '') {
-    console.log('Cell already occupied, try again');
+    // console.log('Cell already occupied, try again');
     return false;
   }
   else {
@@ -119,11 +119,11 @@ const changePlayer = function (player) {
 // compile information and send it to UI and API
 // spitting in DRY's face...
 const executeTurn = function (index) {
-  console.log('click');
+  // console.log('click');
   // is valid move?
   // call UI function to update game board
   if (allowMove(index) !== true) {
-    console.log('invalid move');
+    // console.log('invalid move');
     return;
   }
 
@@ -154,7 +154,7 @@ const executeTurn = function (index) {
     api.updateGame(index, value, true)
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
-    console.log('Game ended in tie');
+    // console.log('Game ended in tie');
     return;
   }
 
@@ -162,12 +162,12 @@ const executeTurn = function (index) {
 // allowed else to run without return?
 
   else {
-    console.log('turn executed');
+    // console.log('turn executed');
     api.updateGame(index, value, false)
       .done(render.updateGameSuccess)
       .fail(render.updateGameFailure);
     changePlayer(app.activePlayer);
-    console.log('player ' + app.activePlayer + ' is up');
+    // console.log('player ' + app.activePlayer + ' is up');
     ui.showTurn(value);
     return;
     // debugger;
