@@ -24,11 +24,35 @@ const updateGameFailure = function(error) {
     console.log('error is ', error);
 };
 
+
 const indexGamesSuccess = function (data) {
   app.user.games = data.games;
-  console.log('indexGamesSuccess');
-  // console.table(data.games);
+  let gamesStarted = [];
+  let gamesFinished = [];
+  for (let i=0, max = data.games.length; i < max; i++) {
+    gamesStarted.push(data.games[i].over);
+  }
+  console.log('gamesStarted is ', gamesStarted);
+  for (let i=0, max = data.games.length; i < max; i++) {
+    if (gamesStarted[i] === true) {
+      gamesFinished.push(data.games[i].over);
+    }
+  }
+  console.log('gamesFinished is ', gamesFinished);
+  $('#games-played').text(gamesFinished.length);
+  return gamesFinished;
 };
+
+
+// const makeStartArray = function() {
+//   let gamesStarted = [];
+// };
+
+//
+//   console.log(gamesFinished);
+//   // console.log(data.games.over);
+//   // console.table(data.games);
+// };
 
 const indexGamesFailure = function (error) {
   console.log('indexGamesFailure');

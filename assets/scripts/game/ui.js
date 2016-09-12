@@ -14,21 +14,22 @@ const newGame = function () {
   }
 };
 
-const countGames = function (data) {
-  data = app.user.games;
-  console.table(data);
-};
-
 const showStats = function () {
   if (app.user === null || app.user === undefined) {
     $('#sign-in-warning').show();
   }
   else {
-    countGames();
     $('#showStatsModal').modal('show');
     console.log('showing stats modal');
   }
 };
+
+// const countGames = function (data) {
+//
+//   // let numGames = games.length;
+//   $('#games-played').text(numGames);
+//   console.log(data.games);
+// };
 
 const updateBoard = function (index, value) {
   let player = value;
@@ -60,5 +61,5 @@ module.exports = {
   showStats,
   gameOver,
   showTurn,
-  countGames,
+  // countGames,
 };

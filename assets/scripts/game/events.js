@@ -11,8 +11,6 @@ const onNewGame = function () {
   api.createGame()
     .done(render.createGameSuccess)
     .fail(render.createGameFailure);
-  // if statement
-  // if board is not empty, clear board, start new game, or just clear board
 };
 
 const onShowStats = function () {
@@ -21,7 +19,7 @@ const onShowStats = function () {
   api.indexGames()
     .done(render.indexGamesSuccess)
     .fail(render.indexGamesFailure);
-  ui.countGames();
+  // ui.countGames();
 };
 
 const onClickBoard = function (event) {
@@ -29,8 +27,6 @@ const onClickBoard = function (event) {
   let index = event.data.index;
   logic.executeTurn(index);
 };
-
-// const updateGame =
 
 const addHandlers = () => {
   $('#new-game-btn').on('click', onNewGame);
