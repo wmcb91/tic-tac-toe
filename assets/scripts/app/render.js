@@ -15,7 +15,6 @@ const createGameFailure = function(error) {
     console.log('error is ', error);
 };
 
-
 const updateGameSuccess = function(data) {
     app.user.game = data.game;
     console.log('updated game data is ', data);
@@ -26,7 +25,10 @@ const updateGameFailure = function(error) {
     console.log('error is ', error);
 };
 
-// let currentPlayer = 'X';
+const indexGamesSuccess = function (data) {
+  app.user.game = data.games;
+  console.table(data.games);
+};
 
 
 
@@ -61,5 +63,5 @@ module.exports = {
   createGameFailure,
   updateGameSuccess,
   updateGameFailure,
-
+  indexGamesSuccess,
 };

@@ -10,16 +10,16 @@ const app = require('../app');
 
 // need to include way to insert [?over=] query
 
-// const indexGames = () => {
-//   console.log('index success');
-//   return $.ajax({
-//     url: app.host + '/games',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//   });
-// };
+const indexFinishedGames = () => {
+  console.log('index request success');
+  return $.ajax({
+    url: app.host + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
 
 const createGame = () => {
   // console.log('create success');
@@ -81,7 +81,7 @@ const updateGame = (index, value, over) => {
 
 
 module.exports = {
-  // indexGames,
+  indexFinishedGames,
   createGame,
   // showGame,
   updateGame,

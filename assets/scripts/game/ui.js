@@ -19,6 +19,7 @@ const showStats = function () {
     $('#sign-in-warning').show();
   }
   else {
+    // countGames(user)
     $('#showStatsModal').modal('show');
     console.log('showing stats');
     // api.getStats();
@@ -27,8 +28,8 @@ const showStats = function () {
 };
 
 // const countGames = function (data) {
-//   let app.user.games = data.games;
-// }
+//   console.table(data.games);
+// };
 
 
 const updateBoard = function (index, value) {
@@ -63,4 +64,5 @@ module.exports = {
   showStats,
   gameOver,
   showTurn,
+  // countGames,
 };
