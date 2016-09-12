@@ -13,7 +13,7 @@ const app = require('../app');
 const indexGames = () => {
   console.log('index request success');
   return $.ajax({
-    url: app.host + '/games',
+    url: app.host + '/games[?over=]',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
