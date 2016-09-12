@@ -27,7 +27,7 @@ const signInFailure = (error) => {
 
 
 //sign up
-const signUpSuccess = (data) => {
+const signUpSuccess = () => {
   $('#signUpModal').modal('hide');
   $('#signUpSuccessModal').modal('show');
 
