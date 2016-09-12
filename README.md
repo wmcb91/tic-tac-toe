@@ -1,15 +1,15 @@
-Will McBride
+## Will McBride
 
-A Tic-tac-toe single page application
+# A Tic-tac-toe single page application
 
 This game has been created for General Assembly's Web Development Immersive.
 HTML, SCSS, JavaScript, jQuery and AJAX are used in this application.
 
-URL:
+URL: https://wmcb91.github.io/tic-tac-toe/
 
-Wireframe:
+Wireframe: http://imgur.com/a/iZlRP
 
-User Stories:
+# User Stories:
 
 1. As a new user I want an easy sign up feature.
 2. As a user, I want to be able to track the number of games I have played
@@ -18,7 +18,7 @@ User Stories:
 5. As a user, I want to be able to 'rage quit' and start a new game mid game
 6. As a user, I want to be able to start a new game after I won without refreshing
 
-Planning
+# Planning
 
 I planned on sketching a wireframe outline on a notepad and using that as my
 basis for creating a more detailed wireframe using balsalmiq Mockups. Once the
@@ -29,7 +29,7 @@ advanced code to improve the look and function of the front-end UI for the app.
 Last, I planned on running through every aspect of the application to check for
 bugs and possibly discover features I wanted to add.
 
-Story
+# Development Story
 
 On day 1 (Wednesday), I made my wireframe using balsalmiq and had it finished by
 the end of the day.
@@ -55,20 +55,34 @@ By midday Sunday I had all but my game data request working on my local game. I
 deployed the game and did not have too much trouble initially. But when I tried
 to include the [?over=] query in my get request things went a bit off the rails.
 I did not realize I needed to redeploy each change for a while and wasted a bit
-of time not understanding why any debugging techniques were working.
+of time not understanding why any debugging techniques were working.  Then I
+decided to use different technique for getting games won and finished that.
+Finally, I had a working site (sort of).
 
 
 
-Future Changes
+# Future Changes
  - Cut down on code by changing event to call only API and have UI affected based
 on .success or .failure.
  - Add local storage to keep player logged in on refresh
+ -  Prevent logging player out when page refreshed
+ -  Make X and O hover over space before pick
+ -  Alternate who gets the first move of each game
+ -  Prompt confirmation if player tries to start new game before previous game is over
+ -  Make ‘play again' button work for gameOver modal
+ -  Add x out button to new game error message
+ -  Clear log-in field after log out
+ -  Clear password field after clear password
+ -  Once space is occupied, remove a:hover property
+ -  Don’t allow X’s or O’s to be highlighted
 
-Bugs:
+# Bugs:
  - If you press new game btn too quickly after pressing sign in, you will
    get error message and it will stay.  Happens if you click before API
    processes because in browser events take priority in stack.  Possible
    fixes: don't allow click for X milliseconds after log in click or just
    make an x out button on the error message.
 
-- Requesting player data ends game progress. Board becomes undefined.
+ - Requesting player data ends game progress. Board becomes undefined.
+
+ - Breakpoint formatting.
