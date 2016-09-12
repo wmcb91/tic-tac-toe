@@ -14,30 +14,25 @@ const newGame = function () {
   }
 };
 
+const countGames = function (data) {
+  data = app.user.games;
+  console.table(data);
+};
+
 const showStats = function () {
   if (app.user === null || app.user === undefined) {
     $('#sign-in-warning').show();
   }
   else {
-    // countGames(user)
+    countGames();
     $('#showStatsModal').modal('show');
-    console.log('showing stats');
-    // api.getStats();
-    // jQuery to post stats
+    console.log('showing stats modal');
   }
 };
-
-// const countGames = function (data) {
-//   console.table(data.games);
-// };
-
 
 const updateBoard = function (index, value) {
   let player = value;
   let cell = (index + 1);
-  // console.log('update board memory');
-  // console.log(player);
-  // console.log(cell);
   let cellId = '#' + cell;
   $(cellId).text(player);
 };
@@ -51,6 +46,7 @@ const gameOver = function (value, result) {
     $('#gameResult').text('Game ended in a tie');
   }
   $('#gameOverModal').modal('show');
+  $('#player-turn').text('Game Over');
 };
 
 const showTurn = function (player) {
@@ -64,5 +60,5 @@ module.exports = {
   showStats,
   gameOver,
   showTurn,
-  // countGames,
+  countGames,
 };

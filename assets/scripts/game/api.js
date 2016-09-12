@@ -1,15 +1,8 @@
 'use strict';
 
-// GET	/games	games#index
-// POST	/games	games#create
-// GET	/games/:id	games#show
-// PATCH	/games/:id	games#update
-// GET	/games/:id/watch	games#watch
-
 const app = require('../app');
 
-// need to include way to insert [?over=] query
-//[?over=] not working
+
 const indexGames = () => {
   console.log('index request success');
   return $.ajax({
@@ -32,19 +25,6 @@ const createGame = () => {
     data: '',
   });
 };
-
-// const showGame = (data) => {
-//   console.log(data);
-//   return $.ajax({
-//     //url app.game correct?
-//     url: app.host + '/games' + app.game.id,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//     data: data,
-//   });
-// };
 
 const updateGame = (index, value, over) => {
   // console.log(index, value, over);
@@ -71,6 +51,19 @@ const updateGame = (index, value, over) => {
 //   console.log(data);
 //   return $.ajax({
 //     url: app.host + '/sign-up' + app.game.id/watch,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     },
+//     data: data,
+//   });
+// };
+
+// const showGame = (data) => {
+//   console.log(data);
+//   return $.ajax({
+//     //url app.game correct?
+//     url: app.host + '/games' + app.game.id,
 //     method: 'GET',
 //     headers: {
 //       Authorization: 'Token token=' + app.user.token,

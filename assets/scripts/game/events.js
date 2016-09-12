@@ -17,13 +17,11 @@ const onNewGame = function () {
 
 const onShowStats = function () {
   event.preventDefault();
-  // ui.showStats();
+  ui.showStats();
   api.indexGames()
     .done(render.indexGamesSuccess)
     .fail(render.indexGamesFailure);
-  // debugger;
-  //api Index request then count "dones"
-  //render.indexGamesSuccess;
+  ui.countGames();
 };
 
 const onClickBoard = function (event) {

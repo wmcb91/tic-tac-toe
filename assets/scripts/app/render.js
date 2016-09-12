@@ -6,7 +6,6 @@ const createGameSuccess = function(data) {
     app.user.game = data.game;
     app.activePlayer = 'X';
     console.log('app.user.game data is ', data);
-    // console.log('First up is player ', app.activePlayer);
     return app.activePlayer;
 };
 
@@ -26,9 +25,9 @@ const updateGameFailure = function(error) {
 };
 
 const indexGamesSuccess = function (data) {
+  app.user.games = data.games;
   console.log('indexGamesSuccess');
-  // app.user.game = data.games;
-  console.table(data.games);
+  // console.table(data.games);
 };
 
 const indexGamesFailure = function (error) {
