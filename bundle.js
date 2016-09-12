@@ -264,8 +264,6 @@ webpackJsonp([0],[
 	  host: 'https://aqueous-atoll-85096.herokuapp.com'
 	};
 
-	// 'http://tic-tac-toe.wdibos.com'
-
 	module.exports = app;
 
 /***/ },
@@ -376,7 +374,10 @@ webpackJsonp([0],[
 	var onShowStats = function onShowStats() {
 	  event.preventDefault();
 	  ui.showStats();
+	  api.indexGames().done(render.indexGamesSuccess).fail(console.log('index request failed'));
+	  // debugger;
 	  //api Index request then count "dones"
+	  //render.indexGamesSuccess;
 	};
 
 	var onClickBoard = function onClickBoard(event) {
@@ -422,16 +423,16 @@ webpackJsonp([0],[
 
 	// need to include way to insert [?over=] query
 
-	// const indexGames = () => {
-	//   console.log('index success');
-	//   return $.ajax({
-	//     url: app.host + '/games',
-	//     method: 'GET',
-	//     headers: {
-	//       Authorization: 'Token token=' + app.user.token,
-	//     },
-	//   });
-	// };
+	var indexGames = function indexGames() {
+	  console.log('index request success');
+	  return $.ajax({
+	    url: app.host + '/games[?over=]',
+	    method: 'GET',
+	    headers: {
+	      Authorization: 'Token token=' + app.user.token
+	    }
+	  });
+	};
 
 	var createGame = function createGame() {
 	  // console.log('create success');
@@ -493,7 +494,7 @@ webpackJsonp([0],[
 
 
 	module.exports = {
-	  // indexGames,
+	  indexGames: indexGames,
 	  createGame: createGame,
 	  // showGame,
 	  updateGame: updateGame
@@ -523,6 +524,7 @@ webpackJsonp([0],[
 	  if (app.user === null || app.user === undefined) {
 	    $('#sign-in-warning').show();
 	  } else {
+	    // countGames(user)
 	    $('#showStatsModal').modal('show');
 	    console.log('showing stats');
 	    // api.getStats();
@@ -531,8 +533,8 @@ webpackJsonp([0],[
 	};
 
 	// const countGames = function (data) {
-	//   let app.user.games = data.games;
-	// }
+	//   console.table(data.games);
+	// };
 
 
 	var updateBoard = function updateBoard(index, value) {
@@ -762,8 +764,11 @@ webpackJsonp([0],[
 	    console.log('error is ', error);
 	};
 
-	// let currentPlayer = 'X';
-
+	var indexGamesSuccess = function indexGamesSuccess(data) {
+	    console.log('indexGamesSuccess');
+	    app.user.game = data.games;
+	    console.table(data.games);
+	};
 
 	// Not ready
 	// const renderPlayerTurn = (player) => {
@@ -795,8 +800,8 @@ webpackJsonp([0],[
 	    createGameSuccess: createGameSuccess,
 	    createGameFailure: createGameFailure,
 	    updateGameSuccess: updateGameSuccess,
-	    updateGameFailure: updateGameFailure
-
+	    updateGameFailure: updateGameFailure,
+	    indexGamesSuccess: indexGamesSuccess
 	};
 
 /***/ },
