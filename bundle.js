@@ -373,8 +373,8 @@ webpackJsonp([0],[
 
 	var onShowStats = function onShowStats() {
 	  event.preventDefault();
-	  ui.showStats();
-	  api.indexGames().done(render.indexGamesSuccess).fail(console.log('index request failed'));
+	  // ui.showStats();
+	  api.indexGames().done(render.indexGamesSuccess).fail(render.indexGamesFailure);
 	  // debugger;
 	  //api Index request then count "dones"
 	  //render.indexGamesSuccess;
@@ -422,11 +422,11 @@ webpackJsonp([0],[
 	var app = __webpack_require__(7);
 
 	// need to include way to insert [?over=] query
-
+	//[?over=] not working
 	var indexGames = function indexGames() {
 	  console.log('index request success');
 	  return $.ajax({
-	    url: app.host + '/games[?over=]',
+	    url: app.host + '/games',
 	    method: 'GET',
 	    headers: {
 	      Authorization: 'Token token=' + app.user.token
@@ -766,34 +766,14 @@ webpackJsonp([0],[
 
 	var indexGamesSuccess = function indexGamesSuccess(data) {
 	    console.log('indexGamesSuccess');
-	    app.user.game = data.games;
+	    // app.user.game = data.games;
 	    console.table(data.games);
 	};
 
-	// Not ready
-	// const renderPlayerTurn = (player) => {
-	//   $('#player-turn').text("Player" + player + "'s turn'");
-	//
-	//   //debug
-	//   console.log('renderPlayerTurn success');
-	// };
-	//
-	// // const renderBoard = (item, id) => {
-	// //   $('.content > ul').append(
-	// //     `<li data-id=${id}>${item.text}</li>`
-	// //   );
-	// // };
-	//
-	// const render = (data) => {
-	//   renderPlayerTurn(data.player);
-	//   // data.list.items.forEach((item, index) => {
-	//   //   renderBoard(item, index);
-	//   // });
-	//
-	//   // debug
-	//   console.log('render success');
-	//   console.log('render is', render);
-	// };
+	var indexGamesFailure = function indexGamesFailure(error) {
+	    console.log('indexGamesFailure');
+	    console.log('error is ', error);
+	};
 
 	module.exports = {
 	    // render,
@@ -801,7 +781,8 @@ webpackJsonp([0],[
 	    createGameFailure: createGameFailure,
 	    updateGameSuccess: updateGameSuccess,
 	    updateGameFailure: updateGameFailure,
-	    indexGamesSuccess: indexGamesSuccess
+	    indexGamesSuccess: indexGamesSuccess,
+	    indexGamesFailure: indexGamesFailure
 	};
 
 /***/ },
