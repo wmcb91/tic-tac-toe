@@ -47,15 +47,22 @@ game API, but struggled with sticking with just one task and began bouncing
 around which wasted time. By the end of the day, I could show pieces on my board
 when clicked, and had progress in the logic, but did not have a working game.
 
+Saturday was a very long but productive day.  I planned my next moves and coded
+more efficiently. The planning helped me stay on one task at a time. By the end
+of the day I had my logic functioning and felt good.
+
+By midday Sunday I had all but my game data request working on my local game. I
+deployed the game and did not have too much trouble initially. But when I tried
+to include the [?over=] query in my get request things went a bit off the rails.
+I did not realize I needed to redeploy each change for a while and wasted a bit
+of time not understanding why any debugging techniques were working.
+
 
 
 Future Changes
  - Cut down on code by changing event to call only API and have UI affected based
 on .success or .failure.
-
-- Move currentPlayer to app so UI and pull from it, and not logic
-
-
+ - Add local storage to keep player logged in on refresh
 
 Bugs:
  - If you press new game btn too quickly after pressing sign in, you will
@@ -63,3 +70,5 @@ Bugs:
    processes because in browser events take priority in stack.  Possible
    fixes: don't allow click for X milliseconds after log in click or just
    make an x out button on the error message.
+
+- Requesting player data ends game progress. Board becomes undefined.

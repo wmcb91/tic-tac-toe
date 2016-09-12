@@ -19,25 +19,21 @@ const showStats = function () {
     $('#sign-in-warning').show();
   }
   else {
-    // countGames(user)
     $('#showStatsModal').modal('show');
-    console.log('showing stats');
-    // api.getStats();
-    // jQuery to post stats
+    console.log('showing stats modal');
   }
 };
 
 // const countGames = function (data) {
-//   console.table(data.games);
+//
+//   // let numGames = games.length;
+//   $('#games-played').text(numGames);
+//   console.log(data.games);
 // };
-
 
 const updateBoard = function (index, value) {
   let player = value;
   let cell = (index + 1);
-  // console.log('update board memory');
-  // console.log(player);
-  // console.log(cell);
   let cellId = '#' + cell;
   $(cellId).text(player);
 };
@@ -51,6 +47,7 @@ const gameOver = function (value, result) {
     $('#gameResult').text('Game ended in a tie');
   }
   $('#gameOverModal').modal('show');
+  $('#player-turn').text('Game Over');
 };
 
 const showTurn = function (player) {
