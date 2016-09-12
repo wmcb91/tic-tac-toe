@@ -26,6 +26,7 @@ const updateGameFailure = function(error) {
 };
 
 const indexGamesSuccess = function (data) {
+  console.log('indexGamesSuccess');
   app.user.game = data.games;
   console.table(data.games);
 };
