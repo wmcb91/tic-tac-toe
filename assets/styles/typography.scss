@@ -4,6 +4,9 @@
 // font-size
 // padding
 
+$title-size: 75px;
+$credit-size: 16px;
+
 // font-family: 'VT323', monospace;
 $bungee-shade: 'Bungee Shade', cursive;
 $bungee: 'Bungee', cursive;
@@ -22,7 +25,7 @@ body {
 
 .title {
   font-family: $rubik;
-  font-size: 75px;
+  // font-size: 75px;
 }
 
 .game-cell {

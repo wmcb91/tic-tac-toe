@@ -1,5 +1,6 @@
 @import 'breakpoint';
 @import 'layout';
+@import 'typography';
 
 // body {
 //   @include breakpoint(tiny) {
@@ -92,6 +93,50 @@
 html {
   @include breakpoint(large) {
     height: 1174px;
+  }
+}
+
+.title {
+  @include breakpoint(tiny) {
+    font-size: ($title-size * .26);
+  }
+
+  @include breakpoint(x-small) {
+    font-size: ($title-size * .40);
+  }
+
+  @include breakpoint(small) {
+    font-size: ($title-size * .9);
+  }
+
+  @include breakpoint(medium) {
+    font-size: $title-size;
+  }
+
+  @include breakpoint(large) {
+    font-size: $title-size;
+  }
+}
+
+.credit {
+  @include breakpoint(tiny) {
+    font-size: ($credit-size * .75);
+  }
+
+  @include breakpoint(x-small) {
+    font-size: ($credit-size * .75);
+  }
+
+  @include breakpoint(small) {
+    font-size: ($credit-size * .75);
+  }
+
+  @include breakpoint(medium) {
+    font-size: $credit-size * .8;
+  }
+
+  @include breakpoint(large) {
+    font-size: $credit-size * .85;
   }
 }
 
