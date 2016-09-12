@@ -19,9 +19,9 @@ const onShowStats = function () {
   event.preventDefault();
   ui.showStats();
   api.indexGames()
-    .done(console.log('sent to api'))
+    .done(render.indexGamesSuccess)
     .fail(console.log('index request failed'));
-  debugger;
+  // debugger;
   //api Index request then count "dones"
   //render.indexGamesSuccess;
 };
