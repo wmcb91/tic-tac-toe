@@ -29,7 +29,7 @@ const onClickBoard = function (event) {
 };
 
 const addHandlers = () => {
-  $('#new-game-btn').on('click', onNewGame);
+  $('#new-game-btn, #play-again-button').on('click', onNewGame);
   $('#show-stats-btn').on('click', onShowStats);
   $('#1').on('click', {index: 0}, onClickBoard);
   $('#2').on('click', {index: 1}, onClickBoard);

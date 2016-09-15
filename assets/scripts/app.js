@@ -5,5 +5,9 @@ const app = {
   // host: 'http://tic-tac-toe.wdibos.com',
 };
 
+// const currentUser = app.user;
 
-module.exports = app;
+module.exports = {
+  app,
+  // currentUser
+};
