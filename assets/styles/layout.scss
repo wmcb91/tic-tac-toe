@@ -1,9 +1,8 @@
-$row-width: 890px;
-$cell-height: 290px;
+$row-width: 720px;
+$cell-size: 235px;
 $base-container-width: 1200px;
 $header-margin: 15px;
-$header-box-height: 95px;
-$cell-width: 290px;
+$header-box-height: 60px;
 
 p {
   margin: 0;
@@ -11,7 +10,7 @@ p {
 
 .title {
   float: left;
-  margin: ($header-box-height * .2) 0 0 $header-margin;
+  margin: 0 0 0 $header-margin;
 }
 
 .header-box {
@@ -20,6 +19,7 @@ p {
   float: right;
   height: $header-box-height;
   margin-right: $header-margin;
+  margin-top: $header-margin;
 }
 
 .user-welcome {
@@ -113,16 +113,15 @@ hr {
 
 .game-cell {
   box-sizing: border-box;
-  height: $cell-height;
+  height: $cell-size;
   padding: 0;
   text-align: center;
-  width: $cell-width;
+  width: $cell-size;
 }
 
 footer {
   bottom: 0;
   position: fixed;
-
 }
 
 .credit {

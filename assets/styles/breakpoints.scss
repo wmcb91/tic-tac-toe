@@ -65,28 +65,28 @@
 
 .game-cell {
   @include breakpoint(tiny) {
-    height: ($cell-height * 3 / 12);
-    width: ($cell-width * 3 / 12);
+    height: ($cell-size * 3 / 12);
+    width: ($cell-size * 3 / 12);
   }
 
   @include breakpoint(x-small) {
-    height: ($cell-height * 4 / 12);
-    width: ($cell-width * 4 / 12);
+    height: ($cell-size * 4 / 12);
+    width: ($cell-size * 4 / 12);
   }
 
   @include breakpoint(small) {
-    height: ($cell-height * 7.68 / 12);
-    width: ($cell-width * 7.68 / 12);
+    height: ($cell-size * 7.68 / 12);
+    width: ($cell-size * 7.68 / 12);
   }
 
   @include breakpoint(medium) {
-    height: ($cell-height * 9.92 / 12);
-    width: ($cell-width * 9.92 / 12);
+    height: ($cell-size * 9.92 / 12);
+    width: ($cell-size * 9.92 / 12);
   }
 
   @include breakpoint(large) {
-    height: $cell-height;
-    width: $cell-width;
+    height: $cell-size;
+    width: $cell-size;
   }
 }
 
