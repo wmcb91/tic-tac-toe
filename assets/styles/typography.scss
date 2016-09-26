@@ -17,7 +17,7 @@ $vt323: 'VT323', monospace;
 $font-size: 14px;
 $line-height: 1.6;
 $heading-line-height: 2;
-
+$game-piece-size: $cell-size * 1.15;
 
 body {
   color: $charcoal;
@@ -30,6 +30,6 @@ body {
 }
 
 .game-cell {
-  font-size: $cell-size * 1.2;
-  line-height: 235px;
+  font-size: $game-piece-size;
+  line-height: $cell-size;
 }
