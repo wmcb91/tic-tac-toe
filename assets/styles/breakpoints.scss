@@ -108,23 +108,33 @@ html {
 
 .title {
   @include breakpoint(tiny) {
-    font-size: ($title-size * .26);
+    font-size: 5.2vw;
+    margin-left: 4px;
+    margin-top: 2.8vh;
   }
 
   @include breakpoint(x-small) {
-    font-size: ($title-size * .40);
+    font-size: 6.7vw;
+    margin-left: 4px;
+    margin-top: 2.0vh;
   }
 
   @include breakpoint(small) {
-    font-size: ($title-size * .9);
+    font-size: ($title-size * .94);
+    margin: inherit;
+    margin-left: 4px;
   }
 
   @include breakpoint(medium) {
     font-size: $title-size;
+    margin: inherit;
+    margin-left: 4px;
   }
 
   @include breakpoint(large) {
     font-size: $title-size;
+    margin: inherit;
+    margin-left: 4px;
   }
 }
 
