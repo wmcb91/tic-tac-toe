@@ -1,3 +1,4 @@
+@import 'layout';
 // margin
 // width and friends (like max-width)
 // line-height
@@ -29,5 +30,6 @@ body {
 }
 
 .game-cell {
-  font-size: 270px;
+  font-size: $cell-size * 1.2;
+  line-height: 235px;
 }
