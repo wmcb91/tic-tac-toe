@@ -16,7 +16,7 @@ const signInSuccess = (data) => {
   $('#user-name-welcome').html(app.user.email);
 
   //debug
-  console.log('data.user is', data.user);
+  // console.log('data.user is', data.user);
 };
 
 const signInFailure = (error) => {
