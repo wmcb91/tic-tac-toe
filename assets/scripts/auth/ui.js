@@ -1,11 +1,10 @@
-'use strict';
+ 'use strict';
 
 const app = require('../app');
 
 //sign in
 const signInSuccess = (data) => {
   //Stores current user data into app.user
-  app.user = data.user;
 
   //UI response to sign in
   $('#sign-in-prompt').hide();

@@ -4,9 +4,23 @@ $base-container-width: 1200px;
 $header-margin: 15px;
 $header-box-height: 60px;
 
+body {
+  z-index: 10;
+}
+
 p {
   margin: 0;
 }
+
+video {
+  // position: fixed;
+  // position: absolute;
+  // position: static;
+  height: 100%;
+  width: 100%;
+  z-index: -800;
+}
+
 
 .title {
   float: left;
@@ -55,7 +69,7 @@ hr {
   clear: both;
   margin: 0;
   position: static;
-  width: 100%;
+  width: 99%;
 }
 
 .content {
