@@ -3,7 +3,10 @@
 const app = require('../app');
 
 //sign in
-const signInSuccess = () => {
+const signInSuccess = (data) => {
+  app.user = data.user;
+  console.log(data);
+  console.log(app.user);
   //UI response to sign in
   $('#sign-in-failure').hide();
 

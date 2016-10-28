@@ -5,12 +5,18 @@ const app = require('../app');
 
 const newGame = function () {
   if (app.user === null || app.user === undefined) {
-    $('#sign-in-warning').show();
+    console.log('app.user is null');
   }
   else {
-    $('#game-container').show();
-    $('#game-board').find('.game-cell').text('');
-    $('#player-turn').text('Player X begins');
+    $('.title').fadeOut(4000);
+    $('.new-game-btn').fadeOut(2);
+    $('.btn-text').fadeOut(2);
+    setTimeout(function(){$('#game-container').fadeIn(500);}, 4000);
+    setTimeout(function(){$('#game-board').find('.game-cell').text('');}, 4000);
+    // setTimeout(function(){$('#player-turn').text('Player X begins');}, 4000);
+    // $('#game-container').show();
+    // $('#game-board').find('.game-cell').text('');
+    // $('#player-turn').text('Player X begins');
   }
 };
 

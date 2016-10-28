@@ -13,15 +13,6 @@ const onNewGame = function () {
     .fail(render.createGameFailure);
 };
 
-const onShowStats = function () {
-  event.preventDefault();
-  ui.showStats();
-  api.indexGames()
-    .done(render.indexGamesSuccess)
-    .fail(render.indexGamesFailure);
-  // ui.countGames();
-};
-
 const onClickBoard = function (event) {
   event.preventDefault();
   let index = event.data.index;
@@ -29,8 +20,7 @@ const onClickBoard = function (event) {
 };
 
 const addHandlers = () => {
-  $('#new-game-btn, #play-again-button').on('click', onNewGame);
-  $('#show-stats-btn').on('click', onShowStats);
+  $('#play-again-button').on('click', onNewGame);
   $('#1').on('click', {index: 0}, onClickBoard);
   $('#2').on('click', {index: 1}, onClickBoard);
   $('#3').on('click', {index: 2}, onClickBoard);
@@ -44,4 +34,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+  onNewGame
 };

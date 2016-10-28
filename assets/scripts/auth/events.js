@@ -1,13 +1,12 @@
 'use strict';
 
-const getFormFields = require('../../../lib/get-form-fields');
-
 const api = require('./api');
+const gameEvents = require('../game/events');
 const ui = require('./ui');
 
 const onSignIn = function () {
   api.signIn()
-    .done(ui.signInSuccess)
+    .done(ui.signInSuccess, gameEvents.onNewGame)
     .fail(ui.signInFailure);
 };
 
