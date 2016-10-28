@@ -1,8 +1,5 @@
-$row-width: 720px;
-$cell-size: 235px;
-$base-container-width: 1200px;
-$header-margin: 15px;
-$header-box-height: 60px;
+$row-width: 740px;
+$cell-size: $row-width / 3.6;
 
 body {
   z-index: 10;
@@ -12,72 +9,35 @@ p {
   margin: 0;
 }
 
-video {
-  // position: fixed;
-  // position: absolute;
-  // position: static;
+.background {
   height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+
   width: 100%;
   z-index: -800;
 }
 
+.background-vid {
+  width: 100%;
+  z-index: -800;
+}
+
+.overlay {
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
 
 .title {
-  float: left;
-  margin: 0 0 0 $header-margin;
-}
-
-.header-box {
-  align-items: flex-end;
-  display: flex;
-  float: right;
-  height: $header-box-height;
-  margin-right: $header-margin;
-  margin-top: $header-margin;
-}
-
-.user-welcome {
-  align-items: center;
-  display: flex;
-  float: right;
-  // justify-content: center;
-  margin-right: ($header-margin * 1.5);
-  margin-top: $header-margin;
-}
-
-.welcome-msg {
-  float: left;
-  margin: auto 5px;
-}
-
-.cog-btn {
-  float: right;
-  margin: 3px;
-  padding: 0;
-}
-
-.glyphicon-cog {
-  margin: 0;
-  padding: 3px 3px 1px 4px;
-}
-
-.dropdown-menu {
-  text-align: center;
-}
-
-hr {
-  clear: both;
-  margin: 0;
-  position: static;
-  width: 99%;
+  height: 10%;
+  padding-top: 200px;
+  width: 41%;
 }
 
 .content {
   text-align: center;
-}
-
-.sign-in-alert-danger {
-  float: right;
 }
 
 .game-container {
@@ -86,28 +46,17 @@ hr {
   text-align: center;
 }
 
-.no-sign-in-alert-danger {
-  margin: 5px auto;
-  width: 460px;
-}
-
 .btn-text {
-  clear: both;
-  margin: 10px 5px;
+  margin: 10px;
   text-align: center;
 }
 
 .new-game-btn {
-  clear: both;
-  margin: 15px 0 0 5px;
+  display: inline-block;
+  margin: 35px 0 0;
+  padding: 2px;
   position: relative;
-}
-
-.show-stats-btn {
-  // float: right;
-  position: inherit;
-  right: 25px;
-  top: 15px;
+  transition: 2s;
 }
 
 .player-turn {
@@ -116,18 +65,19 @@ hr {
 }
 
 .game-board {
-  margin: 0 auto;
+  margin: 2vh auto 0;
   text-align: center;
 }
 
 .board-row {
-  margin-left: auto;
-  margin-right: auto;
-  // width: $row-width;
+  margin: auto;
+  position: relative;
 }
 
 .game-cell {
   box-sizing: border-box;
+  display: inline-block;
+  float: none;
   height: $cell-size;
   padding: 0;
   text-align: center;

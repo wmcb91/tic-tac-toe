@@ -2,26 +2,39 @@ $background-color: $off-white;
 $font-color: $charcoal;
 
 body {
-  background-color: $background-color;
+  // background-color: $background-color;
   color: $font-color;
 }
 
-hr {
-  border: 1px solid $black;
+.title {
+  user-select: none;
+}
+
+.new-game-btn {
+  border: 4px double $stranger-red;
+  cursor: pointer;
+  transition: 2.1s;
+}
+
+.new-game-btn:hover {
+  background-color: $stranger-fade;
+  box-shadow: 0 0 75px $stranger-shadow;
 }
 
 .game-cell {
   border: 1px solid $black;
+  box-shadow: 0 0 60px $stranger-shadow;
+}
+
+.game-cell:hover {
+  box-shadow: 0 0 60px $off-white;
+  opacity: .4;
 }
 
 //Change hover icon from highlight bar to mouse or finger for anchors
 a:hover {
   cursor: pointer;
   text-decoration: none;
-}
-
-.game-cell:hover {
-  background-color: $grey;
 }
 
 .alert-link {

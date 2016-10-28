@@ -2,23 +2,6 @@
 @import 'layout';
 @import 'typography';
 
-// body {
-//   @include breakpoint(tiny) {
-//     font-size: .8em;
-//     max-width: 400px;
-//   }
-
-//   @include breakpoint(small) {
-//     font-size: .9em;
-//     max-width: 500px;
-//   }
-
-//   @include breakpoint(medium) {
-//     font-size: 1em;
-//     max-width: 700px;
-//   }
-// }
-
 .container {
   @include breakpoint(tiny) {
     max-width: 100%;
@@ -37,7 +20,7 @@
   }
 
   @include breakpoint(large) {
-    max-width: $base-container-width;
+    max-width: 100%;
   }
 }
 
@@ -100,11 +83,11 @@
   }
 }
 
-html {
-  @include breakpoint(large) {
-    height: 944px;
-  }
-}
+// html {
+//   @include breakpoint(large) {
+//     height: 944px;
+//   }
+// }
 
 .title {
   @include breakpoint(tiny) {
@@ -116,7 +99,7 @@ html {
   @include breakpoint(x-small) {
     font-size: 6.7vw;
     margin-left: 4px;
-    margin-top: 2.0vh;
+    margin-top: 2vh;
   }
 
   @include breakpoint(small) {
@@ -159,8 +142,3 @@ html {
     font-size: $credit-size * .85;
   }
 }
-
-// .game-cell {
-//   height: $height;
-//   width: ($row-width / 3);
-// }
