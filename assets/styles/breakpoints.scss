@@ -27,31 +27,36 @@
 
 .game-cell {
   @include breakpoint(tiny) {
-    font-size: $cell-size * .85;
+    // font-size: $cell-size * .85;
     height: $cell-size * .85;
+    // line-height: $cell-size * .85;
     margin: $cell-size * .0085;
     width: $cell-size * .85;
   }
 
   @include breakpoint(x-small) {
-    font-size: $cell-size * .95;
+    // font-size: $cell-size * .95;
     height: $cell-size * .95;
+    // line-height: $cell-size * .95;
     margin: $cell-size * .0095;
     width: $cell-size * .95;
   }
 
   @include breakpoint(small) {
     height: $cell-size;
+    // line-height: $cell-size;
     width: $cell-size;
   }
 
   @include breakpoint(medium) {
     height: $cell-size;
+    // line-height: $cell-size;
     width: $cell-size;
   }
 
   @include breakpoint(large) {
     height: $cell-size;
+    // line-height: $cell-size;
     width: $cell-size;
   }
 }

@@ -6,16 +6,12 @@ $title-width: 45%;
 $title-top-padding: 20vh;
 
 // html {
-//   height: 72vw;
+//   height: 75vw;
 // }
 
 body {
   overflow: hidden;
-  z-index: 10;
-}
-
-p {
-  margin: 0;
+  // z-index: 10;
 }
 
 .background {
@@ -37,7 +33,7 @@ p {
 .overlay {
   text-align: center;
   width: 100%;
-  z-index: 100;
+  // z-index: 100;
 }
 
 .title {
@@ -69,10 +65,10 @@ p {
   transition: 2s;
 }
 
-.player-turn {
-  clear: both;
-  text-align: center;
-}
+// .player-turn {
+//   clear: both;
+//   text-align: center;
+// }
 
 .game-board {
   margin: 2vh auto 0;

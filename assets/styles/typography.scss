@@ -1,17 +1,12 @@
 @import 'layout';
+$sumana: 'Sumana';
+$rubik: 'Rubik', sans-serif;
 
 $title-size: 75px;
 $credit-size: 16px;
 $new-game-size: 2vw;
 $new-game-line-height: 25px;
-
-$sumana: 'Sumana';
-$rubik: 'Rubik', sans-serif;
-
-$font-size: 14px;
-$line-height: 1.6;
-$heading-line-height: 2;
-$game-piece-size: $cell-size;
+$game-piece-font-size: $cell-size / 6;
 
 body {
   color: $charcoal;
@@ -29,12 +24,8 @@ body {
 //   color: $near-black;
 // }
 
-.title {
-  font-family: $rubik;
-}
-
 .game-cell {
-  font-size: $game-piece-size;
-  line-height: $game-piece-size;
+  font-size: $game-piece-font-size;
+  line-height: $cell-size;
   text-align: center;
 }

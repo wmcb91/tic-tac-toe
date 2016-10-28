@@ -43,7 +43,7 @@ const updateBoard = function (index, value) {
   let player = value;
   let cell = (index + 1);
   let cellId = '#' + cell;
-  $(cellId).text(player);
+  $(cellId).html(`<p>${player}</p>`);
 };
 
 const gameOver = function (value, result) {
