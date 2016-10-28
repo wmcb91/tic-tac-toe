@@ -5,7 +5,7 @@
 
 .board-row {
   @include breakpoint(tiny) {
-    width: 75%;
+    width: 80vw;
   }
 
   @include breakpoint(x-small) {
@@ -27,11 +27,13 @@
 
 .game-cell {
   @include breakpoint(tiny) {
-    height: $cell-size;
-    width: $cell-size;
+    font-size: 25vw;
+    height: 30vw;
+    width: 25vw;
   }
 
   @include breakpoint(x-small) {
+    font-size: $cell-size * .79;
     height: $cell-size * .79;
     width: $cell-size * .79;
   }

@@ -2,7 +2,7 @@ $row-width: 91vh;
 $cell-size: $row-width / 3.06;
 $title-height: 15%;
 $title-width: 45%;
-$title-top-padding: 200px;
+$title-top-padding: 20vh;
 
 body {
   overflow: hidden;
@@ -24,8 +24,8 @@ p {
 }
 
 .background-vid {
-  height: 810px;
-  width: 1440;
+  // height: 100vh;
+  width: 106vw;
   z-index: -800;
 }
 
@@ -52,13 +52,13 @@ p {
 }
 
 .btn-text {
-  margin: 10px;
+  margin: 1vh 1vw;
   text-align: center;
 }
 
 .new-game-btn {
   display: inline-block;
-  margin: 35px 0 0;
+  margin: 3.5vh 0 0;
   padding: 2px;
   position: relative;
   transition: 2s;
@@ -102,5 +102,5 @@ footer {
 }
 
 .credit {
-  margin: 0 0 5px 10px;
+  margin: 0 0 .5vh 1vw;
 }
