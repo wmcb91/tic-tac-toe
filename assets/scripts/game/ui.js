@@ -8,11 +8,13 @@ const newGame = function () {
     console.log('app.user is null');
   }
   else {
-    $('.title').fadeOut(4000);
+    // $('.title').fadeOut(4000);
+    $('.title').fadeOut(4);
     $('.new-game-btn').fadeOut(2);
     $('.btn-text').fadeOut(2);
-    setTimeout(function(){$('#game-container').fadeIn(500);}, 4000);
-    setTimeout(function(){$('#game-board').find('.game-cell').text('');}, 4000);
+    // setTimeout(function(){$('#game-container').fadeIn(500);}, 4000);
+    setTimeout(function(){$('#game-container').fadeIn(5);}, 4);
+    $('#game-board').find('.game-cell').text('');
     // setTimeout(function(){$('#player-turn').text('Player X begins');}, 4000);
     // $('#game-container').show();
     // $('#game-board').find('.game-cell').text('');
@@ -53,19 +55,19 @@ const gameOver = function (value, result) {
     $('#gameResult').text('Game ended in a tie');
   }
   $('#gameOverModal').modal('show');
-  $('#player-turn').text('Game Over');
+  // $('#player-turn').text('Game Over');
 };
 
-const showTurn = function (player) {
-  player = app.activePlayer;
-  $('#player-turn').text('Player ' + player + "'s turn");
-};
+// const showTurn = function (player) {
+//   player = app.activePlayer;
+//   $('#player-turn').text('Player ' + player + "'s turn");
+// };
 
 module.exports = {
   updateBoard,
   newGame,
   showStats,
   gameOver,
-  showTurn,
+  // showTurn,
   // countGames,
 };

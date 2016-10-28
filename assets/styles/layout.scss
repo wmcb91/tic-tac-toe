@@ -1,5 +1,8 @@
-$row-width: 740px;
-$cell-size: $row-width / 3.6;
+$row-width: 91vh;
+$cell-size: $row-width / 3.06;
+$title-height: 15%;
+$title-width: 45%;
+$title-top-padding: 200px;
 
 body {
   overflow: hidden;
@@ -21,7 +24,8 @@ p {
 }
 
 .background-vid {
-  width: 100%;
+  height: 810px;
+  width: 1440;
   z-index: -800;
 }
 
@@ -32,9 +36,9 @@ p {
 }
 
 .title {
-  height: 10%;
-  padding-top: 200px;
-  width: 41%;
+  height: $title-height;
+  padding-top: $title-top-padding;
+  width: $title-width;
 }
 
 .content {
@@ -43,7 +47,7 @@ p {
 
 .game-container {
   clear: both;
-  margin-bottom: 15px;
+  margin: auto;
   text-align: center;
 }
 
@@ -68,18 +72,25 @@ p {
 .game-board {
   margin: 2vh auto 0;
   text-align: center;
+  vertical-align: top;
 }
 
 .board-row {
   margin: auto;
-  position: relative;
+  // position: relative;
+
 }
 
 .game-cell {
   box-sizing: border-box;
   display: inline-block;
-  float: none;
+
+  // causing problems when cells are clicked
+  // float: none;
+  // TODO
+
   height: $cell-size;
+  margin: $cell-size * .01;
   padding: 0;
   text-align: center;
   width: $cell-size;
@@ -91,5 +102,5 @@ footer {
 }
 
 .credit {
-  margin: 55px 0 5px 10px;
+  margin: 0 0 5px 10px;
 }

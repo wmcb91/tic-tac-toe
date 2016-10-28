@@ -9,7 +9,7 @@ $rubik: 'Rubik', sans-serif;
 $font-size: 14px;
 $line-height: 1.6;
 $heading-line-height: 2;
-$game-piece-size: $cell-size * 1.15;
+$game-piece-size: $cell-size;
 
 body {
   color: $charcoal;
@@ -34,6 +34,7 @@ body {
 }
 
 .game-cell {
+  text-align: center;
   font-size: $game-piece-size;
-  line-height: $cell-size;
+  line-height: $game-piece-size;
 }

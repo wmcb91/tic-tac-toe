@@ -20,6 +20,10 @@ body {
   box-shadow: 0 0 75px $stranger-shadow;
 }
 
+.board-row {
+  user-select: none;
+}
+
 .game-cell {
   border: 1px solid $black;
   box-shadow: 0 0 60px $stranger-shadow;
@@ -27,7 +31,16 @@ body {
 
 .game-cell:hover {
   box-shadow: 0 0 60px $off-white;
+  cursor: pointer;
   opacity: .4;
+  user-select: none;
+}
+
+.game-cell-clicked {
+  box-shadow: 0 0 60px $off-white;
+  cursor: pointer;
+  opacity: .6;
+  user-select: none;
 }
 
 //Change hover icon from highlight bar to mouse or finger for anchors
