@@ -5,11 +5,11 @@
 
 .board-row {
   @include breakpoint(tiny) {
-    width: 80vw;
+    width: $row-width * .85;
   }
 
   @include breakpoint(x-small) {
-    width: $row-width * .8;
+    width: $row-width * .95;
   }
 
   @include breakpoint(small) {
@@ -27,15 +27,17 @@
 
 .game-cell {
   @include breakpoint(tiny) {
-    font-size: 25vw;
-    height: 30vw;
-    width: 25vw;
+    font-size: $cell-size * .85;
+    height: $cell-size * .85;
+    margin: $cell-size * .0085;
+    width: $cell-size * .85;
   }
 
   @include breakpoint(x-small) {
-    font-size: $cell-size * .79;
-    height: $cell-size * .79;
-    width: $cell-size * .79;
+    font-size: $cell-size * .95;
+    height: $cell-size * .95;
+    margin: $cell-size * .0095;
+    width: $cell-size * .95;
   }
 
   @include breakpoint(small) {
@@ -54,41 +56,89 @@
   }
 }
 
-// html {
-//   @include breakpoint(large) {
-//     height: 944px;
-//   }
-// }
-
-.title {
+.btn-text {
   @include breakpoint(tiny) {
-
+    font-size: $new-game-size;
+    line-height: $new-game-size;
   }
 
   @include breakpoint(x-small) {
-
+    font-size: $new-game-size;
+    line-height: $new-game-size * .8;
   }
 
   @include breakpoint(small) {
-
+    font-size: $new-game-size * .9;
+    line-height: $new-game-size;
   }
 
   @include breakpoint(medium) {
-
+    font-size: $new-game-size;
+    line-height: $new-game-size;
   }
 
   @include breakpoint(large) {
+    font-size: $new-game-size;
+    line-height: $new-game-size;
+  }
+}
 
+.title {
+  @include breakpoint(tiny) {
+    height: $title-width * 1.1;
+    width: $title-width * 1.1;
+  }
+
+  @include breakpoint(x-small) {
+    height: $title-width * 1.1;
+    width: $title-width * 1.1;
+  }
+
+  @include breakpoint(small) {
+    height: $title-width;
+    width: $title-width;
+  }
+
+  @include breakpoint(medium) {
+    height: $title-width;
+    width: $title-width;
+  }
+
+  @include breakpoint(large) {
+    height: $title-width;
+    width: $title-width;
+  }
+}
+
+.background-vid {
+  @include breakpoint(tiny) {
+    width: $background-width + 16vw;
+  }
+
+  @include breakpoint(x-small) {
+    width: $background-width + 16vw;
+  }
+
+  @include breakpoint(small) {
+    width: $background-width + 16vw;
+  }
+
+  @include breakpoint(medium) {
+    width: $background-width + 16vw;
+  }
+
+  @include breakpoint(large) {
+    width: $background-width;
   }
 }
 
 .credit {
   @include breakpoint(tiny) {
-    font-size: ($credit-size * .75);
+    font-size: ($credit-size * .45);
   }
 
   @include breakpoint(x-small) {
-    font-size: ($credit-size * .75);
+    font-size: ($credit-size * .55);
   }
 
   @include breakpoint(small) {

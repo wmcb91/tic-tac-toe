@@ -2,6 +2,8 @@
 
 $title-size: 75px;
 $credit-size: 16px;
+$new-game-size: 2vw;
+$new-game-line-height: 25px;
 
 $sumana: 'Sumana';
 $rubik: 'Rubik', sans-serif;
@@ -19,8 +21,7 @@ body {
 .btn-text {
   color: $stranger-red;
   font-weight: 700;
-  line-height: 25px;
-  transition: 2s;
+  // transition: 1s;
   user-select: none;
 }
 
@@ -30,11 +31,10 @@ body {
 
 .title {
   font-family: $rubik;
-  // font-size: 75px;
 }
 
 .game-cell {
-  text-align: center;
   font-size: $game-piece-size;
   line-height: $game-piece-size;
+  text-align: center;
 }

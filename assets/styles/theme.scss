@@ -38,9 +38,9 @@ body {
 
 .game-cell-clicked {
   box-shadow: 0 0 60px $off-white;
-  cursor: pointer;
+  // cursor: pointer;
   opacity: .6;
-  user-select: none;
+  // user-select: none;
 }
 
 //Change hover icon from highlight bar to mouse or finger for anchors
