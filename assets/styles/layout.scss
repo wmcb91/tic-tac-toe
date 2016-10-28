@@ -2,6 +2,7 @@ $row-width: 740px;
 $cell-size: $row-width / 3.6;
 
 body {
+  overflow: hidden;
   z-index: 10;
 }
 
