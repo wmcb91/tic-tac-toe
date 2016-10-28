@@ -8,7 +8,7 @@ const signInSuccess = () => {
   $('#sign-in-failure').hide();
 
   //debug
-  console.log('data.user is', data.user);
+  console.log('Sign in successful');
 };
 
 const signInFailure = (error) => {
