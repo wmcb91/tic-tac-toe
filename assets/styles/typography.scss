@@ -1,18 +1,10 @@
 @import 'layout';
-// margin
-// width and friends (like max-width)
-// line-height
-// font-size
-// padding
 
 $title-size: 75px;
 $credit-size: 16px;
 
-// font-family: 'VT323', monospace;
-$bungee-shade: 'Bungee Shade', cursive;
-$bungee: 'Bungee', cursive;
+$sumana: 'Sumana';
 $rubik: 'Rubik', sans-serif;
-$vt323: 'VT323', monospace;
 
 $font-size: 14px;
 $line-height: 1.6;
@@ -21,8 +13,20 @@ $game-piece-size: $cell-size * 1.15;
 
 body {
   color: $charcoal;
-  font-family: $rubik;
+  font-family: $sumana;
 }
+
+.btn-text {
+  color: $stranger-red;
+  font-weight: 700;
+  line-height: 25px;
+  transition: 2s;
+  user-select: none;
+}
+
+// .btn-text:hover {
+//   color: $near-black;
+// }
 
 .title {
   font-family: $rubik;
