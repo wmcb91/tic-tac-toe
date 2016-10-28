@@ -29,6 +29,7 @@ p {
   // justify-content: center;
   margin-right: ($header-margin * 1.5);
   margin-top: $header-margin;
+  user-select: text;
 }
 
 .welcome-msg {

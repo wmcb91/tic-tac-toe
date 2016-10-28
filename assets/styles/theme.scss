@@ -4,6 +4,7 @@ $font-color: $charcoal;
 body {
   background-color: $background-color;
   color: $font-color;
+  user-select: none;
 }
 
 hr {
@@ -12,6 +13,7 @@ hr {
 
 .game-cell {
   border: 1px solid $black;
+  cursor: pointer;
 }
 
 //Change hover icon from highlight bar to mouse or finger for anchors

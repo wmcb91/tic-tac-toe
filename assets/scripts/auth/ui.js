@@ -13,7 +13,8 @@ const signInSuccess = (data) => {
   $('#sign-in-failure').hide();
 
   //code to show email in welcome
-  $('#user-name-welcome').html(app.user.email);
+  let userName = app.user.email.split(/\s*@\s*/)[0];
+  $('#user-name-welcome').html(userName);
 
   //debug
   // console.log('data.user is', data.user);
