@@ -6,7 +6,7 @@ $title-size: 75px;
 $credit-size: 16px;
 $new-game-size: 2vw;
 $new-game-line-height: 25px;
-$game-piece-font-size: $cell-size / 6;
+$game-piece-font-size: $cell-size / 1.5;
 
 body {
   color: $charcoal;
@@ -25,7 +25,9 @@ body {
 // }
 
 .game-cell {
+  color: $dark-blue;
   font-size: $game-piece-font-size;
   line-height: $cell-size;
   text-align: center;
+  text-shadow: 0 0 25px $stranger-red;
 }
