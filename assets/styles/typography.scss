@@ -20,15 +20,19 @@ body {
   user-select: none;
 }
 
-// .btn-text:hover {
-//   color: $near-black;
-// }
-
 .game-cell {
-  color: $dark-blue;
   font-size: $game-piece-font-size;
   line-height: $cell-size * .8;
   position: relative;
   text-align: center;
+}
+
+.x {
+  color: $grey;
+  text-shadow: 0 0 50px $stranger-blue;
+}
+
+.o {
+  color: $dark-blue;
   text-shadow: 0 0 50px $stranger-red;
 }

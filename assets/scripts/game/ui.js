@@ -1,7 +1,6 @@
 'use strict';
 
 const app = require('../app');
-// const api = require('./api');
 
 const newGame = function () {
   if (app.user === null || app.user === undefined) {
@@ -13,7 +12,7 @@ const newGame = function () {
     $('.new-game-btn').fadeOut(2);
     $('.btn-text').fadeOut(2);
     // setTimeout(function(){$('#game-container').fadeIn(500);}, 4000);
-    $('.clicked').removeClass('clicked');
+    $('.clicked').removeClass('clicked o x');
     setTimeout(function(){$('#game-container').fadeIn(500);}, 6);
     $('#game-board').find('.game-cell').text('');
     // setTimeout(function(){$('#player-turn').text('Player X begins');}, 4000);
@@ -27,8 +26,8 @@ const updateBoard = function (index, value) {
   let player = value;
   let cell = (index + 1);
   let cellId = '#' + cell;
-  $(cellId).html(`<p>${player}</p>`);
-  $(cellId).addClass('clicked');
+  $(cellId).html(`<p>${player.toUpperCase()}</p>`);
+  $(cellId).addClass(`clicked ${player}`);
   console.log("Doc width:", $(document).width());
   console.log("Doc height:", $(document).height());
 };

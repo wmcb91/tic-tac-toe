@@ -4,7 +4,7 @@ const app = require('../app');
 
 const createGameSuccess = function(data) {
     app.user.game = data.game;
-    app.activePlayer = 'X';
+    app.activePlayer = 'x';
     // console.log('app.user.game data is ', data);
     return app.activePlayer;
 };

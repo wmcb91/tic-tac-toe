@@ -53,11 +53,11 @@ const gameTied = function (index, value) {
 };
 
 const changePlayer = function (player) {
-  if (player === 'X') {
-    app.activePlayer = 'O';
+  if (player === 'x') {
+    app.activePlayer = 'o';
   }
   else {
-    app.activePlayer = 'X';
+    app.activePlayer = 'x';
   }
 };
 
