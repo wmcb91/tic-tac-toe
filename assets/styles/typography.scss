@@ -5,8 +5,8 @@ $rubik: 'Rubik', sans-serif;
 $title-size: 75px;
 $credit-size: 16px;
 $new-game-size: 2vw;
-$new-game-line-height: 25px;
-$game-piece-font-size: $cell-size / 1.5;
+$new-game-line-height: 2vw;
+$game-piece-font-size: $cell-size;
 
 body {
   color: $charcoal;
@@ -27,7 +27,8 @@ body {
 .game-cell {
   color: $dark-blue;
   font-size: $game-piece-font-size;
-  line-height: $cell-size;
+  line-height: $cell-size * .8;
+  position: relative;
   text-align: center;
-  text-shadow: 0 0 25px $stranger-red;
+  text-shadow: 0 0 50px $stranger-red;
 }

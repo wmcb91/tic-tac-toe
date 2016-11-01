@@ -6,22 +6,22 @@ body {
   color: $font-color;
 }
 
-.title {
-  opacity: .0;
-  transform: translate3d(0, 0, 0) scale(2.2);
-  user-select: none;
-}
-
 // .title {
+//   opacity: .0;
+//   transform: translate3d(0, 0, 0) scale(2.2);
 //   user-select: none;
 // }
 
-.loaded .title {
-  opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-  transition: 9s;
+.title {
   user-select: none;
 }
+
+// .loaded .title {
+//   opacity: 1;
+//   transform: translate3d(0, 0, 0) scale(1);
+//   transition: 9s;
+//   user-select: none;
+// }
 
 .new-game-btn {
   border: 4px double $stranger-red;
@@ -49,12 +49,20 @@ body {
   user-select: none;
 }
 
-.game-cell-clicked {
-  box-shadow: 0 0 60px $off-white;
-  // cursor: pointer;
-  opacity: .6;
-  // user-select: none;
+.clicked:hover {
+  box-shadow: 0 0 60px $stranger-shadow;
+  opacity: 1;
+  transition: .15s;
+  user-select: none;
 }
+
+.background-vid {
+  // height: 100vh;
+  pointer-events: none;
+  width: $background-width;
+  z-index: -800;
+}
+
 
 //Change hover icon from highlight bar to mouse or finger for anchors
 a:hover {

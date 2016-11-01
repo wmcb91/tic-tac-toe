@@ -13,7 +13,8 @@ const newGame = function () {
     $('.new-game-btn').fadeOut(2);
     $('.btn-text').fadeOut(2);
     // setTimeout(function(){$('#game-container').fadeIn(500);}, 4000);
-    setTimeout(function(){$('#game-container').fadeIn(5);}, 4);
+    $('.clicked').removeClass('clicked');
+    setTimeout(function(){$('#game-container').fadeIn(500);}, 6);
     $('#game-board').find('.game-cell').text('');
     // setTimeout(function(){$('#player-turn').text('Player X begins');}, 4000);
     // $('#game-container').show();
@@ -22,28 +23,14 @@ const newGame = function () {
   }
 };
 
-const showStats = function () {
-  if (app.user === null || app.user === undefined) {
-    $('#sign-in-warning').show();
-  }
-  else {
-    $('#showStatsModal').modal('show');
-    // console.log('showing stats modal');
-  }
-};
-
-// const countGames = function (data) {
-//
-//   // let numGames = games.length;
-//   $('#games-played').text(numGames);
-//   console.log(data.games);
-// };
-
 const updateBoard = function (index, value) {
   let player = value;
   let cell = (index + 1);
   let cellId = '#' + cell;
   $(cellId).html(`<p>${player}</p>`);
+  $(cellId).addClass('clicked');
+  console.log("Doc width:", $(document).width());
+  console.log("Doc height:", $(document).height());
 };
 
 const gameOver = function (value, result) {
@@ -66,8 +53,6 @@ const gameOver = function (value, result) {
 module.exports = {
   updateBoard,
   newGame,
-  showStats,
   gameOver,
   // showTurn,
-  // countGames,
 };

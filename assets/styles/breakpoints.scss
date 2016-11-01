@@ -61,30 +61,31 @@
   }
 }
 
+// New game button font-size and line height
 .btn-text {
   @include breakpoint(tiny) {
     font-size: $new-game-size;
-    line-height: $new-game-size;
+    line-height: $new-game-line-height;
   }
 
   @include breakpoint(x-small) {
     font-size: $new-game-size;
-    line-height: $new-game-size * .8;
+    line-height: $new-game-line-height * .8;
   }
 
   @include breakpoint(small) {
     font-size: $new-game-size * .9;
-    line-height: $new-game-size;
+    line-height: $new-game-line-height;
   }
 
   @include breakpoint(medium) {
     font-size: $new-game-size;
-    line-height: $new-game-size;
+    line-height: $new-game-line-height;
   }
 
   @include breakpoint(large) {
     font-size: $new-game-size;
-    line-height: $new-game-size;
+    line-height: $new-game-line-height;
   }
 }
 
