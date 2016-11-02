@@ -9,9 +9,8 @@ const signInSuccess = (data) => {
   console.log(app.user);
   //UI response to sign in
   $('#sign-in-failure').hide();
-
-  //debug
-  console.log('Sign in successful');
+  // //debug
+  // console.log('Sign in successful');
 };
 
 const signInFailure = (error) => {

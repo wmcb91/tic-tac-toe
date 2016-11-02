@@ -32,40 +32,20 @@
             Initially hidden -->
         <div class='win-tie-message' id='win-tie-message'>
         </div>
+        <div id="play-again-btn" class="new-game-btn">
+          <h3 class='btn-text'>PLAY AGAIN</h3>
+        </div>
 
         <div class='container game-container' id='game-container'>
           <!-- Display of players turn
               using placeholder currently-->
-          <h2 id="player-turn" class="player-turn"></h2>
 
-          <!--  GAME OVER MODAL-->
-          <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog"
-          aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button
-                      type="button" class="close" data-dismiss="modal"
-                      aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-                  <h4 class="modal-title" id="gameOver">Game Over</h4>
-                </div>
-                <div class="modal-body">
-                <!-- insert game result text in <h3> below  -->
-                <h3 class="modal--subtitle" id="gameResult"></h3>
-                </div>
-                <!-- PLAY AGAIN BUTTON include if there is time-->
-                <div class="modal-footer">
-                  <button
-                      type="button" class="btn btn-default play-again"
-                      id="play-again-button"
-                      data-dismiss="modal">Play Again
-                  </button>
-                </div>
-              </div>
-            </div>
+          <!-- GAME OVER MESSEGE -->
+          <div class='game-over'>
+            <h1 class='game-over-message'><!----></h1>
           </div>
+          <!-- END GAME OVER MESSAGE -->
+
           <!-- GAME BOARD -->
           <div class="container game-board" id="game-board">
               <div class="row board-row">

@@ -16,16 +16,15 @@ const setBackGround = () => {
 };
 
 $(() => {
-  authEvents.addHandlers();
-  gameEvents.addHandlers();
-  setBackGround();
-  // document.body.className += 'loaded';
-  // $('.new-game-btn').hide();
-  // setTimeout(function(){$('.new-game-btn').show();}, 9000);
+  $('#win-tie-message').hide();
   $('#pwd-change-msg').hide();
   $('#sign-out').hide();
   $('#user-welcome').hide();
-  $('#sign-in-warning').hide();
   $('#game-container').hide();
-  $('#sign-in-failure').hide();
+  $('.new-game-btn').hide();
+  gameEvents.addHandlers();
+  setBackGround();
+  document.body.className += 'loaded';
+  setTimeout(function(){$('#new-game-btn').show();}, 9000);
+  authEvents.onSignIn();
 });

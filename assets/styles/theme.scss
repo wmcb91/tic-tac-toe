@@ -2,26 +2,25 @@ $background-color: $off-white;
 $font-color: $charcoal;
 
 body {
-  // background-color: $background-color;
   color: $font-color;
 }
 
-// .title {
-//   opacity: .0;
-//   transform: translate3d(0, 0, 0) scale(2.2);
-//   user-select: none;
-// }
-
 .title {
+  opacity: .0;
+  transform: translate3d(0, 0, 0) scale(2.2);
   user-select: none;
 }
 
-// .loaded .title {
-//   opacity: 1;
-//   transform: translate3d(0, 0, 0) scale(1);
-//   transition: 9s;
+// .title {
 //   user-select: none;
 // }
+
+.loaded .title {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition: 9s;
+  user-select: none;
+}
 
 .new-game-btn {
   border: 4px double $stranger-red;

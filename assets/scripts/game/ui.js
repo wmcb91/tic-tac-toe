@@ -8,9 +8,10 @@ const newGame = function () {
   }
   else {
     // $('.title').fadeOut(4000);
+    $('#win-tie-message').hide();
     $('.title').fadeOut(4);
     $('.new-game-btn').fadeOut(2);
-    $('.btn-text').fadeOut(2);
+    $('#new-game-btn.btn-text').fadeOut(2);
     // setTimeout(function(){$('#game-container').fadeIn(500);}, 4000);
     $('.clicked').removeClass('clicked o x');
     setTimeout(function(){$('#game-container').fadeIn(500);}, 6);
@@ -33,25 +34,21 @@ const updateBoard = function (index, value) {
 };
 
 const gameOver = function (value, result) {
-  let winner = value;
+  let winner = value.toUpperCase();
   if (result === true) {
-    $('#gameResult').text('Player ' + winner + ' won this game!');
+    $('.win-tie-message').text('Player ' + winner + ' won this game!');
   }
   else {
-    $('#gameResult').text('Game ended in a tie');
+    $('.win-tie-message').text('Game ended in a tie');
   }
-  $('#gameOverModal').modal('show');
-  // $('#player-turn').text('Game Over');
+  setTimeout(function(){$('#game-container').fadeOut(3500);}, 600);
+  setTimeout(function(){$('#win-tie-message').fadeIn(500);}, 3506);
+  setTimeout(function(){$('#play-again-btn').fadeIn(500);}, 3506);
+  // $('#gameOverModal').modal('show');
 };
-
-// const showTurn = function (player) {
-//   player = app.activePlayer;
-//   $('#player-turn').text('Player ' + player + "'s turn");
-// };
 
 module.exports = {
   updateBoard,
   newGame,
   gameOver,
-  // showTurn,
 };

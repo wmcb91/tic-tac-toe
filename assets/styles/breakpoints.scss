@@ -138,6 +138,51 @@
   }
 }
 
+.win-tie-message {
+  @include breakpoint(tiny) {
+    color: $grey;
+    font-size: $game-piece-font-size * .7;
+    line-height: $cell-size * .6;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0 50px $stranger-blue;
+  }
+
+  @include breakpoint(x-small) {
+    color: $grey;
+    font-size: $game-piece-font-size * .7;
+    line-height: $cell-size * .6;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0 50px $stranger-blue;
+  }
+
+  @include breakpoint(small) {
+    color: $grey;
+    font-size: $game-piece-font-size * .7;
+    line-height: $cell-size * .6;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0 50px $stranger-blue;
+  }
+
+  @include breakpoint(medium) {
+    color: $grey;
+    font-size: $game-piece-font-size * .7;
+    line-height: $cell-size * .6;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0 50px $stranger-blue;
+  }
+
+  @include breakpoint(large) {
+    color: $grey;
+    font-size: $game-piece-font-size * .5;
+    line-height: $cell-size * .8;
+  }
+}
+
+
 .credit {
   @include breakpoint(tiny) {
     font-size: ($credit-size * .45);
