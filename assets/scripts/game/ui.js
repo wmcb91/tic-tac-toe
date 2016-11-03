@@ -4,22 +4,15 @@ const app = require('../app');
 
 const newGame = function () {
   if (app.user === null || app.user === undefined) {
-    console.log('app.user is null');
   }
   else {
-    // $('.title').fadeOut(4000);
     $('#win-tie-message').fadeOut(600);
     $('.title').fadeOut(600);
     $('.new-game-btn').fadeOut(600);
     $('#new-game-btn.btn-text').fadeOut(600);
-    // setTimeout(function(){$('#game-container').fadeIn(500);}, 4000);
     $('.clicked').removeClass('clicked o x');
     setTimeout(function(){$('#game-container').fadeIn(500);}, 600);
     $('#game-board').find('.game-cell').text('');
-    // setTimeout(function(){$('#player-turn').text('Player X begins');}, 4000);
-    // $('#game-container').show();
-    // $('#game-board').find('.game-cell').text('');
-    // $('#player-turn').text('Player X begins');
   }
 };
 
@@ -32,7 +25,6 @@ const updateBoard = function (index, value) {
 };
 
 const gameOver = function (value, result) {
-  console.log('game is over');
   let winner = value;
   if (result === true) {
     $('.win-tie-message').text('Player ' + winner.toUpperCase() + ' wins!');

@@ -33,7 +33,6 @@ const gameWon = function (index, value) {
       (cells[6] === cells[4] && cells[6] === cells[2] && cells[6] !== '')
     )
       {
-      console.log('gameWon thinks game won');
       return true;
     }
     else {
@@ -46,7 +45,6 @@ const gameTied = function (index, value) {
   cells[index] = value;
 
   if (cells.indexOf('') === -1) {
-    console.log('gameTied thinks game tied');
     return true;
   }
   else {
@@ -74,7 +72,6 @@ const executeTurn = function (index) {
   }
 
   if (gameWon(index, value) === true) {
-    console.log('executeTurn thinks game won');
     ui.gameOver(value, true);
     api.updateGame(index, value, true)
       .done(render.updateGameSuccess)
@@ -83,7 +80,6 @@ const executeTurn = function (index) {
   }
 
   if (gameTied(index, value) === true && gameWon(index, value) === false) {
-    console.log('executeTurn thinks game tied');
     ui.gameOver(gameTied);
     api.updateGame(index, value, true)
       .done(render.updateGameSuccess)

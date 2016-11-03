@@ -4,7 +4,6 @@ const app = require('../app');
 
 
 const indexGames = () => {
-  // console.log('index request success');
   return $.ajax({
     url: app.host + '/games',
     method: 'GET',
@@ -15,7 +14,6 @@ const indexGames = () => {
 };
 
 const createGame = () => {
-  // console.log('create success');
   return $.ajax({
     url: app.host + '/games',
     method: 'POST',
@@ -27,8 +25,6 @@ const createGame = () => {
 };
 
 const updateGame = (index, value, over) => {
-  // console.log(index, value, over);
-  // console.log('update game has been reached');
   return $.ajax({
     url: app.host + '/games/' + app.user.game.id,
     method: 'PATCH',
