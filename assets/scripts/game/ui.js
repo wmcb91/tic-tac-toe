@@ -33,18 +33,20 @@ const updateBoard = function (index, value) {
 
 const gameOver = function (value, result) {
   console.log('game is over');
-  let winner = value.toUpperCase();
+  let winner = value;
   if (result === true) {
-    $('.win-tie-message').text('Player ' + winner + ' won this game!');
+    $('.win-tie-message').text('Player ' + winner.toUpperCase() + ' wins!');
   }
   else {
-    $('.win-tie-message').text('Game ended in a tie');
+    $('.win-tie-message').text('Game Tied');
   }
   $('.game-cell').addClass('over');
+  $('.game-board').addClass('over');
   setTimeout(function(){$('#game-container').fadeOut(3500);}, 600);
-  setTimeout(function(){$('#win-tie-message').fadeIn(500);}, 3506);
-  setTimeout(function(){$('#play-again-btn').fadeIn(500);}, 3506);
-  setTimeout(function(){$('.game-cell').removeClass('over');}, 3506);
+  setTimeout(function(){$('#win-tie-message').fadeIn(1500);}, 4000);
+  setTimeout(function(){$('#play-again-btn').fadeIn(1500);}, 4000);
+  setTimeout(function(){$('.game-cell').removeClass('over');}, 3750);
+  setTimeout(function(){$('.game-board').removeClass('over');}, 3750);
 };
 
 module.exports = {

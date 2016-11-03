@@ -57,10 +57,15 @@ body {
 
 .over,
 .over:hover {
-  box-shadow: 0 0 60px $off-white;
   cursor: none;
 }
 
+.over.game-cell,
+.over.game-cell:hover,
+.over.clicked,
+.over.clicked:hover {
+  box-shadow: 0 0 60px $off-white;
+}
 
 .background-vid {
   // height: 100vh;
