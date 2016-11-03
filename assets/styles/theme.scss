@@ -55,6 +55,13 @@ body {
   user-select: none;
 }
 
+.over,
+.over:hover {
+  box-shadow: 0 0 60px $off-white;
+  cursor: none;
+}
+
+
 .background-vid {
   // height: 100vh;
   pointer-events: none;

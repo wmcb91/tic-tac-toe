@@ -40,10 +40,11 @@ const gameOver = function (value, result) {
   else {
     $('.win-tie-message').text('Game ended in a tie');
   }
+  $('.game-cell').addClass('over');
   setTimeout(function(){$('#game-container').fadeOut(3500);}, 600);
   setTimeout(function(){$('#win-tie-message').fadeIn(500);}, 3506);
   setTimeout(function(){$('#play-again-btn').fadeIn(500);}, 3506);
-  // $('#gameOverModal').modal('show');
+  setTimeout(function(){$('.game-cell').removeClass('over');}, 3506);
 };
 
 module.exports = {
