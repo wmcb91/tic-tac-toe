@@ -61,9 +61,7 @@ body {
 }
 
 .over.game-cell,
-.over.game-cell:hover,
-.over.clicked,
-.over.clicked:hover {
+.over.game-cell:hover {
   box-shadow: 0 0 60px $off-white;
 }
 
