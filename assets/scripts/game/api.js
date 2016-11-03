@@ -47,36 +47,8 @@ const updateGame = (index, value, over) => {
         });
 };
 
-// const watchGame = (data) => {
-//   console.log(data);
-//   return $.ajax({
-//     url: app.host + '/sign-up' + app.game.id/watch,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//     data: data,
-//   });
-// };
-
-// const showGame = (data) => {
-//   console.log(data);
-//   return $.ajax({
-//     //url app.game correct?
-//     url: app.host + '/games' + app.game.id,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//     data: data,
-//   });
-// };
-
-
 module.exports = {
   indexGames,
   createGame,
-  // showGame,
   updateGame,
-  // watch,
 };

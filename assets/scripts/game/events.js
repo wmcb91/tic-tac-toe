@@ -6,7 +6,6 @@ const logic = require('./logic');
 const render = require('../app/render');
 
 const onNewGame = function () {
-  event.preventDefault();
   api.createGame()
     .done(render.createGameSuccess, ui.newGame)
     .fail(render.createGameFailure);
@@ -20,7 +19,7 @@ const onClickBoard = function (event) {
 
 const addHandlers = () => {
   $('#new-game-btn').on('click', onNewGame);
-  $('#play-again-button').on('click', onNewGame);
+  $('#play-again-btn').on('click', onNewGame);
   $('#1').on('click', {index: 0}, onClickBoard);
   $('#2').on('click', {index: 1}, onClickBoard);
   $('#3').on('click', {index: 2}, onClickBoard);

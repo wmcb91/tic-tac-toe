@@ -65,7 +65,6 @@ const indexGamesFailure = function (error) {
 
 
 module.exports = {
-  // render,
   createGameSuccess,
   createGameFailure,
   updateGameSuccess,

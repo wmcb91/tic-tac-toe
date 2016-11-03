@@ -7,6 +7,7 @@ $credit-size: 16px;
 $new-game-size: 2vw;
 $new-game-line-height: 2vw;
 $game-piece-font-size: $cell-size;
+$winner-font-size: 9vw;
 
 body {
   color: $charcoal;
@@ -16,7 +17,6 @@ body {
 .btn-text {
   color: $stranger-red;
   font-weight: 700;
-  // transition: 1s;
   user-select: none;
 }
 
@@ -38,6 +38,7 @@ body {
 }
 
 .win-tie-message {
+  line-height: 1;
   text-align: center;
   text-shadow: 0 0 50px $stranger-blue;
 }

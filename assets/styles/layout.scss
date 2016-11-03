@@ -1,5 +1,6 @@
 $background-width: 108vw;
 $row-width: 91vh;
+// $row-width: 50vw;
 $cell-size: $row-width / 3.06;
 $title-height: 15%;
 $title-width: 45%;
@@ -7,7 +8,6 @@ $title-top-padding: 20vh;
 
 body {
   overflow: hidden;
-  // z-index: 10;
 }
 
 .background {
@@ -27,7 +27,6 @@ body {
 .overlay {
   text-align: center;
   width: 100%;
-  // z-index: 100;
 }
 
 .title {
@@ -59,10 +58,13 @@ body {
   transition: 2s;
 }
 
-// .player-turn {
-//   clear: both;
-//   text-align: center;
-// }
+.play-again-btn {
+  margin: 6.5vh 0 0;
+}
+
+.win-tie-message {
+  margin: 10vh auto 0;
+}
 
 .game-board {
   margin: 2vh auto 0;
@@ -72,18 +74,11 @@ body {
 
 .board-row {
   margin: auto;
-  // position: relative;
-
 }
 
 .game-cell {
   box-sizing: border-box;
   display: inline-block;
-
-  // causing problems when cells are clicked
-  // float: none;
-  // TODO
-
   height: $cell-size;
   margin: $cell-size * .01;
   overflow: hidden;
