@@ -102,12 +102,12 @@
 
   @include breakpoint(medium) {
     font-size: $new-game-size;
-    line-height: $new-game-line-height;
+    line-height: $new-game-line-height * .9;
   }
 
   @include breakpoint(large) {
     font-size: $new-game-size;
-    line-height: $new-game-line-height;
+    line-height: $new-game-line-height * .9;
   }
 }
 

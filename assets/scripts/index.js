@@ -16,15 +16,17 @@ const setBackGround = () => {
 };
 
 $(() => {
+  $('.title').hide();
+  $('.new-game-btn').hide();
+  $('#game-container').hide();
   $('#win-tie-message').hide();
   $('#pwd-change-msg').hide();
   $('#sign-out').hide();
   $('#user-welcome').hide();
-  $('#game-container').hide();
-  $('.new-game-btn').hide();
+  $('.title').show();
   gameEvents.addHandlers();
   setBackGround();
-  document.body.className += 'loaded';
+  $('header').addClass('loaded');
   setTimeout(function(){$('#new-game-btn').show();}, 9000);
   authEvents.onSignIn();
 });
