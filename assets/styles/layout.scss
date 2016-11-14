@@ -4,7 +4,7 @@ $row-width: 91vh;
 $cell-size: $row-width / 3.06;
 $title-height: 15%;
 $title-width: 45%;
-$title-top-padding: 20vh;
+$title-top-padding: 24vh;
 
 body {
   overflow: hidden;
@@ -51,11 +51,12 @@ body {
 }
 
 .new-game-btn {
-  display: inline-block;
-  margin: 3.5vh 0 0;
+  display: block;
+  margin: 3.5vh auto;
   padding: 2px;
   position: relative;
   transition: 2s;
+  width: 16vw;
 }
 
 .play-again-btn {
