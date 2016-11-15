@@ -13,12 +13,14 @@ const index = function () {
 };
 
 const signIn = function () {
+  let num = Math.floor(Math.random() * 21).toString();
+  let email = num + '@guest.com';
   return $.ajax({
     url: app.host + '/sign-in',
     method: 'POST',
     data: {
             "credentials": {
-              "email": "guest@guest.guest",
+              "email": email,
               "password": "guest"
             }
           }
