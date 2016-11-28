@@ -11,7 +11,7 @@ const signInSuccess = (data) => {
 
 const signInFailure = (error) => {
   $('#sign-in-failure').show();
-  console.error(error);
+  console.log("error is", error);
   return error;
 };
 
