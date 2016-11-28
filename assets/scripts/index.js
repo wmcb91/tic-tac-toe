@@ -5,8 +5,6 @@ require('./example');
 
 const authEvents = require('./auth/events');
 const gameEvents = require('./game/events');
-// const render = require('./app/render');
-// const app = require('./app');
 
 const setBackGround = () => {
   if ($(document).width() < 1025) {
