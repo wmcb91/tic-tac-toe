@@ -1,61 +1,23 @@
 @import 'breakpoint';
 @import 'layout';
 @import 'typography';
-
-// body {
-//   @include breakpoint(tiny) {
-//     font-size: .8em;
-//     max-width: 400px;
-//   }
-
-//   @include breakpoint(small) {
-//     font-size: .9em;
-//     max-width: 500px;
-//   }
-
-//   @include breakpoint(medium) {
-//     font-size: 1em;
-//     max-width: 700px;
-//   }
-// }
-
-.container {
-  @include breakpoint(tiny) {
-    max-width: 100%;
-  }
-
-  @include breakpoint(x-small) {
-    max-width: 460px;
-  }
-
-  @include breakpoint(small) {
-    max-width: 768px;
-  }
-
-  @include breakpoint(medium) {
-    max-width: 992px;
-  }
-
-  @include breakpoint(large) {
-    max-width: $base-container-width;
-  }
-}
+@import 'theme';
 
 .board-row {
   @include breakpoint(tiny) {
-    width: 75%;
+    width: $row-width * .85;
   }
 
   @include breakpoint(x-small) {
-    width: 75%;
+    width: $row-width * .95;
   }
 
   @include breakpoint(small) {
-    width: ($row-width * 7.68 / 12);
+    width: $row-width;
   }
 
   @include breakpoint(medium) {
-    width: ($row-width * 9.92 / 12);
+    width: $row-width;
   }
 
   @include breakpoint(large) {
@@ -65,86 +27,179 @@
 
 .game-cell {
   @include breakpoint(tiny) {
-    font-size: ($game-piece-size * 3 / 12);
-    height: ($cell-size * 3 / 12);
-    line-height: ($cell-size * 3 / 12);
-    width: ($cell-size * 3 / 12);
+    height: $cell-size * .85;
+    margin: $cell-size * .0085;
+    width: $cell-size * .85;
   }
 
   @include breakpoint(x-small) {
-    font-size: ($game-piece-size * 4 / 12);
-    height: ($cell-size * 4 / 12);
-    line-height: ($cell-size * 4 / 12);
-    width: ($cell-size * 4 / 12);
+    height: $cell-size * .95;
+    margin: $cell-size * .0095;
+    width: $cell-size * .95;
   }
 
   @include breakpoint(small) {
-    font-size: ($game-piece-size * 7.68 / 12);
-    height: ($cell-size * 7.68 / 12);
-    line-height: ($cell-size * 7.68 / 12);
-    width: ($cell-size * 7.68 / 12);
+    height: $cell-size;
+    width: $cell-size;
   }
 
   @include breakpoint(medium) {
-    font-size: ($game-piece-size * 9.92 / 12);
-    height: ($cell-size * 9.92 / 12);
-    line-height: ($cell-size * 9.92 / 12);
-    width: ($cell-size * 9.92 / 12);
+    height: $cell-size;
+    width: $cell-size;
   }
 
   @include breakpoint(large) {
-    font-size: $game-piece-size;
     height: $cell-size;
-    line-height: $cell-size;
     width: $cell-size;
   }
 }
 
-html {
+// .game-cell {
+//   @include breakpoint(tiny) {
+//     height: $cell-width * .85;
+//     margin: $cell-width * .0085;
+//     width: $cell-width * .85;
+//   }
+//
+//   @include breakpoint(x-small) {
+//     height: $cell-width * .95;
+//     margin: $cell-width * .0095;
+//     width: $cell-width * .95;
+//   }
+//
+//   @include breakpoint(small) {
+//     height: $cell-width;
+//     width: $cell-width;
+//   }
+//
+//   @include breakpoint(medium) {
+//     height: $cell-width;
+//     width: $cell-width;
+//   }
+//
+//   @include breakpoint(large) {
+//     height: $cell-height;
+//     width: $cell-height;
+//   }
+// }
+
+// New game button font-size and line height
+.btn-text {
+  @include breakpoint(tiny) {
+    font-size: $new-game-size * .9;
+    line-height: $new-game-line-height;
+  }
+
+  @include breakpoint(x-small) {
+    font-size: $new-game-size * .9;
+    line-height: $new-game-line-height * .9;
+  }
+
+  @include breakpoint(small) {
+    font-size: $new-game-size * .9;
+    line-height: $new-game-line-height;
+  }
+
+  @include breakpoint(medium) {
+    font-size: $new-game-size;
+    line-height: $new-game-line-height * .9;
+  }
+
   @include breakpoint(large) {
-    height: 944px;
+    font-size: $new-game-size;
+    line-height: $new-game-line-height * .9;
   }
 }
 
 .title {
   @include breakpoint(tiny) {
-    font-size: 5.2vw;
-    margin-left: 4px;
-    margin-top: 2.8vh;
+    height: $title-width * 1.1;
+    width: $title-width * 1.1;
   }
 
   @include breakpoint(x-small) {
-    font-size: 6.7vw;
-    margin-left: 4px;
-    margin-top: 2.0vh;
+    height: $title-width * 1.1;
+    width: $title-width * 1.1;
   }
 
   @include breakpoint(small) {
-    font-size: ($title-size * .94);
-    margin: inherit;
-    margin-left: 4px;
+    height: $title-width;
+    width: $title-width;
   }
 
   @include breakpoint(medium) {
-    font-size: $title-size;
-    margin: inherit;
-    margin-left: 4px;
+    height: $title-width;
+    width: $title-width;
   }
 
   @include breakpoint(large) {
-    font-size: $title-size;
-    margin: inherit;
-    margin-left: 4px;
+    height: $title-width;
+    width: $title-width;
   }
 }
 
-.credit {
+.background-vid {
   @include breakpoint(tiny) {
-    font-size: ($credit-size * .75);
+    width: $background-width + 16vw;
   }
 
   @include breakpoint(x-small) {
-    font-size: ($credit-size * .75);
+    width: $background-width + 16vw;
+  }
+
+  @include breakpoint(small) {
+    width: $background-width + 16vw;
+  }
+
+  @include breakpoint(medium) {
+    width: $background-width;
+  }
+
+  @include breakpoint(large) {
+    width: $background-width;
+  }
+}
+
+.win-tie-message {
+  @include breakpoint(tiny) {
+    color: $grey;
+    font-size: $winner-font-size;
+    max-width: 60vw;
+  }
+
+  @include breakpoint(x-small) {
+    color: $grey;
+    font-size: $winner-font-size;
+    max-width: 75vw;
+  }
+
+  @include breakpoint(small) {
+    color: $grey;
+    font-size: $winner-font-size;
+    max-width: 75vw;
+  }
+
+  @include breakpoint(medium) {
+    color: $grey;
+    font-size: $winner-font-size;
+    max-width: 75vw;
+  }
+
+  @include breakpoint(large) {
+    color: $grey;
+    font-size: $winner-font-size;
+    max-width: 75vw;
+  }
+}
+
+
+.credit {
+  @include breakpoint(tiny) {
+    font-size: ($credit-size * .45);
+  }
+
+  @include breakpoint(x-small) {
+    font-size: ($credit-size * .55);
   }
 
   @include breakpoint(small) {
@@ -159,8 +214,3 @@ html {
     font-size: $credit-size * .85;
   }
 }
-
-// .game-cell {
-//   height: $height;
-//   width: ($row-width / 3);
-// }

@@ -6,20 +6,9 @@ const logic = require('./logic');
 const render = require('../app/render');
 
 const onNewGame = function () {
-  event.preventDefault();
-  ui.newGame();
   api.createGame()
-    .done(render.createGameSuccess)
+    .done(render.createGameSuccess, ui.newGame)
     .fail(render.createGameFailure);
-};
-
-const onShowStats = function () {
-  event.preventDefault();
-  ui.showStats();
-  api.indexGames()
-    .done(render.indexGamesSuccess)
-    .fail(render.indexGamesFailure);
-  // ui.countGames();
 };
 
 const onClickBoard = function (event) {
@@ -29,8 +18,8 @@ const onClickBoard = function (event) {
 };
 
 const addHandlers = () => {
-  $('#new-game-btn, #play-again-button').on('click', onNewGame);
-  $('#show-stats-btn').on('click', onShowStats);
+  $('#new-game-btn').on('click', onNewGame);
+  $('#play-again-btn').on('click', onNewGame);
   $('#1').on('click', {index: 0}, onClickBoard);
   $('#2').on('click', {index: 1}, onClickBoard);
   $('#3').on('click', {index: 2}, onClickBoard);
@@ -44,4 +33,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+  onNewGame
 };

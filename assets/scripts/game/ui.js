@@ -1,65 +1,48 @@
 'use strict';
 
 const app = require('../app');
-// const api = require('./api');
 
 const newGame = function () {
   if (app.user === null || app.user === undefined) {
-    $('#sign-in-warning').show();
   }
   else {
-    $('#game-container').show();
+    $('#win-tie-message').fadeOut(600);
+    $('.title').fadeOut(600);
+    $('.new-game-btn').fadeOut(600);
+    $('#new-game-btn.btn-text').fadeOut(600);
+    $('.clicked').removeClass('clicked o x');
+    setTimeout(function(){$('#game-container').fadeIn(500);}, 600);
     $('#game-board').find('.game-cell').text('');
-    $('#player-turn').text('Player X begins');
   }
 };
-
-const showStats = function () {
-  if (app.user === null || app.user === undefined) {
-    $('#sign-in-warning').show();
-  }
-  else {
-    $('#showStatsModal').modal('show');
-    // console.log('showing stats modal');
-  }
-};
-
-// const countGames = function (data) {
-//
-//   // let numGames = games.length;
-//   $('#games-played').text(numGames);
-//   console.log(data.games);
-// };
 
 const updateBoard = function (index, value) {
   let player = value;
   let cell = (index + 1);
   let cellId = '#' + cell;
-  $(cellId).text(player);
+  $(cellId).html(`<p>${player.toUpperCase()}</p>`);
+  $(cellId).addClass(`clicked ${player}`);
 };
 
 const gameOver = function (value, result) {
   let winner = value;
   if (result === true) {
-    $('#gameResult').text('Player ' + winner + ' won this game!');
+    $('.win-tie-message').text('Player ' + winner.toUpperCase() + ' wins!');
   }
   else {
-    $('#gameResult').text('Game ended in a tie');
+    $('.win-tie-message').text('Game Tied');
   }
-  $('#gameOverModal').modal('show');
-  $('#player-turn').text('Game Over');
-};
-
-const showTurn = function (player) {
-  player = app.activePlayer;
-  $('#player-turn').text('Player ' + player + "'s turn");
+  $('.game-cell').addClass('over');
+  $('.game-board').addClass('over');
+  setTimeout(function(){$('#game-container').fadeOut(3500);}, 600);
+  setTimeout(function(){$('#win-tie-message').fadeIn(1500);}, 4000);
+  setTimeout(function(){$('#play-again-btn').fadeIn(1500);}, 4000);
+  setTimeout(function(){$('.game-cell').removeClass('over');}, 3750);
+  setTimeout(function(){$('.game-board').removeClass('over');}, 3750);
 };
 
 module.exports = {
   updateBoard,
   newGame,
-  showStats,
   gameOver,
-  showTurn,
-  // countGames,
 };

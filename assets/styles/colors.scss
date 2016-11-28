@@ -1,13 +1,14 @@
-// Can name colors for use later.
-//$off-white: #fefefe;
-
-
 $off-white: #fefefe;
 $grey: #e5e5e5;
 $charcoal: #4e4e4e;
 $white: #fff;
 $black: #000;
 $red: #f00;
+$stranger-red: #cb3312;
+$stranger-shadow: #bf0607;
+$stranger-blue: #2f9c9c;
+$dark-blue: #052238;
+$near-black: #05050c;
 
 @function tint($color, $percentage) {
   @return mix($white, $color, $percentage);

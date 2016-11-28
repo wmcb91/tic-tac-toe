@@ -1,131 +1,97 @@
-$row-width: 720px;
-$cell-size: 235px;
-$base-container-width: 1200px;
-$header-margin: 15px;
-$header-box-height: 60px;
+$background-width: 108vw;
+$row-width: 91vh;
+// $row-width: 50vw;
+$cell-size: $row-width / 3.06;
+$title-height: 15%;
+$title-width: 45%;
+$title-top-padding: 24vh;
 
-p {
-  margin: 0;
+body {
+  overflow: hidden;
+}
+
+
+.background {
+  left: 0;
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  z-index: -800;
+}
+
+.background-vid {
+  width: $background-width;
+  z-index: -800;
+}
+
+.overlay {
+  text-align: center;
+  width: 100%;
 }
 
 .title {
-  float: left;
-  margin: 0 0 0 $header-margin;
-}
-
-.header-box {
-  align-items: flex-end;
-  display: flex;
-  float: right;
-  height: $header-box-height;
-  margin-right: $header-margin;
-  margin-top: $header-margin;
-}
-
-.user-welcome {
-  align-items: center;
-  display: flex;
-  float: right;
-  // justify-content: center;
-  margin-right: ($header-margin * 1.5);
-  margin-top: $header-margin;
-  user-select: text;
-}
-
-.welcome-msg {
-  float: left;
-  margin: auto 5px;
-}
-
-.cog-btn {
-  float: right;
-  margin: 3px;
-  padding: 0;
-}
-
-.glyphicon-cog {
-  margin: 0;
-  padding: 3px 3px 1px 4px;
-}
-
-.dropdown-menu {
-  text-align: center;
-}
-
-hr {
-  clear: both;
-  margin: 0;
-  position: static;
-  width: 100%;
+  height: $title-height;
+  padding-top: $title-top-padding;
+  width: $title-width;
 }
 
 .content {
   text-align: center;
 }
 
-.sign-in-alert-danger {
-  float: right;
-}
-
 .game-container {
   clear: both;
-  margin-bottom: 15px;
+  margin: auto;
   text-align: center;
 }
 
-.no-sign-in-alert-danger {
-  margin: 5px auto;
-  width: 460px;
-}
-
 .btn-text {
-  clear: both;
-  margin: 10px 5px;
+  margin: 1vh 1vw;
   text-align: center;
 }
 
 .new-game-btn {
-  clear: both;
-  margin: 15px 0 0 5px;
+  display: block;
+  margin: 3.5vh auto;
+  padding: 2px;
   position: relative;
+  transition: 2s;
+  width: 16vw;
 }
 
-.show-stats-btn {
-  // float: right;
-  position: inherit;
-  right: 25px;
-  top: 15px;
+.play-again-btn {
+  margin: 6.5vh auto;
 }
 
-.player-turn {
-  clear: both;
-  text-align: center;
+.win-tie-message {
+  margin: 25vh auto 0;
 }
 
 .game-board {
-  margin: 0 auto;
+  margin: 2vh auto 0;
   text-align: center;
+  vertical-align: top;
 }
 
 .board-row {
-  margin-left: auto;
-  margin-right: auto;
-  // width: $row-width;
+  margin: auto;
 }
 
 .game-cell {
   box-sizing: border-box;
+  display: inline-block;
   height: $cell-size;
+  margin: $cell-size * .01;
+  overflow: hidden;
   padding: 0;
   text-align: center;
   width: $cell-size;
 }
 
-footer {
-  bottom: 0;
-  position: fixed;
-}
-
 .credit {
-  margin: 55px 0 5px 10px;
+  bottom: 0;
+  margin: 0 0 .5vh 1vw;
+  position: absolute;
+  text-align: left;
 }

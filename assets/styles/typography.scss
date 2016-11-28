@@ -1,35 +1,44 @@
 @import 'layout';
-// margin
-// width and friends (like max-width)
-// line-height
-// font-size
-// padding
+$sumana: 'Sumana';
+$rubik: 'Rubik', sans-serif;
 
 $title-size: 75px;
 $credit-size: 16px;
-
-// font-family: 'VT323', monospace;
-$bungee-shade: 'Bungee Shade', cursive;
-$bungee: 'Bungee', cursive;
-$rubik: 'Rubik', sans-serif;
-$vt323: 'VT323', monospace;
-
-$font-size: 14px;
-$line-height: 1.6;
-$heading-line-height: 2;
-$game-piece-size: $cell-size * 1.15;
+$new-game-size: 2vw;
+$new-game-line-height: 2vw;
+$game-piece-font-size: $cell-size;
+$winner-font-size: 9vw;
 
 body {
   color: $charcoal;
-  font-family: $rubik;
+  font-family: $sumana;
 }
 
-.title {
-  font-family: $rubik;
-  // font-size: 75px;
+.btn-text {
+  color: $stranger-red;
+  font-weight: 700;
+  user-select: none;
 }
 
 .game-cell {
-  font-size: $game-piece-size;
-  line-height: $cell-size;
+  font-size: $game-piece-font-size;
+  line-height: $cell-size * .8;
+  position: relative;
+  text-align: center;
+}
+
+.x {
+  color: $grey;
+  text-shadow: 0 0 50px $stranger-blue;
+}
+
+.o {
+  color: $dark-blue;
+  text-shadow: 0 0 50px $stranger-red;
+}
+
+.win-tie-message {
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 0 50px $stranger-blue;
 }

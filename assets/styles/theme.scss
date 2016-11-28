@@ -2,28 +2,82 @@ $background-color: $off-white;
 $font-color: $charcoal;
 
 body {
-  background-color: $background-color;
   color: $font-color;
   user-select: none;
 }
 
-hr {
-  border: 1px solid $black;
+.title {
+  opacity: .0;
+  transform: translate3d(0, 0, 0) scale(2.2);
+  user-select: none;
+}
+
+// .title {
+//   user-select: none;
+// }
+
+.loaded .title {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition: 9s;
+  user-select: none;
+}
+
+.new-game-btn {
+  border: 4px double $stranger-red;
+  cursor: pointer;
+  transition: 2.1s;
+}
+
+.new-game-btn:hover {
+  box-shadow: 0 0 75px $stranger-shadow;
+}
+
+.board-row {
+  user-select: none;
 }
 
 .game-cell {
   border: 1px solid $black;
-  cursor: pointer;
+  box-shadow: 0 0 60px $stranger-shadow;
 }
+
+.game-cell:hover {
+  box-shadow: 0 0 60px $off-white;
+  cursor: pointer;
+  opacity: .6;
+  user-select: none;
+}
+
+.clicked:hover {
+  box-shadow: 0 0 60px $stranger-shadow;
+  opacity: 1;
+  transition: .15s;
+  user-select: none;
+}
+
+.over,
+.over:hover {
+  cursor: none;
+}
+
+.over.game-cell,
+.over.game-cell:hover {
+  box-shadow: 0 0 60px $off-white;
+}
+
+.background-vid {
+  // height: 100vh;
+  pointer-events: none;
+  width: $background-width;
+  z-index: -800;
+}
+
 
 //Change hover icon from highlight bar to mouse or finger for anchors
 a:hover {
   cursor: pointer;
   text-decoration: none;
-}
-
-.game-cell:hover {
-  background-color: $grey;
 }
 
 .alert-link {

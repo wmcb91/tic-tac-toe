@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <title>TIC-TAC-TOE</title>
+    <title>Stranger Tic-tac-toe</title>
     <meta charset="utf-8">
-    <script src="vendor.bundle.js"
+    <script src="dependencies.js"
             type="text/javascript"
             charset="utf-8"
             defer></script>
@@ -13,285 +12,82 @@
             charset="utf-8"
             defer></script>
     <link
-    href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Rubik|VT323"
+    href="https://fonts.googleapis.com/css?family=Rubik|Sumana:400,700"
     rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="./favicon.png">
   </head>
 
   <body>
-    <header>
-      <h1 class='title'>TIC-TAC-TOE</h1>
-  <!-- Container for sign in prompt pre sign-in and welcome-msg post sign in -->
-      <div class='header-box'>
-        <div id="sign-in-prompt" class = "sign-in-prompt">
-          <form id="sign-in">
-            <fieldset>
-              <input type="email" name="credentials[email]" placeholder="Email">
-              <br>
-              <input type="password" name="credentials[password]"
-              placeholder="Password">
-              <input type="submit" value="Sign In">
-            </fieldset>
-          </form>
-          <p class="new-user-text">
-            New user? <a id="sign-up-link" class="sign-up-link">
-              Click here</a> to sign-up now!
-          </p>
+    <div class="overlay">
+      <header>
+        <img class="title" src="stranger-font.png" alt="title">
+      </header>
+      <main class='content'>
+        <!-- NEW GAME BUTTON -->
+        <div id="new-game-btn" class="new-game-btn">
+          <h3 class='btn-text'>NEW GAME</h3>
         </div>
 
-     <!-- Initially hidden
-          Note:
-          - Find something better than span if possible -->
-        <div class='user-welcome' id="user-welcome">
-          <h4 class="welcome-msg"> Hi,
-            <span id="user-name-welcome" class="user-name-welcome"></span>
-          </h4>
-          <div class="dropdown">
-            <button class="btn btn-default btn-lg dropdown-toggle cog-btn"
-                    type="button" id="cogMenu" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="true">
-              <span class="glyphicon glyphicon-cog" aria-hidden="true">
-              <!-- --></span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-right"
-                aria-labelledby="dropdownMenu1">
-              <li><a id="show-stats-btn">View Stats</a></li>
-              <li><a id='change-password-btn'>Change Password</a></li>
-              <li role="separator" class="divider"><!----></li>
-              <li><form id="sign-out" class='sign-out'>
-                <fieldset>
-                  <input type="submit" value="Sign Out">
-                </fieldset>
-              </form></li>
-            </ul>
+        <!-- GAME OVER - WIN OR TIE MESSAGE
+            Initially hidden -->
+        <div class='win-tie-message' id='win-tie-message'>
+        </div>
+        <div id="play-again-btn" class="new-game-btn play-again-btn">
+          <h3 class='btn-text'>PLAY AGAIN</h3>
+        </div>
+
+        <div class='container game-container' id='game-container'>
+          <!-- Display of players turn
+              using placeholder currently-->
+
+          <!-- GAME OVER MESSEGE -->
+          <div class='game-over'>
+            <h1 class='game-over-message'><!----></h1>
+          </div>
+          <!-- END GAME OVER MESSAGE -->
+
+          <!-- GAME BOARD -->
+          <div class="container game-board" id="game-board">
+              <div class="row board-row">
+                <div class="col-xs-4 game-cell" id='1'>
+                </div>
+                <div class="col-xs-4 game-cell" id='2'>
+                </div>
+                <div class="col-xs-4 game-cell" id='3'>
+                </div>
+              </div>
+
+              <div class="row board-row">
+                <div class="col-xs-4 game-cell" id='4'>
+                </div>
+                <div class="col-xs-4 game-cell" id='5'>
+                </div>
+                <div class="col-xs-4 game-cell" id='6'>
+                </div>
+              </div>
+
+              <div class="row board-row">
+                <div class="col-xs-4 game-cell" id='7'>
+                </div>
+                <div class="col-xs-4 game-cell" id='8'>
+                </div>
+                <div class="col-xs-4 game-cell" id='9'>
+                </div>
+              </div>
           </div>
         </div>
+      </main>
+      <div class="background">
+        <video class="background-vid" preload autoplay loop controls="false">
+          <source src='./assets/upside-down.mp4' type="video/mp4">
+        </video>
       </div>
-
-      <!-- Initially hidden-->
-      <!--  Sign Up Modal-->
-      <div class="modal fade" id="signUpModal"
-           tabindex="-1" role="dialog"
-           aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-            </div>
-            <div class="modal-body">
-              <form id="sign-up">
-                <fieldset>
-                  <input type="email" name="credentials[email]" placeholder="Email">
-                  <!-- <input type="text" name="credentials[user_name]" placeholder="User Name"> -->
-                  <br>
-                  <input type="password" name="credentials[password]"
-                  placeholder="Password">
-                  <input type="password" name="credentials[password_confirmation]"
-                  placeholder="Confirm Password">
-                  <input type="submit" value="Sign Up!">
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- successful sign up message and prompt to sign in -->
-      <div class="modal fade" id="signUpSuccessModal" tabindex="-1"
-      role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h3>Sign up succesful! Please sign in now.</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- initially hidden: change password form-->
-      <div class="modal fade" id="changePasswordModal" tabindex="-1"
-      role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Change Password</h4>
-            </div>
-            <div class="modal-body">
-              <form id="change-password">
-                <fieldset>
-                  <legend>Change Password</legend>
-                  <input type="password" name="passwords[old]"
-                  placeholder="Current Password">
-                  <input type="password" name="passwords[new]"
-                  placeholder="New Password">
-                  <input type="submit" value="Change Password">
-                </fieldset>
-              </form>
-              <h3 id='pwd-change-msg'>Password Successfully Changed</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </header>
-
-    <hr>
-    <main class='content'>
-      <!-- sign in failure warning message -->
-      <div
-      id="sign-in-failure"
-      class="alert alert-danger sign-in-alert-danger"
-      role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
-        <!-- --></span>
-        <span class="sr-only">Error:</span>
-        The account email or password you entered is incorrect.
-      </div>
-      <!-- NEW GAME BUTTON -->
-      <button id="new-game-btn" class="new-game-btn">
-        <h3 class='btn-text'>New Game</h3>
-      </button>
-      <!-- SHOW PLAYER STATS BUTTON
-            INITIALLY HIDDEN -->
-      <!-- <button id="show-stats-btn" class="show-stats-btn">
-        <h3 class='btn-text'>Player Stats</h3>
-      </button> -->
-      <!-- PLAYER STATS MODAL
-            INITIALLY HIDDEN -->
-      <div class="modal fade" id="showStatsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h3>Player Stats</h3>
-              <br>
-              <div class='stats' id='stats'>
-                <h4>Games Played: </h4>
-                <h4 class="games-played" id="games-played"></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Initially hidden: warning if attemp to play pre sign in-->
-      <!-- alert should trigger if new-game clicked before player sign in -->
-      <div
-      id="sign-in-warning"
-      class="alert alert-danger no-sign-in-alert-danger"
-      role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
-        <!-- --></span>
-        <span class="sr-only">Error:</span>
-        Whoops! You must sign in or
-        <a id="alert-sign-up" class="alert-link">
-        sign up</a>
-        to start a new game.
-      </div>
-
-      <!-- GAME OVER - WIN OR TIE MESSAGE
-          Initially hidden -->
-      <div class='win-tie-message' id='win-tie-message'>
-      </div>
-
-      <div class='container game-container' id='game-container'>
-        <!-- Display of players turn
-            using placeholder currently-->
-        <h2 id="player-turn" class="player-turn"></h2>
-
-        <!--  GAME OVER MODAL-->
-        <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog"
-        aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button
-                    type="button" class="close" data-dismiss="modal"
-                    aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="gameOver">Game Over</h4>
-              </div>
-              <div class="modal-body">
-              <!-- insert game result text in <h3> below  -->
-              <h3 class="modal--subtitle" id="gameResult"></h3>
-              </div>
-              <!-- PLAY AGAIN BUTTON include if there is time-->
-              <div class="modal-footer">
-                <button
-                    type="button" class="btn btn-default play-again"
-                    id="play-again-button"
-                    data-dismiss="modal">Play Again
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- GAME BOARD -->
-        <div class="container game-board" id="game-board">
-            <div class="row board-row">
-              <div class="col-xs-4 game-cell" id='1'>
-              </div>
-              <div class="col-xs-4 game-cell" id='2'>
-              </div>
-              <div class="col-xs-4 game-cell" id='3'>
-              </div>
-            </div>
-
-            <div class="row board-row">
-              <div class="col-xs-4 game-cell" id='4'>
-              </div>
-              <div class="col-xs-4 game-cell" id='5'>
-              </div>
-              <div class="col-xs-4 game-cell" id='6'>
-              </div>
-            </div>
-
-            <div class="row board-row">
-              <div class="col-xs-4 game-cell" id='7'>
-              </div>
-              <div class="col-xs-4 game-cell" id='8'>
-              </div>
-              <div class="col-xs-4 game-cell" id='9'>
-              </div>
-            </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <h5 class="credit">Game created by Will McBride</h5>
-    </footer>
-
-  </body>
-</html>
+    </div>
+      <!-- <footer>
+        <h6 class="credit">
+          Game created by Will McBride <br>
+          Font by Nelson Cash
+        </h6>
+      </footer> -->
+    </body>
+  </html>
