@@ -17,9 +17,6 @@ $(() => {
   $('.new-game-btn').hide();
   $('#game-container').hide();
   $('#win-tie-message').hide();
-  $('#pwd-change-msg').hide();
-  $('#sign-out').hide();
-  $('#user-welcome').hide();
   $('.title').show();
   gameEvents.addHandlers();
   setBackGround();

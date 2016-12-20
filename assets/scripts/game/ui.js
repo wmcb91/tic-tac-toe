@@ -19,7 +19,7 @@ const newGame = function () {
 
 const updateBoard = function (index, value) {
   let player = value;
-  let cellId = '#' + (index + 1);
+  let cellId = '#' + index;
   $(cellId).html(`<p>${player.toUpperCase()}</p>`);
   $(cellId).addClass(`clicked ${player}`);
 };
@@ -35,8 +35,14 @@ const gameOver = function (value, result) {
   $('.game-cell').addClass('over');
   $('.game-board').addClass('over');
   setTimeout(function(){$('#game-container').fadeOut(2250);}, 300);
-  setTimeout(function(){$('#win-tie-message').fadeIn(1500);}, 2600);
-  setTimeout(function(){$('#play-again-btn').fadeIn(1500);}, 2600);
+
+// NOTE: this animation looks best in Safari, check commented code below in Chrome
+  setTimeout(function(){$('#win-tie-message').fadeIn(1000);}, 2600);
+  setTimeout(function(){$('#play-again-btn').fadeIn(500);}, 3100);
+
+  // setTimeout(function(){$('#win-tie-message').fadeIn(1500);}, 2600);
+  // setTimeout(function(){$('#play-again-btn').fadeIn(1500);}, 2600);
+
   setTimeout(function(){$('.game-cell').removeClass('over');}, 3750);
   setTimeout(function(){$('.game-board').removeClass('over');}, 3750);
 };

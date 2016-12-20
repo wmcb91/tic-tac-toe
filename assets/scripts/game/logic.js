@@ -2,8 +2,6 @@
 
 const app = require('../app');
 const ui = require('./ui');
-// const api = require('./api');
-// const render = require('../app/render');
 
 const allowMove = function (index) {
   let game = app.game;
@@ -69,19 +67,12 @@ const executeTurn = function (index) {
   if (allowMove(index) === true) {
     ui.updateBoard(index, value);
     app.game.cells[index] = value;
-    console.log('app.game is currently', app.game);
   }
 
   if (gameWon(index, value) === true) {
     ui.gameOver(value, true);
-
     app.game.cells[index] = value;
     app.game.over = true;
-    console.log('app.game is currently', app.game);
-
-    // api.updateGame(index, value, true)
-    //   .done(render.updateGameSuccess)
-    //   .fail(render.updateGameFailure);
     return;
   }
 
@@ -89,20 +80,11 @@ const executeTurn = function (index) {
     ui.gameOver(gameTied);
     app.game.cells[index] = value;
     app.game.over = true;
-
-
-    // api.updateGame(index, value, true)
-      // .done(render.updateGameSuccess)
-      // .fail(render.updateGameFailure);
     return;
   }
 
   else {
     app.game.cells[index] = value;
-
-    // api.updateGame(index, value, false)
-    //   .done(render.updateGameSuccess)
-    //   .fail(render.updateGameFailure);
     changePlayer(app.activePlayer);
     return;
   }
