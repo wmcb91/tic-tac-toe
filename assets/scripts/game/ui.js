@@ -1,7 +1,6 @@
 'use strict';
 
 const startFirstGame = () => {
-  console.log('in startFirstGame');
   $('.title').fadeOut(600);
   $('.new-game-btn').fadeOut(600);
   $('#new-game-btn.btn-text').fadeOut(600);
