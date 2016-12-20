@@ -2,13 +2,8 @@
 
 const app = require('../app');
 const ui = require('./ui');
-const api = require('./api');
-const render = require('../app/render');
-
-app.game = {
-  "cells": ["","","","","","","","",""],
-  "over": false
-};
+// const api = require('./api');
+// const render = require('../app/render');
 
 const allowMove = function (index) {
   let game = app.game;
