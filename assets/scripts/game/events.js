@@ -1,14 +1,19 @@
 'use strict';
 
-const api = require('./api');
 const ui = require('./ui');
 const logic = require('./logic');
 const render = require('../app/render');
 
-const onNewGame = function () {
-  api.createGame()
-    .done(render.createGameSuccess, ui.newGame)
-    .fail(render.createGameFailure);
+const onClickNewGame = () => {
+  ui.startFirstGame();
+  render.createGame();
+  console.log('onClickNewGame fired');
+};
+
+const onClickPlayAgain = () => {
+  ui.newGame();
+  render.createGame();
+  console.log('onClickPlayAgain fired');
 };
 
 const onClickBoard = function (event) {
@@ -18,8 +23,8 @@ const onClickBoard = function (event) {
 };
 
 const addHandlers = () => {
-  $('#new-game-btn').on('click', onNewGame);
-  $('#play-again-btn').on('click', onNewGame);
+  $('#new-game-btn').on('click', onClickNewGame);
+  $('#play-again-btn').on('click', onClickPlayAgain);
   $('#1').on('click', {index: 0}, onClickBoard);
   $('#2').on('click', {index: 1}, onClickBoard);
   $('#3').on('click', {index: 2}, onClickBoard);
@@ -33,5 +38,6 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  onNewGame
+  onClickNewGame,
+  onClickPlayAgain
 };
