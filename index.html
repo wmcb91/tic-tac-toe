@@ -12,20 +12,25 @@
             charset="utf-8"
             defer></script>
     <link
-    href="https://fonts.googleapis.com/css?family=Rubik|Sumana:400,700"
+    href="https://fonts.googleapis.com/css?family=Sumana:400,700"
     rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="./favicon.png">
   </head>
 
   <body>
     <div class="overlay">
+      <div class="background">
+        <video class="background-vid" preload autoplay loop controls="false" >
+          <source src='./assets/upside-down.mp4' type="video/mp4">
+        </video>
+      </div>
       <header>
-        <img class="title" src="stranger-font.png" alt="title">
+        <img class="title" src="stranger-font.png" alt="title" style="display: none;">
       </header>
       <main class='content'>
         <!-- NEW GAME BUTTON -->
         <div id="new-game-btn" class="new-game-btn">
-          <h3 class='btn-text'>NEW GAME</h3>
+          <h3 class='btn-text' id='new-game-btn-text'></h3>
         </div>
 
         <!-- GAME OVER - WIN OR TIE MESSAGE
@@ -33,10 +38,10 @@
         <div class='win-tie-message' id='win-tie-message'>
         </div>
         <div id="play-again-btn" class="new-game-btn play-again-btn">
-          <h3 class='btn-text'>PLAY AGAIN</h3>
+          <h3 class='btn-text' id='play-again-btn-text'></h3>
         </div>
 
-        <div class='container game-container' id='game-container'>
+        <div class='container game-container' id='game-container' style="display: none;">
           <!-- Display of players turn
               using placeholder currently-->
 
@@ -77,11 +82,7 @@
           </div>
         </div>
       </main>
-      <div class="background">
-        <video class="background-vid" preload autoplay loop controls="false">
-          <source src='./assets/upside-down.mp4' type="video/mp4">
-        </video>
-      </div>
+
     </div>
       <!-- <footer>
         <h6 class="credit">
