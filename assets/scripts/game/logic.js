@@ -2,12 +2,9 @@
 
 const app = require('../app');
 const ui = require('./ui');
-const api = require('./api');
-const render = require('../app/render');
-
 
 const allowMove = function (index) {
-  let game = app.user.game;
+  let game = app.game;
   if (game.over === true) {
     return false;
   }
@@ -20,7 +17,7 @@ const allowMove = function (index) {
 };
 
 const gameWon = function (index, value) {
-  let cells = app.user.game.cells;
+  let cells = app.game.cells;
   cells[index] = value;
 
   if ((cells[0] === cells[1] && cells[0] === cells[2] && cells[0] !== '') ||
@@ -41,7 +38,7 @@ const gameWon = function (index, value) {
 };
 
 const gameTied = function (index, value) {
-  let cells = app.user.game.cells;
+  let cells = app.game.cells;
   cells[index] = value;
 
   if (cells.indexOf('') === -1) {
@@ -69,28 +66,25 @@ const executeTurn = function (index) {
   let value = app.activePlayer;
   if (allowMove(index) === true) {
     ui.updateBoard(index, value);
+    app.game.cells[index] = value;
   }
 
   if (gameWon(index, value) === true) {
     ui.gameOver(value, true);
-    api.updateGame(index, value, true)
-      .done(render.updateGameSuccess)
-      .fail(render.updateGameFailure);
-      return;
+    app.game.cells[index] = value;
+    app.game.over = true;
+    return;
   }
 
   if (gameTied(index, value) === true && gameWon(index, value) === false) {
     ui.gameOver(gameTied);
-    api.updateGame(index, value, true)
-      .done(render.updateGameSuccess)
-      .fail(render.updateGameFailure);
+    app.game.cells[index] = value;
+    app.game.over = true;
     return;
   }
 
   else {
-    api.updateGame(index, value, false)
-      .done(render.updateGameSuccess)
-      .fail(render.updateGameFailure);
+    app.game.cells[index] = value;
     changePlayer(app.activePlayer);
     return;
   }
