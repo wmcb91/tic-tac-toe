@@ -20,6 +20,6 @@ $(() => {
   $('.title').show();
   $('#play-again-btn-text').html("PLAY AGAIN");
   setTimeout(function(){$('header').addClass('loaded');}, 1000);
-  setTimeout(function(){$('#new-game-btn').show();}, 8000);
+  setTimeout(function(){$('#new-game-btn').show();}, 6300);
   gameEvents.addHandlers();
 });

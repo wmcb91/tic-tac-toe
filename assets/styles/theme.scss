@@ -19,14 +19,14 @@ body {
 .loaded .title {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
-  transition: 8s;
+  transition: 5.7s;
   user-select: none;
 }
 
 .new-game-btn {
   border: 4px double $stranger-red;
   cursor: pointer;
-  transition: 2.1s;
+  transition: 1.2s;
 }
 
 .new-game-btn:hover {
@@ -54,6 +54,10 @@ body {
   opacity: 1;
   transition: .15s;
   user-select: none;
+}
+
+.win-tie-message {
+  cursor: default;
 }
 
 .over,
