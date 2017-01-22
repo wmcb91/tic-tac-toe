@@ -11,7 +11,7 @@ const newGame = function () {
   $('#win-tie-message').fadeOut(1400);
   $('#play-again-btn').fadeOut(600);
   $('.clicked').removeClass('clicked o x');
-  setTimeout(function(){$('#game-container').fadeIn(500);}, 600);
+  setTimeout(function(){$('#game-container').fadeIn(500);}, 1401);
   $('#game-board').find('.game-cell').text('');
 };
 
