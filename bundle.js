@@ -128,7 +128,7 @@ webpackJsonp([0],[
 	  $('.clicked').removeClass('clicked o x');
 	  setTimeout(function () {
 	    $('#game-container').fadeIn(500);
-	  }, 600);
+	  }, 1401);
 	  $('#game-board').find('.game-cell').text('');
 	};
 
